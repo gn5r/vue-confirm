@@ -1,17 +1,17 @@
 <template>
   <transition>
-    <div v-if="dialog" class="confirm-mask">
-      <div
-        class="confirm-wrapper"
-        :class="{bounce:outside}"
-        @click.self="outsideClick"
-        :style="styles"
-      >
+    <div v-if="dialog" class="confirm-mask" @click.self="outsideClick">
+      <div class="confirm-wrapper" :class="{bounce:outside}" :style="styles">
         <div class="confirm-container" :style="styles">
           <div v-if="title" class="confirm-header">
             <slot name="header">
-              <header>
-                <h3>{{title}}</h3>
+              <header class="toolbar" :style="{'--titleColor':titleColor}">
+                <div class="toolbar-content">
+                  <div class="toolbar-title">
+                    <i></i>
+                    {{title}}
+                  </div>
+                </div>
               </header>
             </slot>
           </div>
@@ -31,7 +31,7 @@
                 class="confirm-button"
                 v-for="(button,index) in buttons"
                 :key="index"
-                :style="{'--color':button.color}"
+                :style="{'--btnColor':button.color}"
                 @click="button.function"
               >{{button.text}}</button>
             </slot>
@@ -66,8 +66,8 @@ export default {
     outside: false
   }),
   methods: {
+    //ダイアログの外側クリックイベント。フラグを反転させバウンス効果CSSを有効にする
     outsideClick() {
-      console.debug("外側クリック");
       this.outside = true;
       setTimeout(() => {
         this.outside = false;
@@ -96,7 +96,7 @@ export default {
   }
 
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
@@ -145,15 +145,38 @@ export default {
 }
 
 .confirm-header {
-  max-width: inherit;
-  padding: 4px 16px;
+  width: 100%;
   align-items: center;
   position: relative;
   display: flex;
-  height: 48px;
+}
+
+.toolbar {
+  height: 56px;
+  max-width: 100%;
+  display: block;
+  flex: 1 1 auto;
   border-radius: 0;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  --titleColor: red;
+  background-color: var(--titleColor);
+  color: #fff;
+}
+
+.toolbar-content {
+  height: 48px;
+  align-items: center;
+  display: flex;
+  position: relative;
+  z-index: 0;
+  padding: 4px 16px;
+}
+
+.toolbar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  align-items: baseline;
 }
 
 .confirm-body {
@@ -189,9 +212,9 @@ export default {
   height: 36px;
   font-size: 0.875rem;
   border-radius: 4px;
-  --color: red;
-  background-color: var(--color);
-  border-color: var(--color);
+  --btnColor: red;
+  background-color: var(--btnColor);
+  border-color: var(--btnColor);
   color: #fff;
   outline: 0;
   align-items: center;

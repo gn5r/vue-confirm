@@ -52,7 +52,6 @@ export default {
     titleColor: String,
     message: String,
     buttons: Array,
-    closable: Boolean,
     width: {
       type: [String, Number],
       default: undefined

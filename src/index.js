@@ -1,9 +1,8 @@
 import VConfirm from "./components/VConfirm";
 
+// Vue.use()で実行される関数
 export function install(Vue) {
-  if (install.installed) return;
-  install.installed = true;
-  Vue.component("VConfirm", VConfirm);
+  Vue.component("v-confirm", VConfirm);
 }
 
 export default VConfirm;

@@ -1,14 +1,14 @@
 <template>
-  <transition>
-    <div v-if="dialog" class="confirm-mask" @click.self="outsideClick">
-      <div class="confirm-wrapper" :class="{bounce:outside}" :style="styles">
-        <div class="confirm-container" :style="styles">
+  <transition name="confirm">
+    <div v-if="dialog" class="confirm-mask" :class="{bounce:outside}" @click.self="outsideClick">
+      <div class="confirm-wrapper" :style="{'--maxWidth':maxWidth}">
+        <div class="confirm-container" :style="{'--width':width}">
           <div v-if="title" class="confirm-header">
             <slot name="header">
               <header class="toolbar" :style="{'--titleColor':titleColor}">
                 <div class="toolbar-content">
                   <div class="toolbar-title">
-                    <i></i>
+                    <i v-if="titleIcon" :class="titleIcon"></i>
                     {{title}}
                   </div>
                 </div>
@@ -65,28 +65,34 @@ export default {
     outside: false
   }),
   methods: {
-    //ダイアログの外側クリックイベント。フラグを反転させバウンス効果CSSを有効にする
     outsideClick() {
       this.outside = true;
       setTimeout(() => {
         this.outside = false;
-      }, 500);
-    }
-  },
-  computed: {
-    styles() {
-      return {
-        "--width": this.width + "px",
-        "--maxWidth": this.maxWidth + "px"
-      };
+      }, 200);
     }
   }
 };
 </script>
 
 <style scoped>
+/* スマホの場合は最大幅を80%固定にする */
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .confirm-wrapper {
+    --maxWidth: calc(600px * 0.8) !important;
+    max-width: var(--maxWidth) !important;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 960px) {
+  .confirm-wrapper {
+    --maxWidth: calc(960px * 0.8) !important;
+    max-width: var(--maxWidth) !important;
+  }
+}
+
 .bounce {
-  animation: bounce 0.5s;
+  animation: bounce 0.2s;
 }
 
 @keyframes bounce {
@@ -95,17 +101,24 @@ export default {
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
+.confirm-enter-active {
+  transition: opacity 0.2s ease-in;
 }
 
-.v-enter,
-.v-leave-to {
+.confirm-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.confirm-enter,
+.confirm-leave-to {
   opacity: 0;
 }
 
@@ -225,13 +238,5 @@ export default {
 
 .confirm-button.confirm-button + .confirm-button {
   margin-left: 8px;
-}
-
-.confirm-enter {
-  opacity: 0;
-}
-
-.confirm-leave-active {
-  opacity: 0;
 }
 </style>

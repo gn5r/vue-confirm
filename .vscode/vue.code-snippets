@@ -1,0 +1,36 @@
+{
+  "vue template | .vue": {
+    "prefix": "vue template",
+    "body": [
+      "<template>",
+      "\t<div></div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import Vue from \"vue\";",
+      "type DataType = {",
+      "\t//",
+      "};",
+      "",
+      "export default Vue.extend({",
+      "\tname: \"${1}\",",
+      "\tmodel: {},",
+      "\tmixins: [],",
+      "\tprops: {},",
+      "\tdata (): DataType {",
+      "\t\treturn{};",
+      "\t},",
+      "\tmethods: {},",
+      "\tcreated() {",
+      "\t\t//",
+      "\t},",
+      "\tcomputed: {},",
+      "\twatch: {},",
+      "\tcomponents: {}",
+      "});",
+      "</script>",
+      "",
+      "<style scoped></style>"
+    ]
+  }
+}

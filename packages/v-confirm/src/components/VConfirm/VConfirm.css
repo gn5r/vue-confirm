@@ -1,0 +1,134 @@
+.transition-enter-active {
+  transition: opacity 0.2s ease-in;
+}
+
+.transition-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.transition-enter,
+.transition-leave-to {
+  opacity: 0;
+}
+
+.v-confirm {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.v-confirm > * {
+  width: 100%;
+}
+
+.v-confirm__content {
+  background-color: #eee;
+  border-radius: 3px;
+  box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+}
+
+.v-confirm__titlebar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 36px;
+  margin: 8px 12px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.v-confirm__content .v-confirm__spacer {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.v-confirm__titlebar .v-confirm__close-icon {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  min-width: 24px;
+}
+
+.v-confirm__content .v-confirm__text {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  padding: 0 16px 16px;
+}
+
+.v-confirm__content .v-confirm__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.v-confirm__actions > button {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  justify-content: center;
+  vertical-align: middle;
+  height: 36px;
+  min-width: 64px;
+}
+
+.v-confirm__actions > button + button {
+  margin-left: 8px;
+}
+
+.v-confirm__actions > .button {
+  position: relative;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0 8px;
+  font-size: 0.875rem;
+  outline: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  color: #1867c0;
+  caret-color: #1867c0;
+  text-transform: uppercase;
+}
+
+.v-confirm__actions > .button::before {
+  pointer-events: none;
+  content: "";
+  background-color: currentColor;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.v-confirm__actions > .button:hover::before {
+  opacity: 0.08;
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .v-confirm .v-confirm__container {
+    width: calc(600px * 0.8) !important;
+    max-width: calc(600px * 0.8) !important;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 960px) {
+  .v-confirm .v-confirm__container {
+    width: calc(960px * 0.8) !important;
+    max-width: calc(960px * 0.8) !important;
+  }
+}

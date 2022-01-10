@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "octref.vetur",
+    "visualstudioexptteam.vscodeintellicode",
+    "vivaxy.vscode-conventional-commits"
+  ]
+}

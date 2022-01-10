@@ -1,0 +1,46 @@
+{
+  "name": "@gn5r/vue-confirm",
+  "version": "2.0.0-beta.0",
+  "license": "MIT",
+  "description": "Confirm components for Vue.js projects",
+  "author": {
+    "name": "shangyuan.tuolang",
+    "url": "https://gn5r.github.io"
+  },
+  "homepage": "https://github.com/gn5r/vue-confirm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gn5r/vue-confirm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gn5r/vue-confirm/issues"
+  },
+  "keywords": [
+    "vue",
+    "confirm"
+  ],
+  "main": "dist/v-confirm.min.js",
+  "module": "dist/v-confirm.min.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "src",
+    "types",
+    "dist"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --progress",
+    "lint": "eslint --ext .js,.ts,src",
+    "lint:fix": "prettier --write src/**/*.{js,ts,css}",
+    "test": "cross-env NODE_ENV=test jest --watchAll"
+  },
+  "dependencies": {
+    "vue-click-outside": "^1.1.0"
+  },
+  "devDependencies": {
+    "@mdi/js": "^6.5.95",
+    "vue": "^2.6.14"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

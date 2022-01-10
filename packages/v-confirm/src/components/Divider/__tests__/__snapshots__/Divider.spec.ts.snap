@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider.ts should render 1`] = `<hr role="separator" area-orientation="horizontal" class="divider">`;

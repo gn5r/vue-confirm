@@ -33,9 +33,7 @@
     "lint:fix": "prettier --write src/**/*.{js,ts,css}",
     "test": "cross-env NODE_ENV=test jest --watchAll"
   },
-  "dependencies": {
-    "vue-click-outside": "^1.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@mdi/js": "^6.5.95",
     "vue": "^2.6.14"

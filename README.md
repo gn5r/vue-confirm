@@ -10,7 +10,6 @@
 
 ![vue version](https://img.shields.io/npm/dependency-version/@gn5r/vue-confirm/dev/vue?style=for-the-badge)
 ![@mdi/js version](https://img.shields.io/npm/dependency-version/@gn5r/vue-confirm/dev/@mdi/js?style=for-the-badge)
-![vue-click-outside version](https://img.shields.io/npm/dependency-version/@gn5r/vue-confirm/vue-click-outside?style=for-the-badge)
 
 ## Demo
 
@@ -40,7 +39,6 @@ preparing...
 - dependencies
 
   - vue:^2.6.14
-  - vue-click-outside:^1.1.0
   - @mdi/js:^6.5.95
 
 ## Usage

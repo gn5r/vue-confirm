@@ -57,7 +57,7 @@
   justify-content: flex-start;
   align-items: center;
   min-height: 36px;
-  margin: 8px 12px;
+  padding: 8px 12px;
   font-size: 24px;
   font-weight: bold;
 }
@@ -78,7 +78,10 @@
 .v-confirm__message {
   overflow-wrap: break-word;
   white-space: pre-wrap;
-  padding: 0 16px 16px;
+  padding: 8px 16px;
+  font-size: large;
+  color: #000;
+  font-weight: normal;
 }
 
 .v-confirm__actions {

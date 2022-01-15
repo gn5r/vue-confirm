@@ -7,6 +7,10 @@ export default Vue.extend({
       type: [Number, String],
       default: 24,
     },
+    color: {
+      type: String,
+      default: "inherit",
+    },
   },
   computed: {
     hasClickListener(): boolean {
@@ -39,6 +43,7 @@ export default Vue.extend({
           outline: "none",
           padding: 0,
           appearance: "none",
+          color: this.color,
         },
         on: this.$listeners,
       },
@@ -56,6 +61,7 @@ export default Vue.extend({
               "font-size": `${fontSize}px`,
               width: `${fontSize}px`,
               height: `${fontSize}px`,
+              fill: "currentColor",
             },
           },
           [

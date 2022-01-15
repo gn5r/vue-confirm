@@ -10,7 +10,7 @@ import { VConfirmBtn } from "@gn5r/vue-confirm/types";
 import "./VConfirm.css";
 
 // ClickOutside Directive
-import ClickOutside from "vue-click-outside";
+import { clickOutside } from "../../directives";
 
 // Components
 import { MdiIcon, Divider } from "../index";
@@ -21,7 +21,7 @@ import { mdiClose } from "@mdi/js";
 export default Vue.extend({
   name: "v-confirm",
   directives: {
-    ClickOutside,
+    clickOutside,
   },
   model: {
     prop: "value",
@@ -57,6 +57,8 @@ export default Vue.extend({
   data() {
     return {
       isActive: this.value,
+      animated: false,
+      animateTimeout: -1,
     };
   },
   computed: {
@@ -69,18 +71,35 @@ export default Vue.extend({
         return this.isActive;
       },
     },
+    classes(): object {
+      return {
+        "v-confirm": true,
+        "v-confirm--animated": this.animated,
+      };
+    },
   },
   methods: {
+    animateClick() {
+      this.animated = false;
+      this.$nextTick(() => {
+        this.animated = true;
+        window.clearTimeout(this.animateTimeout);
+        this.animateTimeout = window.setTimeout(
+          () => (this.animated = false),
+          200
+        );
+      });
+    },
     closeCondition(e: Event) {
       const target = e.target as HTMLElement;
-      return !this.isActive || (this.$refs.dialog as Element).contains(target);
+      return this.isActive && (this.$refs.dialog as Element).contains(target);
     },
     onClickOutside(e: Event): void {
       if (!this.closeCondition(e)) return;
 
       this.$emit("click:outside", e);
       if (this.persistent) {
-        //
+        this.animateClick();
       } else {
         this.internalValue = false;
       }
@@ -89,7 +108,7 @@ export default Vue.extend({
       return this.$createElement(
         "div",
         {
-          class: "v-confirm",
+          class: this.classes,
           ref: "dialog",
           directives: [{ name: "show", value: this.isActive }],
         },

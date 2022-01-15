@@ -1,7 +1,7 @@
 export type VConfirmBtn = {
   text?: string;
   textColor?: string;
-  backgoundColor?: string;
+  backgroundColor?: string;
   class?: string | string[];
   function: FunctionConstructor | VoidFunction;
 };

@@ -108,53 +108,63 @@
 
       <div class="row mb-3">
         <div class="col-12">
-          <template v-for="(btn, i) in btns">
-            <div class="row g-2" :key="i">
-              <div class="col-4 col-md-4 col-xl-2">
-                <label for="input-btn-text-color" class="form-label"
-                  >Text Color</label
-                >
-                <input
-                  v-model="btn.textColor"
-                  class="form-control form-control-color"
-                  type="color"
-                  id="input-btn-text-color"
-                />
-              </div>
-              <div class="col-6 col-md-6 col-xl-3">
-                <label for="input-btn-background-color" class="form-label"
-                  >Background Color</label
-                >
-                <input
-                  v-model="btn.backgroundColor"
-                  class="form-control form-control-color"
-                  type="color"
-                  id="input-btn-background-color"
-                />
-              </div>
-              <div class="col-12 col-md-12 col-xl-7">
-                <label for="input-btn-text" class="form-label">Btn Text</label>
-                <input
-                  v-model="btn.text"
-                  class="form-control"
-                  type="text"
-                  id="input-btn-text"
-                />
-              </div>
-              <div class="col-12">
-                <label for="input-btn-class" class="form-label"
-                  >Btn Class</label
-                >
-                <input
-                  v-model="btn.class"
-                  class="form-control"
-                  type="text"
-                  id="input-btn-class"
-                  placeholder="btn btn-primary"
-                />
-              </div>
+          <div class="row g-2">
+            <div class="col-6 col-md-4 col-xl-2">
+              <label for="input-btn-text-color" class="form-label"
+                >Text Color</label
+              >
+              <input
+                v-model="btns[0].textColor"
+                class="form-control form-control-color"
+                type="color"
+                id="input-btn-text-color"
+              />
             </div>
-          </template>
+            <div class="col-6 col-md-4 col-xl-4">
+              <label for="input-btn-background-color" class="form-label"
+                >Background Color</label
+              >
+              <input
+                v-model="btns[0].backgroundColor"
+                class="form-control form-control-color"
+                type="color"
+                id="input-btn-background-color"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-xl-3">
+              <label for="input-btn-align" class="form-label">
+                Btn align
+              </label>
+              <select
+                v-model="btnAlign"
+                id="input-btn-align"
+                class="form-select"
+              >
+                <template v-for="(align, i) in alignments">
+                  <option :key="i" :value="align.id" v-text="align.value" />
+                </template>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="input-btn-text" class="form-label">Btn Text</label>
+              <input
+                v-model="btns[0].text"
+                class="form-control"
+                type="text"
+                id="input-btn-text"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="input-btn-class" class="form-label">Btn Class</label>
+              <input
+                v-model="btns[0].class"
+                class="form-control"
+                type="text"
+                id="input-btn-class"
+                placeholder="btn btn-primary"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -182,6 +192,7 @@
       :title-text-color="titleTextColor"
       :close-icon-color="closeIconColor"
       :message="message"
+      :btn-align="btnAlign"
       :btns="btns"
     />
   </div>
@@ -189,7 +200,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { VConfirmBtn } from "@gn5r/vue-confirm/types";
+import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
 
 export default Vue.extend({
   name: "component-example",
@@ -208,6 +219,37 @@ export default Vue.extend({
       titleTextColor: "#ffffff",
       closeIconColor: "#ffffff",
       message: "test\nmessage",
+      btnAlign: "flex-end" as Alignment,
+      alignments: [
+        {
+          id: "start",
+          value: "start",
+        },
+        {
+          id: "center",
+          value: "center",
+        },
+        {
+          id: "end",
+          value: "end",
+        },
+        {
+          id: "flex-start",
+          value: "flex-start",
+        },
+        {
+          id: "flex-end",
+          value: "flex-end",
+        },
+        {
+          id: "left",
+          value: "left",
+        },
+        {
+          id: "right",
+          value: "right",
+        },
+      ] as Array<{ id: string; value: string }>,
       btns: [] as VConfirmBtn[],
     };
   },
@@ -216,9 +258,16 @@ export default Vue.extend({
     this.btns = [
       {
         text: "ok",
+        textColor: "#ffffff",
+        backgroundColor: "#2196F3",
+        class: "",
+        function: () => (this.dialog = false),
+      },
+      {
+        text: "NO",
         textColor: "",
         backgroundColor: "",
-        class: "",
+        class: "btn btn-outline-danger fw-bold",
         function: () => (this.dialog = false),
       },
     ];

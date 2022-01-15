@@ -74,7 +74,7 @@
   min-width: 24px;
 }
 
-.v-confirm__content .v-confirm__text {
+.v-confirm__content .v-confirm__message {
   overflow-wrap: break-word;
   white-space: pre-wrap;
   padding: 0 16px 16px;

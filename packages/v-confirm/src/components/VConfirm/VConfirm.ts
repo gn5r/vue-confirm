@@ -133,7 +133,7 @@ export default Vue.extend({
         },
         [
           this.genTitlebar(),
-          this.genText(),
+          this.genMessage(),
           this.btns.length > 0 ? this.genActions() : null,
         ]
       );
@@ -184,10 +184,10 @@ export default Vue.extend({
         children
       );
     },
-    genText(): VNode {
+    genMessage(): VNode {
       return this.$createElement(
         "div",
-        { class: "v-confirm__text" },
+        { class: "v-confirm__message" },
         this.message
       );
     },
@@ -235,7 +235,6 @@ export default Vue.extend({
     },
   },
   render(h): VNode {
-    console.debug("v-confirm render");
     return h("transition", { props: { name: "transition", appear: true } }, [
       this.genDialog(),
     ]);

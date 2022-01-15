@@ -42,9 +42,13 @@ export default Vue.extend({
     title: String,
     titleColor: {
       type: String,
-      default: "",
+      default: "inherit",
     },
     titleTextColor: {
+      type: String,
+      default: "inherit",
+    },
+    closeIconColor: {
       type: String,
       default: "inherit",
     },
@@ -122,7 +126,6 @@ export default Vue.extend({
           class: "v-confirm__content",
           style: {
             width: this.width,
-            "max-width": this.width,
           },
           directives: [
             {
@@ -143,9 +146,9 @@ export default Vue.extend({
       const titlebar = this.$createElement(
         "header",
         {
-          class: "v-confirm__titlebar-text",
           style: {
             color: this.titleTextColor,
+            "background-color": "transparent",
           },
         },
         this.title
@@ -163,6 +166,9 @@ export default Vue.extend({
             this.$createElement(
               MdiIcon,
               {
+                props: {
+                  color: this.closeIconColor,
+                },
                 on: { click: () => (this.internalValue = false) },
               },
               [mdiClose]
@@ -187,7 +193,9 @@ export default Vue.extend({
     genMessage(): VNode {
       return this.$createElement(
         "div",
-        { class: "v-confirm__message" },
+        {
+          class: "v-confirm__message",
+        },
         this.message
       );
     },
@@ -218,7 +226,7 @@ export default Vue.extend({
           },
           style: {
             color: btn.textColor || null,
-            "background-color": btn.backgoundColor || null,
+            "background-color": btn.backgroundColor || null,
           },
           on: {
             click: btn.function,

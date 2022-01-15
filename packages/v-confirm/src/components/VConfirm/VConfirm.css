@@ -61,7 +61,7 @@
   font-weight: bold;
 }
 
-.v-confirm__content .v-confirm__spacer {
+.v-confirm__spacer {
   display: flex;
   height: 100%;
   flex-grow: 1;
@@ -74,13 +74,13 @@
   min-width: 24px;
 }
 
-.v-confirm__content .v-confirm__message {
+.v-confirm__message {
   overflow-wrap: break-word;
   white-space: pre-wrap;
   padding: 0 16px 16px;
 }
 
-.v-confirm__content .v-confirm__actions {
+.v-confirm__actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;

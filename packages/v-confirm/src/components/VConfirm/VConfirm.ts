@@ -4,7 +4,7 @@ import Vue from "vue";
 // Types
 import { VNode, VNodeChildren } from "vue/types";
 import { PropValidator } from "vue/types/options";
-import { VConfirmBtn } from "@gn5r/vue-confirm/types";
+import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
 
 // CSS
 import "./VConfirm.css";
@@ -53,6 +53,10 @@ export default Vue.extend({
       default: "inherit",
     },
     message: String,
+    btnAlign: {
+      type: String,
+      default: "flex-end",
+    } as PropValidator<Alignment>,
     btns: {
       type: Array,
       default: () => [],
@@ -210,6 +214,9 @@ export default Vue.extend({
         "div",
         {
           class: "v-confirm__actions",
+          style: {
+            "justify-content": this.btnAlign,
+          },
         },
         btns
       );

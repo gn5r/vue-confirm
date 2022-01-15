@@ -1,3 +1,12 @@
+export type Alignment =
+  | "start"
+  | "center"
+  | "end"
+  | "flex-start"
+  | "flex-end"
+  | "left"
+  | "right";
+
 export type VConfirmBtn = {
   text?: string;
   textColor?: string;
@@ -37,11 +46,11 @@ declare const VConfirm: ExtendedVue<
     closeable: boolean;
     persistent: boolean;
     noActionsDivider: boolean;
-    width: string | number;
+    width: string;
     title: string;
     titleColor: Colors;
     titleTextColor: String;
-    titleIcon: string;
+    closeIconColor: string;
     message: string;
     btns: Array<VConfirmBtn>;
   }

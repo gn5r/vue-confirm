@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 100%">
     <nav class="navbar navbar-dark bg-dark mb-3">
       <div class="container-fluid">
         <span class="navbar-brand">Vue Confirm Component</span>
@@ -16,102 +16,40 @@
       </div>
     </nav>
     <main class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-md-8">
-          <div class="card mb-3" style="min-height: 300px">
-            <div class="card-body container-fluid">
-              <div class="row justify-content-start align-items-center">
-                <div class="col-sm-3 col-md-2 col-lg-1">
-                  <button
-                    class="btn btn-outline-primary"
-                    type="button"
-                    @click="show"
-                  >
-                    show
-                  </button>
-                </div>
-                <div class="col-sm-3 col-md-2 col-lg-1">
-                  <button
-                    class="btn btn-outline-primary"
-                    type="button"
-                    @click="show2"
-                  >
-                    show2
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="row justify-content-center align-items-start">
+        <div class="col-12 col-md-12 col-xl-6">
+          <component-example />
         </div>
       </div>
     </main>
 
-    <v-confirm
-      v-model="dialog"
-      :message="message"
-      :btns="btns"
-      title="titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-      title-color="primary"
-      closeable
-      no-actions-divider
-    />
+    <footer class="text-center text-muted mt-3 px-3">
+      Development by
+      <a href="https://github.com/gn5r" target="_blank" rel="author,noopener"
+        >&copy;shangyuan.tuolang</a
+      >
+    </footer>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { VConfirmBtn } from "@gn5r/vue-confirm/types";
+import ComponentExample from "./components/ComponentExample.vue";
 
 export default Vue.extend({
   name: "App",
   model: {},
   mixins: [],
   props: {},
-  data: () => ({
-    dialog: false,
-    btns: [] as VConfirmBtn[],
-  }),
-  methods: {
-    show() {
-      this.btns = [
-        {
-          text: "ok",
-          function: () => (this.dialog = false),
-        },
-      ];
-      this.dialog = true;
-    },
-    show2() {
-      this.btns = [
-        {
-          text: "ok",
-          class: "btn btn-outline-primary btn-lg",
-          function: () => (this.dialog = false),
-        },
-        {
-          text: "no",
-          class: "btn btn-outline-danger",
-          function: () => (this.dialog = false),
-        },
-        {
-          text: "none",
-          function: () => (this.dialog = false),
-        },
-      ];
-      this.dialog = true;
-    },
-  },
+  data: () => ({}),
+  methods: {},
   created() {
     //
   },
-  computed: {
-    message(): string {
-      return "message\nmessage";
-    },
-  },
+  computed: {},
   watch: {},
-  components: {},
+  components: {
+    ComponentExample,
+  },
 });
 </script>
-
-<style scoped></style>

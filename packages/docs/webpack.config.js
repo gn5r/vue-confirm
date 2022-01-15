@@ -25,7 +25,7 @@ module.exports = {
     alias: {
       vue$: "vue/dist/vue.esm.js",
     },
-    extensions: ["*", ".js", ".ts", ".vue"],
+    extensions: [".js", ".ts", ".vue"],
   },
   module: {
     rules: [
@@ -57,7 +57,7 @@ module.exports = {
           isProcudtion
             ? MiniCssExtractPlugin.loader
             : {
-                loader: "style-loader",
+                loader: "vue-style-loader",
               },
           {
             loader: "css-loader",
@@ -74,6 +74,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       hash: false,
@@ -87,14 +88,13 @@ module.exports = {
         minifyURLs: isProcudtion,
       },
     }),
-    new VueLoaderPlugin(),
   ],
   devServer: {
     host: process.env.HOST || "localhost",
     port: process.env.PORT || 8080,
     open: process.env.BASE_URL || "/",
     hot: true,
-    static: path.resolve(process.cwd(), "src"),
+    static: path.resolve(process.cwd(), "docs"),
   },
 };
 

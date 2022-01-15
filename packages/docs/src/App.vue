@@ -17,7 +17,7 @@
     </nav>
     <main class="container">
       <div class="row justify-content-center align-items-start">
-        <div class="col-12 col-md-12 col-xl-6">
+        <div class="col-12 col-md-12 col-xl-8">
           <component-example />
         </div>
       </div>

@@ -219,7 +219,7 @@ export default Vue.extend({
       titleTextColor: "#ffffff",
       closeIconColor: "#ffffff",
       message: "test\nmessage",
-      btnAlign: "flex-end" as Alignment,
+      btnAlign: "end" as Alignment,
       alignments: [
         {
           id: "start",
@@ -234,22 +234,14 @@ export default Vue.extend({
           value: "end",
         },
         {
-          id: "flex-start",
-          value: "flex-start",
+          id: "space-between",
+          value: "space-between",
         },
         {
-          id: "flex-end",
-          value: "flex-end",
+          id: "space-around",
+          value: "space-around",
         },
-        {
-          id: "left",
-          value: "left",
-        },
-        {
-          id: "right",
-          value: "right",
-        },
-      ] as Array<{ id: string; value: string }>,
+      ] as Array<{ id: Alignment; value: Alignment }>,
       btns: [] as VConfirmBtn[],
     };
   },

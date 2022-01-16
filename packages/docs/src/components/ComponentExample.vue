@@ -28,7 +28,7 @@
               id="input-persistent"
             />
             <label class="form-check-label" for="input-persistent"
-              >Petsistent?</label
+              >Persistent?</label
             >
           </div>
           <div class="form-check form-check-inline">
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div class="col-3 col-md-3 col-xl-2">
+        <div class="col-4 col-md-4 col-xl-2">
           <label for="input-title-color" class="form-label">Title Color</label>
           <input
             v-model="titleColor"
@@ -54,7 +54,7 @@
           />
         </div>
 
-        <div class="col-4 col-md-4 col-xl-2">
+        <div class="col-6 col-md-4 col-xl-2">
           <label for="input-title-text-color" class="form-label"
             >Title Text Color</label
           >
@@ -66,7 +66,7 @@
           />
         </div>
 
-        <div class="col-4 col-md-4 col-xl-2">
+        <div class="col-6 col-md-4 col-xl-2">
           <label for="input-close-icon-color" class="form-label"
             >Close Icon Color</label
           >
@@ -110,17 +110,6 @@
         <div class="col-12">
           <div class="row g-2">
             <div class="col-6 col-md-4 col-xl-2">
-              <label for="input-btn-text-color" class="form-label"
-                >Text Color</label
-              >
-              <input
-                v-model="btns[0].textColor"
-                class="form-control form-control-color"
-                type="color"
-                id="input-btn-text-color"
-              />
-            </div>
-            <div class="col-6 col-md-4 col-xl-4">
               <label for="input-btn-background-color" class="form-label"
                 >Background Color</label
               >
@@ -129,6 +118,17 @@
                 class="form-control form-control-color"
                 type="color"
                 id="input-btn-background-color"
+              />
+            </div>
+            <div class="col-6 col-md-4 col-xl-2">
+              <label for="input-btn-text-color" class="form-label"
+                >Text Color</label
+              >
+              <input
+                v-model="btns[0].textColor"
+                class="form-control form-control-color"
+                type="color"
+                id="input-btn-text-color"
               />
             </div>
             <div class="col-6 col-md-4 col-xl-3">

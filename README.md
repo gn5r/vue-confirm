@@ -13,9 +13,7 @@
 
 ## Demo
 
-preparing...
-
-<!-- [vue-common-confirm Demo](https://gn5r.github.io/vue-confirm/) -->
+[vue-confirm Demo](https://gn5r.github.io/vue-confirm/)
 
 ## Version matrix
 

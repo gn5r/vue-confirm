@@ -1,0 +1,15 @@
+{
+  "name": "@gn5r/vetur-helper-json",
+  "version": "2.0.0-beta.0",
+  "private": true,
+  "license": "ISC",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node ./src/index.js",
+    "lint": "eslint --ext js src",
+    "lint:fix": "yarn run lint --fix"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.4"
+  }
+}

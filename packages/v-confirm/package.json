@@ -31,12 +31,17 @@
     "build": "cross-env NODE_ENV=production webpack --progress",
     "lint": "eslint --ext .js,.ts,src",
     "lint:fix": "prettier --write src/**/*.{js,ts,css}",
-    "test": "cross-env NODE_ENV=test jest --watchAll"
+    "test:unit": "cross-env NODE_ENV=test jest -i",
+    "test:watch": "cross-env NODE_ENV=test jest -i --watch"
   },
   "dependencies": {},
   "devDependencies": {
     "@mdi/js": "^6.5.95",
     "vue": "^2.6.14"
+  },
+  "vetur": {
+    "tags": "dist/tags.json",
+    "attributes": "dist/attributes.json"
   },
   "publishConfig": {
     "access": "public"

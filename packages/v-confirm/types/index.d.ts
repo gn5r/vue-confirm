@@ -2,10 +2,8 @@ export type Alignment =
   | "start"
   | "center"
   | "end"
-  | "flex-start"
-  | "flex-end"
-  | "left"
-  | "right";
+  | "space-between"
+  | "space-around";
 
 export type VConfirmBtn = {
   text?: string;

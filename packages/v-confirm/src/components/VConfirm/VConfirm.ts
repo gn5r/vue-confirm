@@ -55,7 +55,7 @@ export default Vue.extend({
     message: String,
     btnAlign: {
       type: String,
-      default: "flex-end",
+      default: "end",
     } as PropValidator<Alignment>,
     btns: {
       type: Array,

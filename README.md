@@ -47,17 +47,20 @@ preparing...
 
 ## Confirm component props
 
-|    props    |                    description                    |       type       |  default  |
-| :---------: | :-----------------------------------------------: | :--------------: | :-------: |
-|    value    |            show / hide flag of dialog             |     boolean      |   false   |
-|  closable   |     show / hide flag of close icon to dialog      |     boolean      |   false   |
-| persistent  | Clicking outside of the element not deactivate it |     boolean      |   false   |
-|    width    |                  component width                  | number \| string | undefined |
-|    title    |                    title text                     |      string      | undefined |
-| title-icon  |       icon to display in front of the title       |      string      | undefined |
-| title-color |                   toolbar color                   |      string      | undefined |
-|   message   |                   message text                    |      string      | undefined |
-|    btns     |                   action button                   |  VConfirmBtn[]   |    []     |
+|       props        |                                                 description                                                  |       type       |  default  |
+| :----------------: | :----------------------------------------------------------------------------------------------------------: | :--------------: | :-------: |
+|       value        |                                          show / hide flag of dialog                                          |     boolean      |   false   |
+|      closable      |                                   show / hide flag of close icon to dialog                                   |     boolean      |   true    |
+|     persistent     |                              Clicking outside of the element not deactivate it                               |     boolean      |   false   |
+| no-actions-divider |                           show / hide flag of between message and actions divider                            |     boolean      |   false   |
+|       width        |                                               Component width                                                | number \| string |   800px   |
+|       title        |                                                  Title text                                                  |      string      | undefined |
+|    title-color     |                                                Toolbar color                                                 |      string      |  inherit  |
+|  title-text-color  |                                           Text color of title bar                                            |      string      |  inherit  |
+|  close-icon-color  |                                        Close icon color of title bar                                         |      string      |  inherit  |
+|      message       |                                                 Message text                                                 |      string      | undefined |
+|     btn-align      | justify-content css property.<br>Avaiable options are *start*,*cenetr*,*end*,*space-between*,*space-around*. |      string      |    end    |
+|        btns        |                                                Action buttons                                                |  VConfirmBtn[]   |    []     |
 
 ## License
 

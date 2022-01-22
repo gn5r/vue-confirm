@@ -41,24 +41,123 @@
 
 ## Usage
 
-preparing...
+## Using _Vue.use_
+
+```ts:main.ts
+import Vue from "vue";
+import App from "./App.vue";
+// Importing PlugininFunction and css
+import { VConfirmPlugin } from "@gn5r/vue-confirm";
+import "@gn5r/vue-confirm/dist/v-confirm.min.css";
+
+Vue.use(VConfirmPlugin);
+
+new Vue({
+  render: (h) => h(App)
+}).$mount("#app");
+```
+
+```vue:SampleComponent.vue
+<template>
+  <button type="button" @click="show">show</button>
+  <v-confirm
+    v-model="dialog"
+    :title="title"
+    :message="message"
+    :btns="btns"
+  />
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import { VConfirmBtn } from "@gn5r/vue-confirm";
+
+export default Vue.extend({
+  name: "sample-component",
+  data: () => ({
+    dialog: false,
+    title: "",
+    message: "",
+    btns: [] as VConfirmBtn[]
+  }),
+  methods: {
+    show() {
+      this.title = "title";
+      this.message = "message!";
+      this.btns = [
+        {
+          text: "OK",
+          function: () => this.dialog = false,
+        }
+      ]
+      this.dialog = true;
+    }
+  },
+});
+</script>
+```
+
+## Not using _Vue.use_
+
+```vue:SampleComponent.vue
+<template>
+  <button type="button" @click="show">show</button>
+  <v-confirm
+    v-model="dialog"
+    :title="title"
+    :message="message"
+    :btns="btns"
+  />
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import VConfirm, { VConfirmBtn } from "@gn5r/vue-confirm";
+
+export default Vue.extend({
+  name: "sample-component",
+  data: () => ({
+    dialog: false,
+    title: "",
+    message: "",
+    btns: [] as VConfirmBtn[]
+  }),
+  methods: {
+    show() {
+      this.title = "title";
+      this.message = "message!";
+      this.btns = [
+        {
+          text: "OK",
+          function: () => this.dialog = false,
+        }
+      ]
+      this.dialog = true;
+    }
+  },
+  components: {
+    VConfirm
+  }
+});
+</script>
+```
 
 ## Confirm component props
 
-|       props        |                                                       description                                                       |       type       |  default  |
-| :----------------: | :---------------------------------------------------------------------------------------------------------------------: | :--------------: | :-------: |
-|       value        |                                               show / hide flag of dialog                                                |     boolean      |   false   |
-|      closable      |                                        show / hide flag of close icon to dialog                                         |     boolean      |   true    |
-|     persistent     |                                    Clicking outside of the element not deactivate it                                    |     boolean      |   false   |
-| no-actions-divider |                                 show / hide flag of between message and actions divider                                 |     boolean      |   false   |
-|       width        |                                                     Component width                                                     | number \| string |   800px   |
-|       title        |                                                       Title text                                                        |      string      | undefined |
-|    title-color     |                                                      Toolbar color                                                      |      string      |  inherit  |
-|  title-text-color  |                                                 Text color of title bar                                                 |      string      |  inherit  |
-|  close-icon-color  |                                              Close icon color of title bar                                              |      string      |  inherit  |
-|      message       |                                                      Message text                                                       |      string      | undefined |
-|     btn-align      | justify-content css property.<br>Available options are __start__,__cenetr__,__end__,__space-between__,__space-around__. |      string      |    end    |
-|        btns        |                                                     Action buttons                                                      |  VConfirmBtn[]   |    []     |
+|       props        |                                                       description                                                       |       type        |  default  |
+| :----------------: | :---------------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
+|       value        |                                               show / hide flag of dialog                                                |      boolean      |   false   |
+|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   true    |
+|     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
+| no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
+|       width        |                                                     Component width                                                     | number \| string  |   800px   |
+|       title        |                                                       Title text                                                        |      string       | undefined |
+|    title-color     |                                                      Toolbar color                                                      |      string       |  inherit  |
+|  title-text-color  |                                                 Text color of title bar                                                 |      string       |  inherit  |
+|  close-icon-color  |                                              Close icon color of title bar                                              |      string       |  inherit  |
+|      message       |                                                      Message text                                                       |      string       | undefined |
+|     btn-align      | justify-content css property.<br>Available options are __start__,__cenetr__,__end__,__space-between__,__space-around__. | Alignment(string) |    end    |
+|        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
 
 ## License
 

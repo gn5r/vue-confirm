@@ -12,4 +12,16 @@ describe("VConfirm.ts", () => {
     const wrapper = mountFunc();
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  it("component default width is 800px", () => {
+    const wrapper = mountFunc({ propsData: { value: true } });
+    const dialog = wrapper.find(".v-confirm__content");
+    expect(dialog.attributes().style).toContain("width: 800px");
+  });
+
+  it("render a component with custom width", () => {
+    const wrapper = mountFunc({ propsData: { value: true, width: "900" } });
+    const dialog = wrapper.find(".v-confirm__content");
+    expect(dialog.attributes().style).toContain("width: 900px");
+  });
 });

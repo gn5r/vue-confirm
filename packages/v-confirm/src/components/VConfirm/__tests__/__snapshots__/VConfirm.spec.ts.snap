@@ -3,11 +3,11 @@
 exports[`VConfirm.ts render when not active 1`] = `
 <transition-stub name="transition" appear="true">
   <div class="v-confirm" style="display: none;">
-    <div class="v-confirm__content" style="width: 800px; max-width: 800px;">
-      <div class="v-confirm__titlebar">
-        <header class="v-confirm__titlebar-text"></header>
+    <div class="v-confirm__content" style="width: 800px;">
+      <div class="v-confirm__titlebar" style="background-color: inherit;">
+        <header style="background-color: transparent;"></header>
       </div>
-      <div class="v-confirm__text"></div>
+      <div class="v-confirm__message"></div>
     </div>
   </div>
 </transition-stub>

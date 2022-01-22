@@ -60,7 +60,7 @@ jobs:
 
   deploy-docs:
     needs: [lint, test]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: github.event_name == 'push' && (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/master')
     steps:
       - name: Checkout
@@ -71,12 +71,15 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Build docs
+      - name: Install dependencies
         uses: actions/cache@v2
         with:
           path: ${YARN_CACHE_DIR}
           key: ${{ runner.os }}-yarn-cache-v1
-      - run: yarn run build
+      - run: yarn --frozen-lockfile --non-interactive
+
+      - name: Build docs
+        run: yarn run build
         working-directory: ./packages/docs
 
       - name: Deploy to gh-pages

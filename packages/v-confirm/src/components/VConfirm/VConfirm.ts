@@ -32,7 +32,10 @@ export default Vue.extend({
   },
   props: {
     value: Boolean,
-    closeable: Boolean,
+    closeable: {
+      type: Boolean,
+      default: true,
+    },
     persistent: Boolean,
     noActionsDivider: {
       type: Boolean,

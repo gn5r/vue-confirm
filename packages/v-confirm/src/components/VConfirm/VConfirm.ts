@@ -18,6 +18,9 @@ import { MdiIcon, Divider } from "../index";
 // mdi close icon
 import { mdiClose } from "@mdi/js";
 
+// helper
+import { getSize } from "../../utils/helper";
+
 export default Vue.extend({
   name: "v-confirm",
   directives: {
@@ -36,8 +39,8 @@ export default Vue.extend({
       default: false,
     },
     width: {
-      type: String,
-      default: "800px",
+      type: [String, Number],
+      default: "800",
     },
     title: String,
     titleColor: {
@@ -129,7 +132,7 @@ export default Vue.extend({
         {
           class: "v-confirm__content",
           style: {
-            width: this.width,
+            width: `${getSize(this.width)}px`,
           },
           directives: [
             {

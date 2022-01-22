@@ -1,4 +1,5 @@
 import Vue, { VNode } from "vue";
+import { getSize } from "../../utils/helper";
 
 export default Vue.extend({
   name: "icon",
@@ -17,16 +18,11 @@ export default Vue.extend({
       return Boolean(this.$listeners.click);
     },
   },
-  methods: {
-    getSize(): number {
-      return Number(String(this.size).replace(/[^0-9]/g, ""));
-    },
-  },
   render(h): VNode {
     let iconName = "";
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     if (this.$slots.default) iconName = this.$slots.default[0].text!.trim();
-    const fontSize = this.getSize();
+    const fontSize = getSize(this.size);
     return h(
       this.hasClickListener ? "button" : "span",
       {

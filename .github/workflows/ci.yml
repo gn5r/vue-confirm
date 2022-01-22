@@ -1,0 +1,59 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches:
+      - master
+      - dev
+
+env:
+  YARN_CACHE_DIR: .cache/yarn
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${YARN_CACHE_DIR}
+          key: ${{ runner.os }}-yarn-cache-v1
+      - run: yarn --frozen-lockfile --non-interactive
+
+      - name: Run lint
+        run: yarn run lint
+        working-directory: ./packages/v-confirm
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${YARN_CACHE_DIR}
+          key: ${{ runner.os }}-yarn-cache-v1
+      - run: yarn --frozen-lockfile --non-interactive
+
+      - name: Run unit test
+        run: yarn run test:unit
+        working-directory: ./packages/v-confirm

@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%">
+  <div id="app">
     <nav class="navbar navbar-dark bg-dark mb-3">
       <div class="container-fluid">
         <span class="navbar-brand">Vue Confirm Component</span>

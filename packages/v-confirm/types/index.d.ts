@@ -1,3 +1,5 @@
+import Vue, { VueConstructor, PluginFunction } from "vue";
+
 export type Alignment =
   | "start"
   | "center"
@@ -12,8 +14,6 @@ export type VConfirmBtn = {
   class?: string | string[];
   function: FunctionConstructor | VoidFunction;
 };
-
-import Vue, { VueConstructor } from "vue";
 
 type CombinedVueInstance<
   Instance extends Vue,
@@ -34,7 +34,7 @@ type ExtendedVue<
 >;
 
 /* eslint-disable @typescript-eslint/ban-types */
-declare const VConfirm: ExtendedVue<
+const VConfirm: ExtendedVue<
   Vue,
   {},
   {},
@@ -53,3 +53,9 @@ declare const VConfirm: ExtendedVue<
     btns: Array<VConfirmBtn>;
   }
 >;
+
+export default VConfirm;
+
+export class VConfirmPlugin {
+  static install: PluginFunction;
+}

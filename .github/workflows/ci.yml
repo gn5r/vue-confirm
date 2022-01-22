@@ -37,7 +37,7 @@ jobs:
         working-directory: ./packages/v-confirm
 
   tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -57,3 +57,30 @@ jobs:
       - name: Run unit test
         run: yarn run test:unit
         working-directory: ./packages/v-confirm
+
+  deploy-docs:
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/master')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Build docs
+        uses: actions/cache@v2
+        with:
+          path: ${YARN_CACHE_DIR}
+          key: ${{ runner.os }}-yarn-cache-v1
+        run: yarn run build
+        working-directory: ./packages/docs
+
+      - name: Deploy to gh-pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./packages/docs/docs

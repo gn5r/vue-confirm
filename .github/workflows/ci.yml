@@ -36,7 +36,7 @@ jobs:
         run: yarn run lint
         working-directory: ./packages/v-confirm
 
-  tests:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

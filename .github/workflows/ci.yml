@@ -76,7 +76,7 @@ jobs:
         with:
           path: ${YARN_CACHE_DIR}
           key: ${{ runner.os }}-yarn-cache-v1
-        run: yarn run build
+      - run: yarn run build
         working-directory: ./packages/docs
 
       - name: Deploy to gh-pages

@@ -1,0 +1,46 @@
+{
+  "name": "@gn5r/vue-confirm",
+  "version": "1.0.1",
+  "description": "Vue.js用共通ダイアログコンポーネント",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --mode docs",
+    "lint": "vue-cli-service lint",
+    "build:lib": "vue-cli-service build --mode lib --target lib --name vue-confirm src/index.js"
+  },
+  "main": "dist/vue-confirm.common.js",
+  "files": [
+    "src",
+    "dist",
+    "lib"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.3.0",
+    "@vue/cli-plugin-eslint": "^4.3.0",
+    "@vue/cli-service": "^4.3.0",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.4",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gn5r/vue-confirm.git"
+  },
+  "homepage": "https://gn5r.github.io/vue-confirm",
+  "keywords": [
+    "vue",
+    "confirm",
+    "vue-confirm",
+    "v-confirm"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

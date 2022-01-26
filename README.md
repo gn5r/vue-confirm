@@ -3,8 +3,10 @@
 ![downloads](https://img.shields.io/npm/dt/@gn5r/vue-confirm?color=green&style=for-the-badge)
 ![latest](https://img.shields.io/npm/v/@gn5r/vue-confirm/latest?color=green&style=for-the-badge)
 ![beta version](https://img.shields.io/npm/v/@gn5r/vue-confirm/beta?color=green&style=for-the-badge)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=green&style=for-the-badge)](https://opensource.org/licenses/MIT)
 ![typed](https://img.shields.io/npm/types/@gn5r/vue-confirm?color=green&style=for-the-badge)
+![Github workflow](https://img.shields.io/github/workflow/status/gn5r/vue-confirm/ci?label=Github%20ci&style=for-the-badge)
 
 ## Dependencies version
 
@@ -156,7 +158,7 @@ export default Vue.extend({
 |  title-text-color  |                                                 Text color of title bar                                                 |      string       |  inherit  |
 |  close-icon-color  |                                              Close icon color of title bar                                              |      string       |  inherit  |
 |      message       |                                                      Message text                                                       |      string       | undefined |
-|     btn-align      | justify-content css property.<br>Available options are __start__,__cenetr__,__end__,__space-between__,__space-around__. | Alignment(string) |    end    |
+|     btn-align      | justify-content css property.<br>Available options are **start**,**cenetr**,**end**,**space-between**,**space-around**. | Alignment(string) |    end    |
 |        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
 
 ## License

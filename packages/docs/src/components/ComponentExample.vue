@@ -1,8 +1,8 @@
 <template>
   <div class="card">
     <div class="card-body container-fluid">
-      <div class="row">
-        <div class="col-auto me-auto">
+      <div class="row align-items-center mb-1">
+        <div class="col-auto">
           <h3>Component Options</h3>
         </div>
       </div>
@@ -43,9 +43,21 @@
             >
           </div>
         </div>
+      </div>
 
-        <div class="col-4 col-md-4 col-xl-2">
-          <label for="input-title-color" class="form-label">Title Color</label>
+      <div class="row align-items-center mb-1">
+        <div class="col-auto">
+          <h3>Title Options</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <label
+          for="input-title-color"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Color</label
+        >
+        <div class="col-2 col-md-1 col-xl-1">
           <input
             v-model="titleColor"
             class="form-control form-control-color"
@@ -53,11 +65,16 @@
             id="input-title-color"
           />
         </div>
+        <div class="col-6 col-md-3 col-xl-2">
+          <input v-model="titleColor" class="form-control" type="text" />
+        </div>
 
-        <div class="col-6 col-md-4 col-xl-2">
-          <label for="input-title-text-color" class="form-label"
-            >Title Text Color</label
-          >
+        <label
+          for="input-title-text-color"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Text Color</label
+        >
+        <div class="col-2 col-md-1 col-xl-1">
           <input
             v-model="titleTextColor"
             class="form-control form-control-color"
@@ -65,11 +82,18 @@
             id="input-title-text-color"
           />
         </div>
+        <div class="col-6 col-md-3 col-xl-2">
+          <input v-model="titleTextColor" class="form-control" type="text" />
+        </div>
+      </div>
 
-        <div class="col-6 col-md-4 col-xl-2">
-          <label for="input-close-icon-color" class="form-label"
-            >Close Icon Color</label
-          >
+      <div class="row">
+        <label
+          for="input-close-icon-color"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Icon Color</label
+        >
+        <div class="col-2 col-md-1 col-xl-1">
           <input
             v-model="closeIconColor"
             class="form-control form-control-color"
@@ -77,9 +101,16 @@
             id="input-close-icon-color"
           />
         </div>
+        <div class="col-6 col-md-3 col-xl-2">
+          <input v-model="closeIconColor" class="form-control" type="text" />
+        </div>
+      </div>
 
-        <div class="col-12">
-          <label for="input-title" class="form-label">Title</label>
+      <div class="row mb-3">
+        <label for="input-title" class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Text</label
+        >
+        <div class="col-8 col-md-10 col-xl-10">
           <input
             v-model="title"
             class="form-control"
@@ -87,9 +118,16 @@
             id="input-title"
           />
         </div>
+      </div>
 
+      <div class="row">
+        <div class="col-auto me-auto">
+          <h3>Message Option</h3>
+        </div>
+      </div>
+
+      <div class="row mb-3">
         <div class="col-12">
-          <label for="input-message" class="form-label">Message</label>
           <textarea
             v-model="message"
             class="form-control"
@@ -106,69 +144,92 @@
         </div>
       </div>
 
-      <div class="row mb-3">
-        <div class="col-12">
-          <div class="row g-2">
-            <div class="col-6 col-md-4 col-xl-2">
-              <label for="input-btn-background-color" class="form-label"
-                >Background Color</label
-              >
-              <input
-                v-model="btns[0].backgroundColor"
-                class="form-control form-control-color"
-                type="color"
-                id="input-btn-background-color"
-              />
-            </div>
-            <div class="col-6 col-md-4 col-xl-2">
-              <label for="input-btn-text-color" class="form-label"
-                >Text Color</label
-              >
-              <input
-                v-model="btns[0].textColor"
-                class="form-control form-control-color"
-                type="color"
-                id="input-btn-text-color"
-              />
-            </div>
-            <div class="col-6 col-md-4 col-xl-3">
-              <label for="input-btn-align" class="form-label">
-                Btn align
-              </label>
-              <select
-                v-model="btnAlign"
-                id="input-btn-align"
-                class="form-select"
-              >
-                <template v-for="(align, i) in alignments">
-                  <option :key="i" :value="align.id" v-text="align.value" />
-                </template>
-              </select>
-            </div>
-            <div class="col-12 col-md-6">
-              <label for="input-btn-text" class="form-label">Btn Text</label>
-              <input
-                v-model="btns[0].text"
-                class="form-control"
-                type="text"
-                id="input-btn-text"
-              />
-            </div>
-            <div class="col-12 col-md-6">
-              <label for="input-btn-class" class="form-label">Btn Class</label>
-              <input
-                v-model="btns[0].class"
-                class="form-control"
-                type="text"
-                id="input-btn-class"
-                placeholder="btn btn-primary"
-              />
-            </div>
-          </div>
+      <div class="row">
+        <label
+          for="input-btn-background-color"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Color</label
+        >
+        <div class="col-2 col-md-1 col-xl-1">
+          <input
+            v-model="btns[0].backgroundColor"
+            class="form-control form-control-color"
+            type="color"
+            id="input-btn-background-color"
+          />
+        </div>
+        <div class="col-6 col-md-3 col-xl-2">
+          <input
+            v-model="btns[0].backgroundColor"
+            class="form-control"
+            type="text"
+          />
+        </div>
+
+        <label
+          for="input-btn-text-color"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Text Color</label
+        >
+        <div class="col-2 col-md-1 col-xl-1">
+          <input
+            v-model="btns[0].textColor"
+            class="form-control form-control-color"
+            type="color"
+            id="input-btn-text-color"
+          />
+        </div>
+        <div class="col-6 col-md-3 col-xl-2">
+          <input v-model="btns[0].textColor" class="form-control" type="text" />
         </div>
       </div>
 
-      <div class="row mt-3">
+      <div class="row">
+        <label
+          for="input-btn-align"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Btn align</label
+        >
+        <div class="col-8 col-md-4 col-xl-3">
+          <select v-model="btnAlign" id="input-btn-align" class="form-select">
+            <template v-for="(align, i) in alignments">
+              <option :key="i" :value="align.id" v-text="align.value" />
+            </template>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label
+          for="input-btn-text"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Text</label
+        >
+        <div class="col-8 col-md-3">
+          <input
+            v-model="btns[0].text"
+            class="form-control"
+            type="text"
+            id="input-btn-text"
+          />
+        </div>
+        <label
+          for="input-btn-class"
+          class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Btn Class</label
+        >
+        <div class="col-8 col-md-5">
+          <input
+            v-model="btns[0].class"
+            class="form-control"
+            type="text"
+            id="input-btn-class"
+            placeholder="btn btn-primary"
+          />
+        </div>
+      </div>
+
+      <div class="row">
         <div class="col-6 col-md-4 col-xl-3">
           <button
             class="btn btn-outline-primary"

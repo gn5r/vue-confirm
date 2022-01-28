@@ -19,10 +19,10 @@
 
 ## Version matrix
 
-| Vue.js version | Package version | Type definition |  Branch  |
-| :------------: | :-------------: | :-------------: | :------: |
-|      2.x       |       1.x       |       No        | `master` |
-|      2.x       |       2.x       |       Yes       |  `2.x`   |
+| Vue.js version | Package version | Type definition |                       Branch                        |
+| :------------: | :-------------: | :-------------: | :-------------------------------------------------: |
+|      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
+|      2.x       |       2.x       |       Yes       |                        `2.x`                        |
 
 ## Installation
 

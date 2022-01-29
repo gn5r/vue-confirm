@@ -91,6 +91,12 @@ jobs:
         uses: actions/checkout@v2
       - run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
+      - name: Build Release Note
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create release tag
         id: create_release
         uses: actions/create-release@v1
@@ -99,3 +105,4 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.TAG_NAME }}
+          body: ${{steps.github_release.outputs.changelog}}

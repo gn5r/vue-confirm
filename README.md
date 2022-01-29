@@ -7,6 +7,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=green&style=for-the-badge)](https://opensource.org/licenses/MIT)
 ![typed](https://img.shields.io/npm/types/@gn5r/vue-confirm?color=green&style=for-the-badge)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gn5r/vue-confirm/ci?event=push&label=CI&logo=GitHub&style=for-the-badge)
+  
+[日本語版 README はこちら](README-ja.md)
 
 [日本語版 README はこちら](README-ja.md)
 

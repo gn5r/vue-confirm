@@ -34,7 +34,7 @@ type ExtendedVue<
 >;
 
 /* eslint-disable @typescript-eslint/ban-types */
-const VConfirm: ExtendedVue<
+declare const VConfirm: ExtendedVue<
   Vue,
   {},
   {},
@@ -44,12 +44,13 @@ const VConfirm: ExtendedVue<
     closeable: boolean;
     persistent: boolean;
     noActionsDivider: boolean;
-    width: string;
+    width: string | number;
     title: string;
-    titleColor: Colors;
+    titleColor: string;
     titleTextColor: String;
     closeIconColor: string;
     message: string;
+    btnAlign: Alignment;
     btns: Array<VConfirmBtn>;
   }
 >;
@@ -57,5 +58,5 @@ const VConfirm: ExtendedVue<
 export default VConfirm;
 
 export class VConfirmPlugin {
-  static install: PluginFunction;
+  static install: PluginFunction<Vue>;
 }

@@ -8,27 +8,25 @@
 ![typed](https://img.shields.io/npm/types/@gn5r/vue-confirm?color=green&style=for-the-badge)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gn5r/vue-confirm/ci?event=push&label=CI&logo=GitHub&style=for-the-badge)
 
-[日本語版 README はこちら](README-ja.md)
-
-## Dependencies version
+## 依存関係のバージョン
 
 ![vue version](https://img.shields.io/npm/dependency-version/@gn5r/vue-confirm/dev/vue?style=for-the-badge)
 ![@mdi/js version](https://img.shields.io/npm/dependency-version/@gn5r/vue-confirm/dev/@mdi/js?style=for-the-badge)
 
-## Demo
+## デモ
 
 [vue-confirm Demo](https://gn5r.github.io/vue-confirm/)
 
-## Version matrix
+## バージョンマトリクス
 
 | Vue.js version | Package version | Type definition |                       Branch                        |
 | :------------: | :-------------: | :-------------: | :-------------------------------------------------: |
 |      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
 |      2.x       |       2.x       |       Yes       |                        `2.x`                        |
 
-## Installation
+## インストールの仕方
 
-- commands
+- コマンド
 
   ```
   # npm
@@ -38,19 +36,19 @@
   yarn add @gn5r/vue-confirm
   ```
 
-- dependencies
+- 依存関係(devDependencies)
 
   - vue:^2.6.14
   - @mdi/js:^6.5.95
 
-## Usage
+## 使い方
 
-## Using _Vue.use_
+## _Vue.use_ を使う場合
 
 ```ts:main.ts
 import Vue from "vue";
 import App from "./App.vue";
-// Importing PlugininFunction and css
+// PlugininFunction と cssをインポート
 import { VConfirmPlugin } from "@gn5r/vue-confirm";
 import "@gn5r/vue-confirm/dist/v-confirm.min.css";
 
@@ -101,7 +99,7 @@ export default Vue.extend({
 </script>
 ```
 
-## Not using _Vue.use_
+## _Vue.use_ を使わない場合
 
 ```vue:SampleComponent.vue
 <template>
@@ -146,22 +144,22 @@ export default Vue.extend({
 </script>
 ```
 
-## Confirm component props
+## コンポーネントプロパティ(props)
 
-|       props        |                                                       description                                                       |       type        |  default  |
-| :----------------: | :---------------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
-|       value        |                                               show / hide flag of dialog                                                |      boolean      |   false   |
-|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   true    |
-|     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
-| no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
-|       width        |                                                     Component width                                                     | number \| string  |   800px   |
-|       title        |                                                       Title text                                                        |      string       | undefined |
-|    title-color     |                                                      Toolbar color                                                      |      string       |  inherit  |
-|  title-text-color  |                                                 Text color of title bar                                                 |      string       |  inherit  |
-|  close-icon-color  |                                              Close icon color of title bar                                              |      string       |  inherit  |
-|      message       |                                                      Message text                                                       |      string       | undefined |
-|     btn-align      | justify-content css property.<br>Available options are **start**,**cenetr**,**end**,**space-between**,**space-around**. | Alignment(string) |    end    |
-|        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
+|       props        |                                                   description                                                    |       type        |  default  |
+| :----------------: | :--------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
+|       value        |                                       ダイアログの表示/非表示をするフラグ                                        |      boolean      |   false   |
+|      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   true    |
+|     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
+| no-actions-divider |                         メッセージとアクションボタン間の境界線を表示/非表示をするフラグ                          |      boolean      |   false   |
+|       width        |                                                 ダイアログの横幅                                                 | number \| string  |   800px   |
+|       title        |                                          タイトルバーに表示するテキスト                                          |      string       | undefined |
+|    title-color     |                                               タイトルバーの背景色                                               |      string       |  inherit  |
+|  title-text-color  |                                               タイトルバーの文字色                                               |      string       |  inherit  |
+|  close-icon-color  |                                          タイトルバーの閉じるボタンの色                                          |      string       |  inherit  |
+|      message       |                                                メッセージテキスト                                                |      string       | undefined |
+|     btn-align      | css の justify-content プロパティ<br>**start**,**cenetr**,**end**,**space-between**,**space-around**が有効値です | Alignment(string) |    end    |
+|        btns        |                                                 アクションボタン                                                 |   VConfirmBtn[]   |    []     |
 
 ## License
 

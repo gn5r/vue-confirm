@@ -1,4 +1,4 @@
-# Vue Confirm Component using Vuetify
+# Vue Confirm Component
 
 ![downloads](https://img.shields.io/npm/dt/@gn5r/vue-confirm?color=green&style=for-the-badge)
 ![latest](https://img.shields.io/npm/v/@gn5r/vue-confirm/latest?color=green&style=for-the-badge)

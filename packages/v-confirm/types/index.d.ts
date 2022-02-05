@@ -47,7 +47,7 @@ declare const VConfirm: ExtendedVue<
     width: string | number;
     title: string;
     titleColor: string;
-    titleTextColor: String;
+    titleTextColor: string;
     closeIconColor: string;
     message: string;
     btnAlign: Alignment;

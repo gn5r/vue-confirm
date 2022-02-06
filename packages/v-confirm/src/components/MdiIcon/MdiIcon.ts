@@ -58,6 +58,7 @@ export default Vue.extend({
               width: `${fontSize}px`,
               height: `${fontSize}px`,
               fill: "currentColor",
+              "vertical-align": "middle",
             },
           },
           [

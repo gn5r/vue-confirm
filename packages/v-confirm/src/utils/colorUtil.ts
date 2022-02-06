@@ -14,10 +14,14 @@ export function setBackgroundColor(
       "background-color": color,
     };
   } else if (color) {
-    data.class = {
-      ...data.class,
-      [color]: true,
-    };
+    if (Array.isArray(data.class)) {
+      data.class = [...data.class, color];
+    } else {
+      data.class = {
+        ...data.class,
+        [color]: true,
+      };
+    }
   }
   return data;
 }
@@ -29,10 +33,14 @@ export function setTextColor(color?: string, data: VNodeData = {}): VNodeData {
       color: color,
     };
   } else if (color) {
-    data.class = {
-      ...data.class,
-      [color]: true,
-    };
+    if (Array.isArray(data.class)) {
+      data.class = [...data.class, color];
+    } else {
+      data.class = {
+        ...data.class,
+        [color]: true,
+      };
+    }
   }
   return data;
 }

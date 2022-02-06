@@ -20,7 +20,7 @@ exports[`VConfirm.ts not render a divider when noActionsDivider is true 1`] = `
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>
@@ -38,7 +38,7 @@ exports[`VConfirm.ts render a close icon in titlebar when default 1`] = `
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>
@@ -55,7 +55,7 @@ exports[`VConfirm.ts render a divider and actions when set the btns props 1`] = 
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>
@@ -74,7 +74,7 @@ exports[`VConfirm.ts render a message text 1`] = `
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>
@@ -91,7 +91,7 @@ exports[`VConfirm.ts render a title text and background-color is inherit 1`] = `
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;">title</header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>
@@ -108,7 +108,7 @@ exports[`VConfirm.ts render a title with custom background-color 1`] = `
       <div class="v-confirm__titlebar" style="background-color: rgb(255, 255, 255);">
         <header style="background-color: transparent;">title</header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>
@@ -125,7 +125,7 @@ exports[`VConfirm.ts render a title with custom text-color 1`] = `
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="color: rgb(255, 255, 255); background-color: transparent;">title</header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>
@@ -142,7 +142,7 @@ exports[`VConfirm.ts render when not active 1`] = `
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
         <div class="v-confirm__spacer"></div>
-        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor;">
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
               <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
             </svg></button></div>
       </div>

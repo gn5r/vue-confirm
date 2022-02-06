@@ -20,6 +20,7 @@ import { mdiClose } from "@mdi/js";
 
 // helper
 import { getSize } from "../../utils/helper";
+import { setTextColor, setBackgroundColor } from "../../utils/colorUtil";
 
 export default Vue.extend({
   name: "v-confirm",
@@ -153,14 +154,15 @@ export default Vue.extend({
     },
     genTitlebar(): VNode {
       const children: VNodeChildren = [];
+      const headerData = {
+        style: {
+          color: this.titleTextColor,
+          "background-color": "transparent",
+        },
+      };
       const titlebar = this.$createElement(
         "header",
-        {
-          style: {
-            color: this.titleTextColor,
-            "background-color": "transparent",
-          },
-        },
+        setTextColor(this.titleTextColor, headerData),
         this.title
       );
       children.push(titlebar);
@@ -189,14 +191,14 @@ export default Vue.extend({
         children.push(closeIcon);
       }
 
+      const titlebarData = {
+        class: {
+          "v-confirm__titlebar": true,
+        },
+      };
       return this.$createElement(
         "div",
-        {
-          class: "v-confirm__titlebar",
-          style: {
-            "background-color": this.titleColor,
-          },
-        },
+        setBackgroundColor(this.titleColor, titlebarData),
         children
       );
     },
@@ -230,21 +232,21 @@ export default Vue.extend({
     },
     genActionBtn(btn: VConfirmBtn): VNode {
       const text = this.$createElement("span", btn.text || null);
+      const data = {
+        class: btn.class || "button",
+        attrs: {
+          type: "button",
+        },
+        on: {
+          click: btn.function,
+        },
+      };
       const button = this.$createElement(
         "button",
-        {
-          class: btn.class || "button",
-          attrs: {
-            type: "button",
-          },
-          style: {
-            color: btn.textColor || null,
-            "background-color": btn.backgroundColor || null,
-          },
-          on: {
-            click: btn.function,
-          },
-        },
+        setBackgroundColor(
+          btn.backgroundColor,
+          setTextColor(btn.textColor, data)
+        ),
         [text]
       );
       return button;

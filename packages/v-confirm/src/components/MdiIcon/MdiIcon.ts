@@ -1,5 +1,6 @@
 import Vue, { VNode } from "vue";
 import { getSize } from "../../utils/helper";
+import { setTextColor } from "../../utils/colorUtil";
 
 export default Vue.extend({
   name: "icon",
@@ -23,26 +24,26 @@ export default Vue.extend({
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     if (this.$slots.default) iconName = this.$slots.default[0].text!.trim();
     const fontSize = getSize(this.size);
+    const data = {
+      attrs: {
+        "area-hidden": !this.hasClickListener,
+        type: this.hasClickListener ? "button" : undefined,
+      },
+      style: {
+        width: `${fontSize}px`,
+        height: `${fontSize + 12}px`,
+        "background-color": "transparent",
+        border: "none",
+        cursor: "pointer",
+        outline: "none",
+        padding: 0,
+        appearance: "none",
+      },
+      on: this.$listeners,
+    };
     return h(
       this.hasClickListener ? "button" : "span",
-      {
-        attrs: {
-          "area-hidden": !this.hasClickListener,
-          type: this.hasClickListener ? "button" : undefined,
-        },
-        style: {
-          width: `${fontSize}px`,
-          height: `${fontSize + 12}px`,
-          "background-color": "transparent",
-          border: "none",
-          cursor: "pointer",
-          outline: "none",
-          padding: 0,
-          appearance: "none",
-          color: this.color,
-        },
-        on: this.$listeners,
-      },
+      setTextColor(this.color, data),
       [
         h(
           "svg",

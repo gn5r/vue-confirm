@@ -242,10 +242,7 @@ export default Vue.extend({
       };
       const button = this.$createElement(
         "button",
-        setBackgroundColor(
-          btn.backgroundColor,
-          setTextColor(btn.textColor, btnData)
-        ),
+        setBackgroundColor(btn.color, setTextColor(btn.textColor, btnData)),
         [text]
       );
       return button;

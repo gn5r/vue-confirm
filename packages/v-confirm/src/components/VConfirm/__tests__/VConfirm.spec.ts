@@ -109,6 +109,65 @@ describe("VConfirm.ts", () => {
     expect(divider.exists()).toBe(false);
   });
 
+  it("render the action buttons", () => {
+    const wrapper = mountFunc({
+      propsData: { value: true, btns: [{ text: "test", function: jest.fn() }] },
+    });
+    const buttons = wrapper.find(".v-confirm__actions > button");
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(buttons.exists()).toBe(true);
+  });
+
+  it("render the action buttons with css style background-color", () => {
+    const wrapper = mountFunc({
+      propsData: {
+        value: true,
+        btns: [{ text: "test", function: jest.fn(), color: "#fff" }],
+      },
+    });
+    const buttons = wrapper.find(".v-confirm__actions > button");
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(buttons.attributes().style).toContain(
+      "background-color: rgb(255, 255, 255)"
+    );
+  });
+
+  it("render the action buttons with class style background-color", () => {
+    const wrapper = mountFunc({
+      propsData: {
+        value: true,
+        btns: [{ text: "test", function: jest.fn(), color: "white" }],
+      },
+    });
+    const buttons = wrapper.find(".v-confirm__actions > button");
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(buttons.attributes().class).toContain("white");
+  });
+
+  it("render the action buttons with css style text color", () => {
+    const wrapper = mountFunc({
+      propsData: {
+        value: true,
+        btns: [{ text: "test", function: jest.fn(), textColor: "#fff" }],
+      },
+    });
+    const buttons = wrapper.find(".v-confirm__actions > button");
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(buttons.attributes().style).toContain("color: rgb(255, 255, 255)");
+  });
+
+  it("render the action buttons with class style text color", () => {
+    const wrapper = mountFunc({
+      propsData: {
+        value: true,
+        btns: [{ text: "test", function: jest.fn(), textColor: "white--text" }],
+      },
+    });
+    const buttons = wrapper.find(".v-confirm__actions > button");
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(buttons.attributes().class).toContain("white--text");
+  });
+
   it("button function is execute when click the actions button", async () => {
     const btnFun = jest.fn();
     const wrapper = mountFunc({

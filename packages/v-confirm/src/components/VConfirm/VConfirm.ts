@@ -240,7 +240,7 @@ export default Vue.extend({
           click: btn.function,
         },
       };
-      if (btn.class !== undefined) {
+      if (btn.class) {
         if (Array.isArray(btn.class)) btnData.class = [...btn.class];
         else btnData.class.push(btn.class);
       } else {

@@ -118,6 +118,14 @@ describe("VConfirm.ts", () => {
     expect(buttons.exists()).toBe(true);
   });
 
+  it("default class is .button of action button ", () => {
+    const wrapper = mountFunc({
+      propsData: { value: true, btns: [{ text: "test", function: jest.fn() }] },
+    });
+    const buttons = wrapper.find(".v-confirm__actions > button");
+    expect(buttons.attributes().class).toContain("button");
+  });
+
   it("render the action buttons with css style background-color", () => {
     const wrapper = mountFunc({
       propsData: {

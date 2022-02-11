@@ -232,7 +232,7 @@ export default Vue.extend({
     genActionBtn(btn: VConfirmBtn): VNode {
       const text = this.$createElement("span", btn.text || null);
       const btnData = {
-        class: [btn.class ? btn.class : "button"],
+        class: [] as string[],
         attrs: {
           type: "button",
         },
@@ -240,12 +240,15 @@ export default Vue.extend({
           click: btn.function,
         },
       };
+      if (btn.class !== undefined) {
+        if (Array.isArray(btn.class)) btnData.class = [...btn.class];
+        else btnData.class.push(btn.class);
+      } else {
+        btnData.class.push("button");
+      }
       const button = this.$createElement(
         "button",
-        setBackgroundColor(
-          btn.backgroundColor,
-          setTextColor(btn.textColor, btnData)
-        ),
+        setBackgroundColor(btn.color, setTextColor(btn.textColor, btnData)),
         [text]
       );
       return button;

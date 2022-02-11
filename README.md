@@ -163,6 +163,16 @@ export default Vue.extend({
 |     btn-align      | justify-content css property.<br>Available options are **start**,**cenetr**,**end**,**space-between**,**space-around**. | Alignment(string) |    end    |
 |        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
 
+### VConfirmBtn description
+
+|   name    |                                                                  description                                                                  |        type        |  default  |
+| :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: | :-------: |
+|   text    |                                                                text in button                                                                 |       string       | undefined |
+| textColor |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |       string       | undefined |
+|   color   | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |       string       | undefined |
+|   class   |                                                            css classes for button                                                             | string \| string[] | undefined |
+| function  |                                                 function executed when the button is clicked                                                  |       string       | undefined |
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)

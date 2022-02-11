@@ -152,18 +152,14 @@
         >
         <div class="col-2 col-md-1 col-xl-1">
           <input
-            v-model="btns[0].backgroundColor"
+            v-model="btns[0].color"
             class="form-control form-control-color"
             type="color"
             id="input-btn-background-color"
           />
         </div>
         <div class="col-6 col-md-3 col-xl-2">
-          <input
-            v-model="btns[0].backgroundColor"
-            class="form-control"
-            type="text"
-          />
+          <input v-model="btns[0].color" class="form-control" type="text" />
         </div>
 
         <label
@@ -312,14 +308,14 @@ export default Vue.extend({
       {
         text: "ok",
         textColor: "#ffffff",
-        backgroundColor: "#2196F3",
+        color: "#2196F3",
         class: "",
         function: () => (this.dialog = false),
       },
       {
         text: "NO",
         textColor: "",
-        backgroundColor: "",
+        color: "",
         class: "btn btn-outline-danger fw-bold",
         function: () => (this.dialog = false),
       },

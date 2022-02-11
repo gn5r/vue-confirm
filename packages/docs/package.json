@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/docs",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@gn5r/vue-confirm": "^2.1.0",
+    "@gn5r/vue-confirm": "^2.1.1",
     "bootstrap": "^5.1.3"
   },
   "devDependencies": {

@@ -161,6 +161,16 @@ export default Vue.extend({
 |     btn-align      | css の justify-content プロパティ<br>**start**,**cenetr**,**end**,**space-between**,**space-around**が有効値です | Alignment(string) |    end    |
 |        btns        |                                                 アクションボタン                                                 |   VConfirmBtn[]   |    []     |
 
+### VConfirmBtn
+
+|   name    |                                                              description                                                              |        type        |  default  |
+| :-------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------: | :-------: |
+|   text    |                                                            ボタンテキスト                                                             |       string       | undefined |
+| textColor | ボタンのテキストカラー<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます |       string       | undefined |
+|   color   |     ボタンの背景色<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます     |       string       | undefined |
+|   class   |                                                ボタンに対する css クラスを指定できます                                                | string \| string[] | undefined |
+| function  |                                                ボタンをクリックした時に実行される関数                                                 |       string       | undefined |
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)

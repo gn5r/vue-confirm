@@ -12,6 +12,14 @@
           >
             <i class="fab fa-github fa-lg"></i>
           </a>
+          <a
+            class="text-light ms-3"
+            href="https://www.npmjs.com/package/@gn5r/vue-confirm"
+            target="_blank"
+            :style="{ 'font-size': '24px' }"
+          >
+            <i class="fab fa-npm fa-lg"></i>
+          </a>
         </div>
       </div>
     </nav>

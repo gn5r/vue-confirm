@@ -151,7 +151,7 @@ export default Vue.extend({
 |       value        |                                       ダイアログの表示/非表示をするフラグ                                        |      boolean      |   false   |
 |      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   true    |
 |     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
-| no-actions-divider |                         メッセージとアクションボタン間の境界線を表示/非表示をするフラグ                          |      boolean      |   false   |
+| no-actions-divider |                          メッセージとアクションボタン間の境界線を表示/非表示するフラグ                           |      boolean      |   false   |
 |       width        |                                                 ダイアログの横幅                                                 | number \| string  |   800px   |
 |       title        |                                          タイトルバーに表示するテキスト                                          |      string       | undefined |
 |    title-color     |                                               タイトルバーの背景色                                               |      string       |  inherit  |

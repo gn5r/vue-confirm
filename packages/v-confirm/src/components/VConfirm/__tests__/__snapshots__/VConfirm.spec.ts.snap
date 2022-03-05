@@ -230,6 +230,20 @@ exports[`VConfirm.ts render the action buttons with css style text color 1`] = `
 </transition-stub>
 `;
 
+exports[`VConfirm.ts render the closeIcon slot 1`] = `
+<transition-stub name="transition" appear="true">
+  <div class="v-confirm">
+    <div class="v-confirm__content" style="width: 800px;">
+      <div class="v-confirm__titlebar" style="background-color: inherit;">
+        <header style="background-color: transparent;"></header>
+        <div class="v-confirm__spacer"></div><button class="v-confirm__close-icon">test</button>
+      </div>
+      <div class="v-confirm__message"></div>
+    </div>
+  </div>
+</transition-stub>
+`;
+
 exports[`VConfirm.ts render when not active 1`] = `
 <transition-stub name="transition" appear="true">
   <div class="v-confirm" style="display: none;">

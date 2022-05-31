@@ -19,7 +19,7 @@ import { MdiIcon, Divider } from "../index";
 import { mdiClose } from "@mdi/js";
 
 // helper
-import { getSize } from "../../utils/helper";
+import { getSize, getClass } from "../../utils/helper";
 import { setTextColor, setBackgroundColor } from "../../utils/colorUtil";
 
 export default Vue.extend({
@@ -170,22 +170,38 @@ export default Vue.extend({
         const spacer = this.$createElement("div", {
           class: "v-confirm__spacer",
         });
-        const closeIcon = this.$createElement(
-          "div",
-          { class: "v-confirm__close-icon" },
-          [
-            this.$createElement(
-              MdiIcon,
-              {
-                props: {
-                  color: this.closeIconColor,
+
+        let closeIcon: VNode;
+        const click = () => (this.internalValue = false);
+        if (this.$slots.closeIcon) {
+          console.debug("[v-confirm] closeIcon slots:", this.$slots.closeIcon);
+          closeIcon = this.$slots.closeIcon[0];
+          const closeIconClass = getClass(closeIcon.data);
+          closeIcon.data = {
+            ...closeIcon.data,
+            class: [...closeIconClass, "v-confirm__close-icon"],
+            on: {
+              click: click,
+            },
+          };
+        } else {
+          closeIcon = this.$createElement(
+            "div",
+            { class: "v-confirm__close-icon" },
+            [
+              this.$createElement(
+                MdiIcon,
+                {
+                  props: {
+                    color: this.closeIconColor,
+                  },
+                  on: { click: click },
                 },
-                on: { click: () => (this.internalValue = false) },
-              },
-              [mdiClose]
-            ),
-          ]
-        );
+                [mdiClose]
+              ),
+            ]
+          );
+        }
         children.push(spacer);
         children.push(closeIcon);
       }

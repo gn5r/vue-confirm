@@ -1,0 +1,140 @@
+@import "./variables";
+
+.transition-enter-active {
+  transition: $v-confirm-transition-enter-active;
+}
+
+.transition-leave-active {
+  transition: $v-confirm-transition-leave-active;
+}
+
+.transition-enter,
+.transition-leave-to {
+  opacity: 0;
+}
+
+.v-confirm {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $v-confirm-overlay-background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.v-confirm--animated {
+  > .v-confirm__content {
+    animation: $v-confirm-animation;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.v-confirm__content {
+  background-color: $v-confirm-content-background-color;
+  border-radius: $v-confirm-content-border-radius;
+  box-shadow: $v-confirm-content-box-shadow;
+  max-width: $v-confirm-content-max-width;
+}
+
+.v-confirm__titlebar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: $v-confirm-titlebar-min-height;
+  padding: $v-confirm-titlebar-padding;
+  font-size: $v-confirm-titlebar-font-size;
+  font-weight: $v-confirm-titlebar-font-weight;
+
+  .v-confirm__close-icon {
+    display: flex;
+    align-items: center;
+    min-height: $v-confirm-titlebar-icon-size;
+    min-width: $v-confirm-titlebar-icon-size;
+  }
+}
+
+.v-confirm__spacer {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.v-confirm__message {
+  overflow-wrap: $v-confirm-message-overflow-wrap;
+  white-space: $v-confirm-message-white-space;
+  padding: $v-confirm-message-padding;
+  font-size: $v-confirm-message-font-size;
+  color: $v-confirm-message-font-color;
+  font-weight: $v-confirm-message-font-weight;
+}
+
+.v-confirm__actions {
+  display: flex;
+  align-items: center;
+  padding: $v-confirm-actions-padding;
+
+  // button tag
+  > button {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    justify-content: center;
+    vertical-align: middle;
+    height: $v-confirm-actions-button-height;
+    min-width: $v-confirm-actions-button-min-width;
+    & + button {
+      margin: $v-confirm-actions-button-margin-size;
+    }
+  }
+
+  // button class
+  > .button {
+    position: relative;
+    border-radius: $v-confirm-button-border-radius;
+    font-weight: $v-confirm-button-font-weight;
+    white-space: $v-confirm-button-white-space;
+    padding: $v-confirm-button-padding;
+    font-size: $v-confirm-button-font-size;
+    outline: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    color: $v-confirm-button-color;
+    caret-color: $v-confirm-button-color;
+    text-transform: uppercase;
+
+    &::before {
+      pointer-events: none;
+      content: "";
+      background-color: currentColor;
+      border-radius: inherit;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    &:hover::before {
+      opacity: $v-confirm-button-hover-opacity;
+    }
+  }
+}

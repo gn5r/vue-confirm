@@ -6,8 +6,8 @@ import { VNode, VNodeChildren } from "vue/types";
 import { PropValidator } from "vue/types/options";
 import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
 
-// CSS
-import "./VConfirm.css";
+// Style
+import "./VConfirm.scss";
 
 // ClickOutside Directive
 import { clickOutside } from "../../directives";

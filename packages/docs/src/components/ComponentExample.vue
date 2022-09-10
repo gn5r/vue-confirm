@@ -45,6 +45,20 @@
         </div>
       </div>
 
+      <div class="row mb-3">
+        <label for="input-width" class="col-4 col-md-2 col-xl-2 col-form-label"
+          >Width</label
+        >
+        <div class="col-4 col-md-2 col-xl-2">
+          <input
+            v-model="width"
+            class="form-control"
+            type="text"
+            id="input-width"
+          />
+        </div>
+      </div>
+
       <div class="row align-items-center mb-1">
         <div class="col-auto">
           <h3>Title Options</h3>

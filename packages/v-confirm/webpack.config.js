@@ -8,6 +8,16 @@ const resolve = (dir = "") => path.resolve(__dirname, dir);
 
 const isProcudtion = process.env.NODE_ENV === "production";
 
+const cssLoaders = [
+  isProcudtion ? MiniCssExtractPlugin.loader : "style-loader",
+  {
+    loader: "css-loader",
+    options: {
+      sourceMap: !isProcudtion,
+    },
+  },
+];
+
 /**
  * @type {import("webpack").Configuration}
  */
@@ -39,7 +49,7 @@ module.exports = {
   resolve: {
     alias: {
       vue$: "vue/dist/vue.esm.js",
-      "@": resolve("./src"),
+      "@/": resolve("src"),
     },
     extensions: [".js", ".ts", "vue"],
   },
@@ -68,12 +78,38 @@ module.exports = {
         ],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        test: /\.sass$/,
+        use: [
+          ...cssLoaders,
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
+              sassOptions: {
+                indentedSyntax: true,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          ...cssLoaders,
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
+              sassOptions: {
+                indentedSyntax: false,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: cssLoaders,
       },
     ],
   },

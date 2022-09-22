@@ -1,5 +1,5 @@
-// Vue
-import Vue from "vue";
+// Mixins
+import Themeable from "../../mixins/themeable";
 
 // Types
 import { VNode, VNodeChildren } from "vue/types";
@@ -18,11 +18,11 @@ import { MdiIcon, Divider } from "../index";
 // mdi close icon
 import { mdiClose } from "@mdi/js";
 
-// helper
+// Helper
 import { getSize, getClass } from "../..//utils/helper";
 import { setTextColor, setBackgroundColor } from "../../utils/colorUtil";
 
-export default Vue.extend({
+export default Themeable.extend({
   name: "v-confirm",
   directives: {
     clickOutside,
@@ -39,7 +39,6 @@ export default Vue.extend({
     },
     persistent: Boolean,
     noActionsDivider: Boolean,
-    dark: Boolean,
     width: {
       type: [String, Number],
       default: "800",
@@ -86,10 +85,9 @@ export default Vue.extend({
     },
     classes(): object {
       return {
-        light: !this.dark,
-        dark: this.dark,
         "v-confirm": true,
         "v-confirm--animated": this.animated,
+        ...this.themeClasses,
       };
     },
   },
@@ -193,6 +191,7 @@ export default Vue.extend({
                 {
                   props: {
                     color: this.closeIconColor,
+                    dark: this.dark,
                   },
                   on: { click: click },
                 },

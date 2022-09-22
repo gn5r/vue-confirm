@@ -1,20 +1,19 @@
-import Vue from "vue";
+// Mixins
+import Themeable from "../../mixins/themeable";
 
+// Types
 import { VNode } from "vue/types";
 
+// Style
 import "./Divider.scss";
 
-export default Vue.extend({
+export default Themeable.extend({
   name: "divider",
-  props: {
-    dark: Boolean,
-  },
   computed: {
     classes(): object {
       return {
-        light: !this.dark,
-        dark: this.dark,
         divider: true,
+        ...this.themeClasses,
       };
     },
   },

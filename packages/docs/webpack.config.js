@@ -7,6 +7,17 @@ const resolve = (dir = "") => path.resolve(__dirname, dir);
 
 const isProcudtion = process.env.NODE_ENV === "production";
 
+const cssLoaders = [
+  isProcudtion ? MiniCssExtractPlugin.loader : "vue-style-loader",
+  // "style-loader",
+  {
+    loader: "css-loader",
+    options: {
+      sourceMap: !isProcudtion,
+    },
+  },
+];
+
 /**
  * @type {import("webpack").Configuration}
  */
@@ -25,7 +36,7 @@ module.exports = {
     alias: {
       vue$: "vue/dist/vue.esm.js",
     },
-    extensions: [".js", ".ts", ".vue"],
+    extensions: ["*", ".js", ".ts", ".vue"],
   },
   module: {
     rules: [
@@ -52,17 +63,38 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
+        test: /\.sass$/,
         use: [
-          isProcudtion
-            ? MiniCssExtractPlugin.loader
-            : {
-                loader: "vue-style-loader",
-              },
+          ...cssLoaders,
           {
-            loader: "css-loader",
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
+              sassOptions: {
+                indentedSyntax: true,
+              },
+            },
           },
         ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          ...cssLoaders,
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
+              sassOptions: {
+                indentedSyntax: false,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: cssLoaders,
       },
       {
         test: /.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,

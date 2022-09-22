@@ -2,7 +2,7 @@ import Vue from "vue";
 
 import { VNode } from "vue/types";
 
-import "./Divider.css";
+import "./Divider.scss";
 
 export default Vue.extend({
   name: "divider",

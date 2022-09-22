@@ -6,6 +6,10 @@
 
     .v-confirm__titlebar {
       color: map-get($theme, "text-color");
+
+      header {
+        color: inherit;
+      }
     }
 
     .v-confirm__message {

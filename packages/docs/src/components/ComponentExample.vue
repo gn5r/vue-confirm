@@ -42,6 +42,15 @@
               >NoActionsDivider?</label
             >
           </div>
+          <div class="form-check form-check-inline">
+            <input
+              v-model="dark"
+              class="form-check-input"
+              type="checkbox"
+              id="input-dark"
+            />
+            <label class="form-check-label" for="input-dark">Dark?</label>
+          </div>
         </div>
       </div>
 
@@ -257,6 +266,7 @@
       :closeable="closeable"
       :persistent="persistent"
       :no-actions-divider="noActionsDivider"
+      :dark="dark"
       :width="`${width}px`"
       :title="title"
       :title-color="titleColor"
@@ -284,6 +294,7 @@ export default Vue.extend({
       closeable: true,
       persistent: false,
       noActionsDivider: false,
+      dark: false,
       width: 800,
       title: "titleeeeeeeeeeee",
       titleColor: "#2196f3",

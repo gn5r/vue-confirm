@@ -2,7 +2,7 @@
 
 exports[`VConfirm.ts not render a close icon when closeable is false 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -15,7 +15,7 @@ exports[`VConfirm.ts not render a close icon when closeable is false 1`] = `
 
 exports[`VConfirm.ts not render a divider when noActionsDivider is true 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -33,7 +33,24 @@ exports[`VConfirm.ts not render a divider when noActionsDivider is true 1`] = `
 
 exports[`VConfirm.ts render a close icon in titlebar when default 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
+    <div class="v-confirm__content" style="width: 800px;">
+      <div class="v-confirm__titlebar" style="background-color: inherit;">
+        <header style="background-color: transparent;"></header>
+        <div class="v-confirm__spacer"></div>
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
+              <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+            </svg></button></div>
+      </div>
+      <div class="v-confirm__message"></div>
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`VConfirm.ts render a dark component 1`] = `
+<transition-stub name="transition" appear="true">
+  <div class="dark v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -50,7 +67,7 @@ exports[`VConfirm.ts render a close icon in titlebar when default 1`] = `
 
 exports[`VConfirm.ts render a divider and actions when set the btns props 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -60,7 +77,7 @@ exports[`VConfirm.ts render a divider and actions when set the btns props 1`] = 
             </svg></button></div>
       </div>
       <div class="v-confirm__message"></div>
-      <hr role="separator" area-orientation="horizontal" class="divider" style="margin: 0px;">
+      <hr role="separator" area-orientation="horizontal" class="light divider" style="margin: 0px;">
       <div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button"><span>test</span></button></div>
     </div>
   </div>
@@ -69,7 +86,7 @@ exports[`VConfirm.ts render a divider and actions when set the btns props 1`] = 
 
 exports[`VConfirm.ts render a message text 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -86,7 +103,7 @@ exports[`VConfirm.ts render a message text 1`] = `
 
 exports[`VConfirm.ts render a title text and background-color is inherit 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;">title</header>
@@ -103,7 +120,7 @@ exports[`VConfirm.ts render a title text and background-color is inherit 1`] = `
 
 exports[`VConfirm.ts render a title with custom background-color 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: rgb(255, 255, 255);">
         <header style="background-color: transparent;">title</header>
@@ -120,7 +137,7 @@ exports[`VConfirm.ts render a title with custom background-color 1`] = `
 
 exports[`VConfirm.ts render a title with custom text-color 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent; color: rgb(255, 255, 255);">title</header>
@@ -135,9 +152,9 @@ exports[`VConfirm.ts render a title with custom text-color 1`] = `
 </transition-stub>
 `;
 
-exports[`VConfirm.ts render the action buttons 1`] = `
+exports[`VConfirm.ts render dark divider 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="dark v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -147,7 +164,26 @@ exports[`VConfirm.ts render the action buttons 1`] = `
             </svg></button></div>
       </div>
       <div class="v-confirm__message"></div>
-      <hr role="separator" area-orientation="horizontal" class="divider" style="margin: 0px;">
+      <hr role="separator" area-orientation="horizontal" class="dark divider" style="margin: 0px;">
+      <div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button"><span>test</span></button></div>
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`VConfirm.ts render the action buttons 1`] = `
+<transition-stub name="transition" appear="true">
+  <div class="light v-confirm">
+    <div class="v-confirm__content" style="width: 800px;">
+      <div class="v-confirm__titlebar" style="background-color: inherit;">
+        <header style="background-color: transparent;"></header>
+        <div class="v-confirm__spacer"></div>
+        <div class="v-confirm__close-icon"><button type="button" style="width: 24px; height: 36px; background-color: transparent; cursor: pointer; outline: none; padding: 0px; appearance: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" area-hidden="true" style="font-size: 24px; width: 24px; height: 24px; fill: currentColor; vertical-align: middle;">
+              <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+            </svg></button></div>
+      </div>
+      <div class="v-confirm__message"></div>
+      <hr role="separator" area-orientation="horizontal" class="light divider" style="margin: 0px;">
       <div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button"><span>test</span></button></div>
     </div>
   </div>
@@ -156,7 +192,7 @@ exports[`VConfirm.ts render the action buttons 1`] = `
 
 exports[`VConfirm.ts render the action buttons with class style background-color 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -166,7 +202,7 @@ exports[`VConfirm.ts render the action buttons with class style background-color
             </svg></button></div>
       </div>
       <div class="v-confirm__message"></div>
-      <hr role="separator" area-orientation="horizontal" class="divider" style="margin: 0px;">
+      <hr role="separator" area-orientation="horizontal" class="light divider" style="margin: 0px;">
       <div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button white"><span>test</span></button></div>
     </div>
   </div>
@@ -175,7 +211,7 @@ exports[`VConfirm.ts render the action buttons with class style background-color
 
 exports[`VConfirm.ts render the action buttons with class style text color 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -185,7 +221,7 @@ exports[`VConfirm.ts render the action buttons with class style text color 1`] =
             </svg></button></div>
       </div>
       <div class="v-confirm__message"></div>
-      <hr role="separator" area-orientation="horizontal" class="divider" style="margin: 0px;">
+      <hr role="separator" area-orientation="horizontal" class="light divider" style="margin: 0px;">
       <div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button white--text"><span>test</span></button></div>
     </div>
   </div>
@@ -194,7 +230,7 @@ exports[`VConfirm.ts render the action buttons with class style text color 1`] =
 
 exports[`VConfirm.ts render the action buttons with css style background-color 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -204,7 +240,7 @@ exports[`VConfirm.ts render the action buttons with css style background-color 1
             </svg></button></div>
       </div>
       <div class="v-confirm__message"></div>
-      <hr role="separator" area-orientation="horizontal" class="divider" style="margin: 0px;">
+      <hr role="separator" area-orientation="horizontal" class="light divider" style="margin: 0px;">
       <div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button" style="background-color: rgb(255, 255, 255);"><span>test</span></button></div>
     </div>
   </div>
@@ -213,7 +249,7 @@ exports[`VConfirm.ts render the action buttons with css style background-color 1
 
 exports[`VConfirm.ts render the action buttons with css style text color 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -223,7 +259,7 @@ exports[`VConfirm.ts render the action buttons with css style text color 1`] = `
             </svg></button></div>
       </div>
       <div class="v-confirm__message"></div>
-      <hr role="separator" area-orientation="horizontal" class="divider" style="margin: 0px;">
+      <hr role="separator" area-orientation="horizontal" class="light divider" style="margin: 0px;">
       <div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button" style="color: rgb(255, 255, 255);"><span>test</span></button></div>
     </div>
   </div>
@@ -232,7 +268,7 @@ exports[`VConfirm.ts render the action buttons with css style text color 1`] = `
 
 exports[`VConfirm.ts render the closeIcon slot 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm">
+  <div class="light v-confirm">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>
@@ -246,7 +282,7 @@ exports[`VConfirm.ts render the closeIcon slot 1`] = `
 
 exports[`VConfirm.ts render when not active 1`] = `
 <transition-stub name="transition" appear="true">
-  <div class="v-confirm" style="display: none;">
+  <div class="light v-confirm" style="display: none;">
     <div class="v-confirm__content" style="width: 800px;">
       <div class="v-confirm__titlebar" style="background-color: inherit;">
         <header style="background-color: transparent;"></header>

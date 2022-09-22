@@ -19,7 +19,7 @@ import { MdiIcon, Divider } from "../index";
 import { mdiClose } from "@mdi/js";
 
 // helper
-import { getSize, getClass } from "../../utils/helper";
+import { getSize, getClass } from "../..//utils/helper";
 import { setTextColor, setBackgroundColor } from "../../utils/colorUtil";
 
 export default Vue.extend({
@@ -38,10 +38,8 @@ export default Vue.extend({
       default: true,
     },
     persistent: Boolean,
-    noActionsDivider: {
-      type: Boolean,
-      default: false,
-    },
+    noActionsDivider: Boolean,
+    dark: Boolean,
     width: {
       type: [String, Number],
       default: "800",
@@ -88,6 +86,8 @@ export default Vue.extend({
     },
     classes(): object {
       return {
+        light: !this.dark,
+        dark: this.dark,
         "v-confirm": true,
         "v-confirm--animated": this.animated,
       };
@@ -174,7 +174,6 @@ export default Vue.extend({
         let closeIcon: VNode;
         const click = () => (this.internalValue = false);
         if (this.$slots.closeIcon) {
-          console.debug("[v-confirm] closeIcon slots:", this.$slots.closeIcon);
           closeIcon = this.$slots.closeIcon[0];
           const closeIconClass = getClass(closeIcon.data);
           closeIcon.data = {
@@ -227,7 +226,10 @@ export default Vue.extend({
       );
     },
     genActions(): VNodeChildren {
-      const divider = this.$createElement(Divider, { style: { margin: "0" } });
+      const divider = this.$createElement(Divider, {
+        props: { dark: this.dark },
+        style: { margin: "0" },
+      });
       const btns: VNodeChildren = [];
       this.btns.forEach((btn) => {
         const button = this.genActionBtn(btn);

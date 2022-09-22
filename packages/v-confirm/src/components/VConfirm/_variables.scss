@@ -1,37 +1,37 @@
-$v-confirm-transition-enter-active: opacity 0.2s ease-in;
-$v-confirm-transition-leave-active: opacity 0.3s ease-out;
-$v-confirm-overlay-background-color: rgba(0, 0, 0, 0.5);
-$v-confirm-animation: bounce 0.2s;
+@forward "../../styles/index";
 
-$v-confirm-content-background-color: #eee;
-$v-confirm-content-border-radius: 3px;
-$v-confirm-content-box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
-$v-confirm-content-max-width: 95%;
+$v-confirm-transition-enter-active: opacity 0.2s ease-in !default;
+$v-confirm-transition-leave-active: opacity 0.3s ease-out !default;
+$v-confirm-overlay-background-color: rgba(0, 0, 0, 0.5) !default;
+$v-confirm-animation: bounce 0.2s !default;
 
-$v-confirm-titlebar-min-height: 36px;
-$v-confirm-titlebar-padding: 8px 12px;
-$v-confirm-titlebar-font-size: 24px;
-$v-confirm-titlebar-font-weight: bold;
+$v-confirm-content-border-radius: 3px !default;
+$v-confirm-content-box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2) !default;
+$v-confirm-content-max-width: 95% !default;
 
-$v-confirm-titlebar-icon-size: 24px;
+$v-confirm-titlebar-min-height: 36px !default;
+$v-confirm-titlebar-padding: 8px 12px !default;
+$v-confirm-titlebar-font-size: 24px !default;
+$v-confirm-titlebar-font-weight: bold !default;
 
-$v-confirm-message-overflow-wrap: break-word;
-$v-confirm-message-white-space: pre-wrap;
-$v-confirm-message-padding: 8px 16px;
-$v-confirm-message-font-size: large;
-$v-confirm-message-font-color: #000;
-$v-confirm-message-font-weight: normal;
+$v-confirm-titlebar-icon-size: 24px !default;
 
-$v-confirm-actions-padding: 8px;
-$v-confirm-actions-button-height: 36px;
-$v-confirm-actions-button-min-width: 64px;
-$v-confirm-actions-button-margin-size: 0 0 0 8px;
+$v-confirm-message-overflow-wrap: break-word !default;
+$v-confirm-message-white-space: pre-wrap !default;
+$v-confirm-message-padding: 8px 16px !default;
+$v-confirm-message-font-size: large !default;
+$v-confirm-message-font-weight: normal !default;
 
-$v-confirm-button-border-radius: 4px;
-$v-confirm-button-font-weight: 500;
-$v-confirm-button-white-space: nowrap;
-$v-confirm-button-padding: 0 8px;
-$v-confirm-button-font-size: 0.857rem;
-$v-confirm-button-color: #1867c0;
+$v-confirm-actions-padding: 8px !default;
+$v-confirm-actions-button-height: 36px !default;
+$v-confirm-actions-button-min-width: 64px !default;
+$v-confirm-actions-button-margin-size: 0 0 0 8px !default;
 
-$v-confirm-button-hover-opacity: 0.08;
+$v-confirm-button-border-radius: 4px !default;
+$v-confirm-button-font-weight: 500 !default;
+$v-confirm-button-white-space: nowrap !default;
+$v-confirm-button-padding: 0 8px !default;
+$v-confirm-button-font-size: 0.857rem !default;
+$v-confirm-button-color: #1867c0 !default;
+
+$v-confirm-button-hover-opacity: 0.08 !default;

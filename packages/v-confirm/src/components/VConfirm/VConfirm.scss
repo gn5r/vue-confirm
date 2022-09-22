@@ -1,11 +1,25 @@
-@import "./_variables.scss";
+@use "./variables" as var;
+
+@include var.theme(v-confirm) using ($theme) {
+  > .v-confirm__content {
+    background: map-get($theme, "background");
+
+    .v-confirm__titlebar {
+      color: map-get($theme, "text-color");
+    }
+
+    .v-confirm__message {
+      color: map-get($theme, "text-color");
+    }
+  }
+}
 
 .transition-enter-active {
-  transition: $v-confirm-transition-enter-active;
+  transition: var.$v-confirm-transition-enter-active;
 }
 
 .transition-leave-active {
-  transition: $v-confirm-transition-leave-active;
+  transition: var.$v-confirm-transition-leave-active;
 }
 
 .transition-enter,
@@ -20,7 +34,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $v-confirm-overlay-background-color;
+  background-color: var.$v-confirm-overlay-background-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +43,7 @@
 
 .v-confirm--animated {
   > .v-confirm__content {
-    animation: $v-confirm-animation;
+    animation: var.$v-confirm-animation;
   }
 }
 
@@ -46,26 +60,25 @@
 }
 
 .v-confirm__content {
-  background-color: $v-confirm-content-background-color;
-  border-radius: $v-confirm-content-border-radius;
-  box-shadow: $v-confirm-content-box-shadow;
-  max-width: $v-confirm-content-max-width;
+  border-radius: var.$v-confirm-content-border-radius;
+  box-shadow: var.$v-confirm-content-box-shadow;
+  max-width: var.$v-confirm-content-max-width;
 }
 
 .v-confirm__titlebar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: $v-confirm-titlebar-min-height;
-  padding: $v-confirm-titlebar-padding;
-  font-size: $v-confirm-titlebar-font-size;
-  font-weight: $v-confirm-titlebar-font-weight;
+  min-height: var.$v-confirm-titlebar-min-height;
+  padding: var.$v-confirm-titlebar-padding;
+  font-size: var.$v-confirm-titlebar-font-size;
+  font-weight: var.$v-confirm-titlebar-font-weight;
 
   .v-confirm__close-icon {
     display: flex;
     align-items: center;
-    min-height: $v-confirm-titlebar-icon-size;
-    min-width: $v-confirm-titlebar-icon-size;
+    min-height: var.$v-confirm-titlebar-icon-size;
+    min-width: var.$v-confirm-titlebar-icon-size;
   }
 }
 
@@ -76,18 +89,17 @@
 }
 
 .v-confirm__message {
-  overflow-wrap: $v-confirm-message-overflow-wrap;
-  white-space: $v-confirm-message-white-space;
-  padding: $v-confirm-message-padding;
-  font-size: $v-confirm-message-font-size;
-  color: $v-confirm-message-font-color;
-  font-weight: $v-confirm-message-font-weight;
+  overflow-wrap: var.$v-confirm-message-overflow-wrap;
+  white-space: var.$v-confirm-message-white-space;
+  padding: var.$v-confirm-message-padding;
+  font-size: var.$v-confirm-message-font-size;
+  font-weight: var.$v-confirm-message-font-weight;
 }
 
 .v-confirm__actions {
   display: flex;
   align-items: center;
-  padding: $v-confirm-actions-padding;
+  padding: var.$v-confirm-actions-padding;
 
   // button tag
   > button {
@@ -96,27 +108,27 @@
     flex: 0 0 auto;
     justify-content: center;
     vertical-align: middle;
-    height: $v-confirm-actions-button-height;
-    min-width: $v-confirm-actions-button-min-width;
+    height: var.$v-confirm-actions-button-height;
+    min-width: var.$v-confirm-actions-button-min-width;
     & + button {
-      margin: $v-confirm-actions-button-margin-size;
+      margin: var.$v-confirm-actions-button-margin-size;
     }
   }
 
   // button class
   > .button {
     position: relative;
-    border-radius: $v-confirm-button-border-radius;
-    font-weight: $v-confirm-button-font-weight;
-    white-space: $v-confirm-button-white-space;
-    padding: $v-confirm-button-padding;
-    font-size: $v-confirm-button-font-size;
+    border-radius: var.$v-confirm-button-border-radius;
+    font-weight: var.$v-confirm-button-font-weight;
+    white-space: var.$v-confirm-button-white-space;
+    padding: var.$v-confirm-button-padding;
+    font-size: var.$v-confirm-button-font-size;
     outline: none;
     appearance: none;
     border: none;
     cursor: pointer;
-    color: $v-confirm-button-color;
-    caret-color: $v-confirm-button-color;
+    color: var.$v-confirm-button-color;
+    caret-color: var.$v-confirm-button-color;
     text-transform: uppercase;
 
     &::before {
@@ -134,7 +146,7 @@
     }
 
     &:hover::before {
-      opacity: $v-confirm-button-hover-opacity;
+      opacity: var.$v-confirm-button-hover-opacity;
     }
   }
 }

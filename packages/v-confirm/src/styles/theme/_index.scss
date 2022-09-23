@@ -1,11 +1,13 @@
+@forward "light";
+@forward "dark";
 @use "light";
 @use "dark";
 
 @mixin theme($component) {
   .light.#{$component} {
-    @content (light.$theme-light);
+    @content (light.$light-theme);
   }
   .dark.#{$component} {
-    @content (dark.$theme-dark);
+    @content (dark.$dark-theme);
   }
 }

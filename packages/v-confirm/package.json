@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/vue-confirm",
-  "version": "2.1.1",
+  "version": "2.2.0-beta.0",
   "license": "MIT",
   "description": "Confirm components for Vue.js projects",
   "author": {

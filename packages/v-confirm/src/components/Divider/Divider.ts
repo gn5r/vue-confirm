@@ -1,15 +1,26 @@
-import Vue from "vue";
+// Mixins
+import Themeable from "../../mixins/themeable";
 
+// Types
 import { VNode } from "vue/types";
 
-import "./Divider.css";
+// Style
+import "./Divider.scss";
 
-export default Vue.extend({
+export default Themeable.extend({
   name: "divider",
+  computed: {
+    classes(): object {
+      return {
+        divider: true,
+        ...this.themeClasses,
+      };
+    },
+  },
   render(h): VNode {
     return h("hr", {
       attrs: { role: "separator", "area-orientation": "horizontal" },
-      class: "divider",
+      class: this.classes,
     });
   },
 });

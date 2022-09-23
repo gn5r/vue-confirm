@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Divider.ts should render 1`] = `<hr role="separator" area-orientation="horizontal" class="divider">`;
+exports[`Divider.ts render a dark component 1`] = `<hr role="separator" area-orientation="horizontal" class="divider dark">`;
+
+exports[`Divider.ts should render 1`] = `<hr role="separator" area-orientation="horizontal" class="divider light">`;

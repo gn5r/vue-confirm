@@ -22,13 +22,14 @@
   "main": "dist/v-confirm.min.js",
   "module": "dist/v-confirm.min.js",
   "typings": "types/index.d.ts",
+  "style": "dist/v-confirm.min.css",
   "files": [
     "src",
     "types",
     "dist"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress",
+    "build": "rm -rf dist && cross-env NODE_ENV=production webpack --progress",
     "lint": "eslint --ext .js,.ts,src",
     "lint:fix": "prettier --write src/**/*.{js,ts,css}",
     "test:unit": "cross-env NODE_ENV=test jest -i",

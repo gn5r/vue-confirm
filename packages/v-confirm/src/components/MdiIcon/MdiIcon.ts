@@ -1,8 +1,17 @@
-import Vue, { VNode } from "vue";
+// Types
+import { VNode } from "vue";
+
+// Style
+import "./MdiIcon.scss";
+
+// Helpers
 import { getSize } from "../../utils/helper";
 import { setTextColor } from "../../utils/colorUtil";
 
-export default Vue.extend({
+// Mixins
+import Themeable from "../../mixins/themeable";
+
+export default Themeable.extend({
   name: "icon",
   props: {
     size: {
@@ -18,6 +27,12 @@ export default Vue.extend({
     hasClickListener(): boolean {
       return Boolean(this.$listeners.click);
     },
+    classes(): object {
+      return {
+        "mdi-icon": true,
+        ...this.themeClasses,
+      };
+    },
   },
   render(h): VNode {
     let iconName = "";
@@ -29,15 +44,10 @@ export default Vue.extend({
         "area-hidden": !this.hasClickListener,
         type: this.hasClickListener ? "button" : undefined,
       },
+      class: this.classes,
       style: {
         width: `${fontSize}px`,
         height: `${fontSize + 12}px`,
-        "background-color": "transparent",
-        border: "none",
-        cursor: "pointer",
-        outline: "none",
-        padding: 0,
-        appearance: "none",
       },
       on: this.$listeners,
     };

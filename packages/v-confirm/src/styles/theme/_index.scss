@@ -1,0 +1,11 @@
+@use "light";
+@use "dark";
+
+@mixin theme($component) {
+  .light.#{$component} {
+    @content (light.$theme-light);
+  }
+  .dark.#{$component} {
+    @content (dark.$theme-dark);
+  }
+}

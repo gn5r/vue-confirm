@@ -26,4 +26,9 @@ describe("MdiIcon.ts", () => {
     expect(wrapper.html()).toMatchSnapshot();
     expect(button.exists()).toBe(true);
   });
+
+  it("render a dark component", () => {
+    const wrapper = mountFunc({ propsData: { dark: true } });
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });

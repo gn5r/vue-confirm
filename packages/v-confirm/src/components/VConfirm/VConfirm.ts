@@ -1,13 +1,13 @@
-// Vue
-import Vue from "vue";
+// Mixins
+import Themeable from "../../mixins/themeable";
 
 // Types
 import { VNode, VNodeChildren } from "vue/types";
 import { PropValidator } from "vue/types/options";
 import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
 
-// CSS
-import "./VConfirm.css";
+// Style
+import "./VConfirm.scss";
 
 // ClickOutside Directive
 import { clickOutside } from "../../directives";
@@ -18,11 +18,11 @@ import { MdiIcon, Divider } from "../index";
 // mdi close icon
 import { mdiClose } from "@mdi/js";
 
-// helper
-import { getSize } from "../../utils/helper";
+// Helper
+import { getSize, getClass } from "../..//utils/helper";
 import { setTextColor, setBackgroundColor } from "../../utils/colorUtil";
 
-export default Vue.extend({
+export default Themeable.extend({
   name: "v-confirm",
   directives: {
     clickOutside,
@@ -38,10 +38,7 @@ export default Vue.extend({
       default: true,
     },
     persistent: Boolean,
-    noActionsDivider: {
-      type: Boolean,
-      default: false,
-    },
+    noActionsDivider: Boolean,
     width: {
       type: [String, Number],
       default: "800",
@@ -90,6 +87,7 @@ export default Vue.extend({
       return {
         "v-confirm": true,
         "v-confirm--animated": this.animated,
+        ...this.themeClasses,
       };
     },
   },
@@ -170,22 +168,38 @@ export default Vue.extend({
         const spacer = this.$createElement("div", {
           class: "v-confirm__spacer",
         });
-        const closeIcon = this.$createElement(
-          "div",
-          { class: "v-confirm__close-icon" },
-          [
-            this.$createElement(
-              MdiIcon,
-              {
-                props: {
-                  color: this.closeIconColor,
+
+        let closeIcon: VNode;
+        const click = () => (this.internalValue = false);
+        if (this.$slots.closeIcon) {
+          closeIcon = this.$slots.closeIcon[0];
+          const closeIconClass = getClass(closeIcon.data);
+          closeIcon.data = {
+            ...closeIcon.data,
+            class: [...closeIconClass, "v-confirm__close-icon"],
+            on: {
+              click: click,
+            },
+          };
+        } else {
+          closeIcon = this.$createElement(
+            "div",
+            { class: "v-confirm__close-icon" },
+            [
+              this.$createElement(
+                MdiIcon,
+                {
+                  props: {
+                    color: this.closeIconColor,
+                    dark: this.dark,
+                  },
+                  on: { click: click },
                 },
-                on: { click: () => (this.internalValue = false) },
-              },
-              [mdiClose]
-            ),
-          ]
-        );
+                [mdiClose]
+              ),
+            ]
+          );
+        }
         children.push(spacer);
         children.push(closeIcon);
       }
@@ -211,7 +225,10 @@ export default Vue.extend({
       );
     },
     genActions(): VNodeChildren {
-      const divider = this.$createElement(Divider, { style: { margin: "0" } });
+      const divider = this.$createElement(Divider, {
+        props: { dark: this.dark },
+        style: { margin: "0" },
+      });
       const btns: VNodeChildren = [];
       this.btns.forEach((btn) => {
         const button = this.genActionBtn(btn);

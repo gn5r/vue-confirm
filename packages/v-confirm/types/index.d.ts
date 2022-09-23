@@ -40,18 +40,19 @@ declare const VConfirm: ExtendedVue<
   {},
   {},
   {
-    value: boolean;
-    closeable: boolean;
-    persistent: boolean;
-    noActionsDivider: boolean;
-    width: string | number;
-    title: string;
-    titleColor: string;
-    titleTextColor: string;
-    closeIconColor: string;
-    message: string;
-    btnAlign: Alignment;
-    btns: Array<VConfirmBtn>;
+    value?: boolean;
+    closeable?: boolean;
+    persistent?: boolean;
+    noActionsDivider?: boolean;
+    dark?: boolean;
+    width?: string | number;
+    title?: string;
+    titleColor?: string;
+    titleTextColor?: string;
+    closeIconColor?: string;
+    message?: string;
+    btnAlign?: Alignment;
+    btns?: Array<VConfirmBtn>;
   }
 >;
 

@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar navbar-dark bg-dark mb-3">
       <div class="container-fluid">
-        <span class="navbar-brand">Vue Confirm Component</span>
+        <span class="navbar-brand">Vue Confirm</span>
         <div class="d-flex">
           <a
             class="text-light"

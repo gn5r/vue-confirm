@@ -1,6 +1,8 @@
+@forward "./variables";
+@use "../../styles/index" as *;
 @use "./variables" as var;
 
-@include var.theme(v-confirm) using ($theme) {
+@include theme(v-confirm) using ($theme) {
   > .v-confirm__content {
     background: map-get($theme, "background");
 

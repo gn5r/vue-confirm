@@ -185,19 +185,6 @@ describe("VConfirm.ts", () => {
     expect(btnFun).toBeCalled();
   });
 
-  it("render the closeIcon slot", () => {
-    const wrapper = mountFunc({
-      propsData: { value: true },
-      slots: {
-        closeIcon: "<button>test</button>",
-      },
-    });
-    const button = wrapper.find(".v-confirm__titlebar > button");
-    expect(wrapper.html()).toMatchSnapshot();
-    expect(button.exists()).toBe(true);
-    expect(button.attributes().class).toContain("v-confirm__close-icon");
-  });
-
   it("render a dark component", () => {
     const wrapper = mountFunc({
       propsData: {

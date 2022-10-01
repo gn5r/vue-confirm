@@ -19,7 +19,7 @@ import { MdiIcon, Divider } from "../index";
 import { mdiClose } from "@mdi/js";
 
 // Helper
-import { getSize, getClass } from "../..//utils/helper";
+import { getSize } from "../..//utils/helper";
 import { setTextColor, setBackgroundColor } from "../../utils/colorUtil";
 
 export default Themeable.extend({
@@ -168,38 +168,23 @@ export default Themeable.extend({
         const spacer = this.$createElement("div", {
           class: "v-confirm__spacer",
         });
-
-        let closeIcon: VNode;
-        const click = () => (this.internalValue = false);
-        if (this.$slots.closeIcon) {
-          closeIcon = this.$slots.closeIcon[0];
-          const closeIconClass = getClass(closeIcon.data);
-          closeIcon.data = {
-            ...closeIcon.data,
-            class: [...closeIconClass, "v-confirm__close-icon"],
-            on: {
-              click: click,
-            },
-          };
-        } else {
-          closeIcon = this.$createElement(
-            "div",
-            { class: "v-confirm__close-icon" },
-            [
-              this.$createElement(
-                MdiIcon,
-                {
-                  props: {
-                    color: this.closeIconColor,
-                    dark: this.dark,
-                  },
-                  on: { click: click },
+        const closeIcon: VNode = this.$createElement(
+          "div",
+          { class: "v-confirm__close-icon" },
+          [
+            this.$createElement(
+              MdiIcon,
+              {
+                props: {
+                  color: this.closeIconColor,
+                  dark: this.dark,
                 },
-                [mdiClose]
-              ),
-            ]
-          );
-        }
+                on: { click: () => (this.internalValue = false) },
+              },
+              [mdiClose]
+            ),
+          ]
+        );
         children.push(spacer);
         children.push(closeIcon);
       }

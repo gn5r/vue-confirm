@@ -7,6 +7,9 @@ on:
       - next
     tags:
       - "v*"
+    paths-ignore:
+      - ".github/**"
+      - "**/README*"
 
 jobs:
   ci:

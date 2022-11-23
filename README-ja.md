@@ -149,9 +149,10 @@ export default Vue.extend({
 |       props        |                                                   description                                                    |       type        |  default  |
 | :----------------: | :--------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
 |       value        |                                       ダイアログの表示/非表示をするフラグ                                        |      boolean      |   false   |
-|      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   true    |
+|      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   false   |
 |     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
 | no-actions-divider |                          メッセージとアクションボタン間の境界線を表示/非表示するフラグ                           |      boolean      |   false   |
+|        dark        |                                          ダークテーマを有効にするフラグ                                          |      boolean      |   false   |
 |       width        |                                                 ダイアログの横幅                                                 | number \| string  |   800px   |
 |       title        |                                          タイトルバーに表示するテキスト                                          |      string       | undefined |
 |    title-color     |                                               タイトルバーの背景色                                               |      string       |  inherit  |
@@ -163,13 +164,13 @@ export default Vue.extend({
 
 ### VConfirmBtn
 
-|   name    |                                                              description                                                              |        type        |  default  |
-| :-------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------: | :-------: |
-|   text    |                                                            ボタンテキスト                                                             |       string       | undefined |
-| textColor | ボタンのテキストカラー<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます |       string       | undefined |
-|   color   |     ボタンの背景色<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます     |       string       | undefined |
-|   class   |                                                ボタンに対する css クラスを指定できます                                                | string \| string[] | undefined |
-| function  |                                                ボタンをクリックした時に実行される関数                                                 |       string       | undefined |
+|   name    |                                                              description                                                              |           type           |  default  |
+| :-------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
+|   text    |                                                            ボタンテキスト                                                             |          string          | undefined |
+| textColor | ボタンのテキストカラー<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます |          string          | undefined |
+|   color   |     ボタンの背景色<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます     |          string          | undefined |
+|   class   |                                                ボタンに対する css クラスを指定できます                                                |    string \| string[]    | undefined |
+| function  |                                                ボタンをクリックした時に実行される関数                                                 | Function \| VoidFunction | undefined |
 
 ## License
 

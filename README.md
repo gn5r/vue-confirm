@@ -151,9 +151,10 @@ export default Vue.extend({
 |       props        |                                                       description                                                       |       type        |  default  |
 | :----------------: | :---------------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
 |       value        |                                               show / hide flag of dialog                                                |      boolean      |   false   |
-|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   true    |
+|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   false   |
 |     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
 | no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
+|        dark        |                                                    Enable dark theme                                                    |      boolean      |   false   |
 |       width        |                                                     Component width                                                     | number \| string  |   800px   |
 |       title        |                                                       Title text                                                        |      string       | undefined |
 |    title-color     |                                                      Toolbar color                                                      |      string       |  inherit  |
@@ -165,13 +166,13 @@ export default Vue.extend({
 
 ### VConfirmBtn description
 
-|   name    |                                                                  description                                                                  |        type        |  default  |
-| :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: | :-------: |
-|   text    |                                                                text in button                                                                 |       string       | undefined |
-| textColor |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |       string       | undefined |
-|   color   | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |       string       | undefined |
-|   class   |                                                            css classes for button                                                             | string \| string[] | undefined |
-| function  |                                                 function executed when the button is clicked                                                  |       string       | undefined |
+|   name    |                                                                  description                                                                  |           type           |  default  |
+| :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
+|   text    |                                                                text in button                                                                 |          string          | undefined |
+| textColor |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |          string          | undefined |
+|   color   | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |          string          | undefined |
+|   class   |                                                            css classes for button                                                             |    string \| string[]    | undefined |
+| function  |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
 
 ## License
 

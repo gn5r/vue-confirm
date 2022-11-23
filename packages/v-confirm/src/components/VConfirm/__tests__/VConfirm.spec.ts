@@ -13,17 +13,8 @@ describe("VConfirm.ts", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("render a close icon in titlebar when default", () => {
+  it("not render a close icon in titlebar when default", () => {
     const wrapper = mountFunc({ propsData: { value: true } });
-    const closeIcon = wrapper.find(
-      ".v-confirm__titlebar > .v-confirm__close-icon"
-    );
-    expect(wrapper.html()).toMatchSnapshot();
-    expect(closeIcon.exists()).toBe(true);
-  });
-
-  it("not render a close icon when closeable is false", () => {
-    const wrapper = mountFunc({ propsData: { value: true, closeable: false } });
     const closeIcon = wrapper.find(
       ".v-confirm__titlebar > .v-confirm__close-icon"
     );
@@ -31,8 +22,17 @@ describe("VConfirm.ts", () => {
     expect(closeIcon.exists()).toBe(false);
   });
 
+  it("render a close icon when closeable is true", () => {
+    const wrapper = mountFunc({ propsData: { value: true, closeable: true } });
+    const closeIcon = wrapper.find(
+      ".v-confirm__titlebar > .v-confirm__close-icon"
+    );
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(closeIcon.exists()).toBe(true);
+  });
+
   it("emitted change event when click to close icon", async () => {
-    const wrapper = mountFunc({ propsData: { value: true } });
+    const wrapper = mountFunc({ propsData: { value: true, closeable: true } });
     await wrapper.find(".v-confirm__close-icon > button").trigger("click");
     expect(wrapper.vm.isActive).toBe(false);
     const event = wrapper.emitted().change;

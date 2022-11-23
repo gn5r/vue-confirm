@@ -1,4 +1,5 @@
-import Vue, { VueConstructor, PluginFunction } from "vue";
+import Vue, { PluginFunction } from "vue";
+import { ExtendedVue } from "vue/types/vue";
 
 export type Alignment =
   | "start"
@@ -14,24 +15,6 @@ export type VConfirmBtn = {
   class?: string | string[];
   function: FunctionConstructor | VoidFunction;
 };
-
-type CombinedVueInstance<
-  Instance extends Vue,
-  Data,
-  Methods,
-  Computed,
-  Props
-> = Data & Methods & Computed & Props & Instance;
-
-type ExtendedVue<
-  Instance extends Vue,
-  Data,
-  Methods,
-  Computed,
-  Props
-> = VueConstructor<
-  CombinedVueInstance<Instance, Data, Methods, Computed, Props> & Vue
->;
 
 /* eslint-disable @typescript-eslint/ban-types */
 declare const VConfirm: ExtendedVue<
@@ -55,6 +38,7 @@ declare const VConfirm: ExtendedVue<
     btns?: Array<VConfirmBtn>;
   }
 >;
+/* eslint-enable */
 
 export default VConfirm;
 

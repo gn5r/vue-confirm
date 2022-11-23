@@ -1,27 +1,32 @@
-name: ci
+name: CI
 
-on: [push, pull_request]
-
-env:
-  YARN_CACHE_DIR: .cache/yarn
+on:
+  workflow_call:
+  push:
+    paths-ignore:
+      - ".github/**"
+      - "**/README*"
+    branches-ignore:
+      - master
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18
 
       - name: Install dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
+        id: cache_dependencies
         with:
-          path: ${YARN_CACHE_DIR}
-          key: ${{ runner.os }}-yarn-cache-v1
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
       - run: yarn --frozen-lockfile --non-interactive
 
       - name: Run lint
@@ -32,77 +37,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18
 
       - name: Install dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
+        id: cache_dependencies
         with:
-          path: ${YARN_CACHE_DIR}
-          key: ${{ runner.os }}-yarn-cache-v1
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
       - run: yarn --frozen-lockfile --non-interactive
 
       - name: Run unit test
         run: yarn run test:unit
         working-directory: ./packages/v-confirm
-
-  deploy-docs:
-    needs: [lint, test]
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/next')
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-
-      - name: Install dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${YARN_CACHE_DIR}
-          key: ${{ runner.os }}-yarn-cache-v1
-      - run: yarn --frozen-lockfile --non-interactive
-
-      - name: Build v-confirm
-        run: yarn run build
-
-      - name: Build docs
-        run: yarn run build
-        working-directory: ./packages/docs
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/docs/docs
-
-  create-release:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && startswith(github.ref, 'refs/tags/v')
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
-      - name: Build Release Note
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create release tag
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: ${{ env.TAG_NAME }}
-          body: ${{steps.github_release.outputs.changelog}}

@@ -1,5 +1,10 @@
+/**
+ * @type {import("eslint").Linter.Config}
+ */
 module.exports = {
   env: {
+    es2021: true,
+    browser: true,
     node: true,
   },
   extends: [
@@ -8,9 +13,10 @@ module.exports = {
     "@vue/typescript/recommended",
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
+    sourceType: "module",
   },
   rules: {
-    "vue/multi-word-component-names": "warn"
+    "vue/multi-word-component-names": "warn",
   },
 };

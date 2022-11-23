@@ -1,14 +1,34 @@
+/**
+ * @type {import("eslint").Linter.Config}
+ */
 module.exports = {
   root: true,
   env: {
-    browser: true,
     node: true,
   },
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  parser: "@typescript-eslint/parser",
+  extends: ["eslint:recommended"],
   parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
+    ecmaVersion: 2021,
+    sourceType: "script",
   },
-  rules: {},
+  overrides: [
+    {
+      files: ["**/*.ts"],
+      env: {
+        es2021: true,
+        browser: true,
+        node: true,
+      },
+      extends: [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+      ],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaVersion: 2021,
+        sourceType: "module",
+      },
+      rules: {},
+    },
+  ],
 };

@@ -33,10 +33,7 @@ export default Themeable.extend({
   },
   props: {
     value: Boolean,
-    closeable: {
-      type: Boolean,
-      default: true,
-    },
+    closeable: Boolean,
     persistent: Boolean,
     noActionsDivider: Boolean,
     width: {

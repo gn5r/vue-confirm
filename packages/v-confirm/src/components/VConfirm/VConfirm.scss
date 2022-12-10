@@ -6,7 +6,7 @@
   > .v-confirm__content {
     background: map-get($theme, "background");
 
-    .v-confirm__titlebar {
+    .v-confirm__header {
       color: map-get($theme, "text-color");
 
       header {
@@ -71,20 +71,20 @@
   max-width: var.$v-confirm-content-max-width;
 }
 
-.v-confirm__titlebar {
+.v-confirm__header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: var.$v-confirm-titlebar-min-height;
-  padding: var.$v-confirm-titlebar-padding;
-  font-size: var.$v-confirm-titlebar-font-size;
-  font-weight: var.$v-confirm-titlebar-font-weight;
+  min-height: var.$v-confirm-header-min-height;
+  padding: var.$v-confirm-header-padding;
+  font-size: var.$v-confirm-header-font-size;
+  font-weight: var.$v-confirm-header-font-weight;
 
   .v-confirm__close-icon {
     display: flex;
     align-items: center;
-    min-height: var.$v-confirm-titlebar-icon-size;
-    min-width: var.$v-confirm-titlebar-icon-size;
+    min-height: var.$v-confirm-header-icon-size;
+    min-width: var.$v-confirm-header-icon-size;
   }
 }
 

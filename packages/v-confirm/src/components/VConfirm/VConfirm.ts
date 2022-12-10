@@ -141,25 +141,25 @@ export default Themeable.extend({
           ],
         },
         [
-          this.genTitlebar(),
+          this.genHeader(),
           this.genMessage(),
           this.btns.length > 0 ? this.genActions() : null,
         ]
       );
     },
-    genTitlebar(): VNode {
+    genHeader(): VNode {
       const children: VNodeChildren = [];
-      const headerData = {
-        style: {
-          "background-color": "transparent",
-        },
-      };
-      const titlebar = this.$createElement(
-        "header",
-        setTextColor(this.titleTextColor, headerData),
-        this.title
+      children.push(
+        this.$createElement(
+          "header",
+          setTextColor(this.titleTextColor, {
+            style: {
+              "background-color": "transparent",
+            },
+          }),
+          this.title
+        )
       );
-      children.push(titlebar);
 
       if (this.closeable) {
         const spacer = this.$createElement("div", {
@@ -186,14 +186,13 @@ export default Themeable.extend({
         children.push(closeIcon);
       }
 
-      const titlebarData = {
-        class: {
-          "v-confirm__titlebar": true,
-        },
-      };
       return this.$createElement(
         "div",
-        setBackgroundColor(this.titleColor, titlebarData),
+        setBackgroundColor(this.titleColor, {
+          class: {
+            "v-confirm__header": true,
+          },
+        }),
         children
       );
     },

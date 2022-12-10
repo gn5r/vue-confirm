@@ -13,10 +13,10 @@ describe("VConfirm.ts", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("not render a close icon in titlebar when default", () => {
+  it("not render a close icon in header when default", () => {
     const wrapper = mountFunc({ propsData: { value: true } });
     const closeIcon = wrapper.find(
-      ".v-confirm__titlebar > .v-confirm__close-icon"
+      ".v-confirm__header > .v-confirm__close-icon"
     );
     expect(wrapper.html()).toMatchSnapshot();
     expect(closeIcon.exists()).toBe(false);
@@ -25,7 +25,7 @@ describe("VConfirm.ts", () => {
   it("render a close icon when closeable is true", () => {
     const wrapper = mountFunc({ propsData: { value: true, closeable: true } });
     const closeIcon = wrapper.find(
-      ".v-confirm__titlebar > .v-confirm__close-icon"
+      ".v-confirm__header > .v-confirm__close-icon"
     );
     expect(wrapper.html()).toMatchSnapshot();
     expect(closeIcon.exists()).toBe(true);
@@ -53,7 +53,7 @@ describe("VConfirm.ts", () => {
 
   it("render a title text and background-color is inherit", () => {
     const wrapper = mountFunc({ propsData: { value: true, title: "title" } });
-    const title = wrapper.find(".v-confirm__titlebar");
+    const title = wrapper.find(".v-confirm__header");
     expect(wrapper.html()).toMatchSnapshot();
     expect(title.attributes().style).toContain("background-color: inherit");
   });
@@ -62,7 +62,7 @@ describe("VConfirm.ts", () => {
     const wrapper = mountFunc({
       propsData: { value: true, title: "title", titleColor: "#ffffff" },
     });
-    const title = wrapper.find(".v-confirm__titlebar");
+    const title = wrapper.find(".v-confirm__header");
     expect(wrapper.html()).toMatchSnapshot();
     expect(title.attributes().style).toContain(
       "background-color: rgb(255, 255, 255)"
@@ -73,7 +73,7 @@ describe("VConfirm.ts", () => {
     const wrapper = mountFunc({
       propsData: { value: true, title: "title", titleTextColor: "#ffffff" },
     });
-    const title = wrapper.find(".v-confirm__titlebar > header");
+    const title = wrapper.find(".v-confirm__header > header");
     expect(wrapper.html()).toMatchSnapshot();
     expect(title.attributes().style).toContain("color: rgb(255, 255, 255)");
   });

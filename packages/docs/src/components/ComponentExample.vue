@@ -291,7 +291,7 @@ export default Vue.extend({
   data() {
     return {
       dialog: false,
-      closeable: true,
+      closeable: false,
       persistent: false,
       noActionsDivider: false,
       dark: false,

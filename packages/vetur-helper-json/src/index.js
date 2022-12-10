@@ -85,12 +85,7 @@ function parseProps(component, array = []) {
 }
 
 function writeJsonFile(obj, file) {
-  const stream = fs.createWriteStream(file);
-
-  stream.once("open", () => {
-    stream.write(JSON.stringify(obj, null, 2));
-    stream.end();
-  });
+  return fs.promises.writeFile(file, JSON.stringify(obj, null, 2));
 }
 
 const components = {};
@@ -147,14 +142,17 @@ if (!fs.existsSync("dist")) {
   fs.mkdirSync("dist", 0o755);
 }
 
-writeJsonFile(tags, "dist/tags.json");
-writeJsonFile(attributes, "dist/attributes.json");
-
-console.debug("pwd");
-shell.exec("pwd");
-shell.cp("./dist/tags.json", "../v-confirm/dist");
-shell.cp("./dist/attributes.json", "../v-confirm/dist");
-console.debug("ls");
-shell.exec("ls ../v-confirm/dist");
-
-console.debug("[vetur-helper-json:] generated tags.json and attributes.json");
+Promise.all([
+  writeJsonFile(tags, "dist/tags.json"),
+  writeJsonFile(attributes, "dist/attributes.json"),
+]).then(() => {
+  console.log("generated json file to dist");
+  if (shell.exec("ls ./dist/*.json").code === 0) {
+    shell.cp("./dist/tags.json", "../v-confirm/dist");
+    shell.cp("./dist/attributes.json", "../v-confirm/dist");
+    shell.exec("ls ../v-confirm/dist");
+    console.debug(
+      "[vetur-helper-json:] generated tags.json and attributes.json"
+    );
+  }
+});

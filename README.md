@@ -150,19 +150,20 @@ export default Vue.extend({
 
 |       props        |                                                       description                                                       |       type        |  default  |
 | :----------------: | :---------------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
-|       value        |                                               show / hide flag of dialog                                                |      boolean      |   false   |
-|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   false   |
-|     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
-| no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
+|        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
 |        dark        |                                                    Enable dark theme                                                    |      boolean      |   false   |
-|       width        |                                                     Component width                                                     | number \| string  |   800px   |
 |       title        |                                                       Title text                                                        |      string       | undefined |
-|    title-color     |                                                      Toolbar color                                                      |      string       |  inherit  |
-|  title-text-color  |                                                 Text color of title bar                                                 |      string       |  inherit  |
-|  close-icon-color  |                                              Close icon color of title bar                                              |      string       |  inherit  |
+|       value        |                                               show / hide flag of dialog                                                |      boolean      |   false   |
+|       width        |                                                     Component width                                                     | number \| string  |   800px   |
+|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   false   |
 |      message       |                                                      Message text                                                       |      string       | undefined |
 |     btn-align      | justify-content css property.<br>Available options are **start**,**cenetr**,**end**,**space-between**,**space-around**. | Alignment(string) |    end    |
-|        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
+|     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
+|    hide-header     |                                                  hidden default header                                                  |      boolean      |   false   |
+|    title-color     |                                                      Toolbar color                                                      |      string       |  inherit  |
+|  close-icon-color  |                                              Close icon color of title bar                                              |      string       |  inherit  |
+|  title-text-color  |                                                 Text color of title bar                                                 |      string       |  inherit  |
+| no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
 
 ### VConfirmBtn description
 

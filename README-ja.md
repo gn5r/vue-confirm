@@ -148,19 +148,20 @@ export default Vue.extend({
 
 |       props        |                                                   description                                                    |       type        |  default  |
 | :----------------: | :--------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
-|       value        |                                       ダイアログの表示/非表示をするフラグ                                        |      boolean      |   false   |
-|      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   false   |
-|     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
-| no-actions-divider |                          メッセージとアクションボタン間の境界線を表示/非表示するフラグ                           |      boolean      |   false   |
+|        btns        |                                                 アクションボタン                                                 |   VConfirmBtn[]   |    []     |
 |        dark        |                                          ダークテーマを有効にするフラグ                                          |      boolean      |   false   |
-|       width        |                                                 ダイアログの横幅                                                 | number \| string  |   800px   |
 |       title        |                                          タイトルバーに表示するテキスト                                          |      string       | undefined |
-|    title-color     |                                               タイトルバーの背景色                                               |      string       |  inherit  |
-|  title-text-color  |                                               タイトルバーの文字色                                               |      string       |  inherit  |
-|  close-icon-color  |                                          タイトルバーの閉じるボタンの色                                          |      string       |  inherit  |
+|       value        |                                       ダイアログの表示/非表示をするフラグ                                        |      boolean      |   false   |
+|       width        |                                                 ダイアログの横幅                                                 | number \| string  |   800px   |
+|      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   false   |
 |      message       |                                                メッセージテキスト                                                |      string       | undefined |
 |     btn-align      | css の justify-content プロパティ<br>**start**,**cenetr**,**end**,**space-between**,**space-around**が有効値です | Alignment(string) |    end    |
-|        btns        |                                                 アクションボタン                                                 |   VConfirmBtn[]   |    []     |
+|     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
+|    hide-header     |                                  デフォルトで描画されるヘッダーを非表示にします                                  |      boolean      |   false   |
+|    title-color     |                                               タイトルバーの背景色                                               |      string       |  inherit  |
+|  close-icon-color  |                                          タイトルバーの閉じるボタンの色                                          |      string       |  inherit  |
+|  title-text-color  |                                               タイトルバーの文字色                                               |      string       |  inherit  |
+| no-actions-divider |                          メッセージとアクションボタン間の境界線を表示/非表示するフラグ                           |      boolean      |   false   |
 
 ### VConfirmBtn
 

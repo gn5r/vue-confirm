@@ -23,19 +23,20 @@ declare const VConfirm: ExtendedVue<
   {},
   {},
   {
-    value?: boolean;
+    btnAlign?: Alignment;
+    btns?: Array<VConfirmBtn>;
     closeable?: boolean;
-    persistent?: boolean;
-    noActionsDivider?: boolean;
+    closeIconColor?: string;
     dark?: boolean;
-    width?: string | number;
+    message?: string;
+    noActionsDivider?: boolean;
+    hideHeader?: boolean;
+    persistent?: boolean;
     title?: string;
     titleColor?: string;
     titleTextColor?: string;
-    closeIconColor?: string;
-    message?: string;
-    btnAlign?: Alignment;
-    btns?: Array<VConfirmBtn>;
+    value?: boolean;
+    width?: string | number;
   }
 >;
 /* eslint-enable */

@@ -207,4 +207,11 @@ describe("VConfirm.ts", () => {
     expect(wrapper.html()).toMatchSnapshot();
     expect(divider.exists()).toBe(true);
   });
+
+  it("not render a header when hideHeader is true", () => {
+    const wrapper = mountFunc({ propsData: { value: true, hideHeader: true } });
+    const header = wrapper.find(".v-confirm__header");
+    expect(wrapper.html()).toMatchSnapshot();
+    expect(header.exists()).toBe(false);
+  });
 });

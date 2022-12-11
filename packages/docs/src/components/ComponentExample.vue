@@ -51,6 +51,17 @@
             />
             <label class="form-check-label" for="input-dark">Dark?</label>
           </div>
+          <div class="form-check form-check-inline">
+            <input
+              v-model="hideHeader"
+              class="form-check-input"
+              type="checkbox"
+              id="input-hide-header"
+            />
+            <label class="form-check-label" for="input-hide-header"
+              >HideHeader?</label
+            >
+          </div>
         </div>
       </div>
 
@@ -261,6 +272,8 @@
       </div>
     </div>
 
+    <page-up-btn v-show="isShowPageUpBtn" />
+
     <v-confirm
       v-model="dialog"
       :closeable="closeable"
@@ -275,6 +288,7 @@
       :message="message"
       :btn-align="btnAlign"
       :btns="btns"
+      :hide-header="hideHeader"
     />
   </div>
 </template>
@@ -282,6 +296,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
+import PageUpBtn from "./PageUpBtn";
 
 export default Vue.extend({
   name: "component-example",
@@ -325,9 +340,18 @@ export default Vue.extend({
         },
       ] as Array<{ id: Alignment; value: Alignment }>,
       btns: [] as VConfirmBtn[],
+      hideHeader: false,
+      scrollY: 0,
+      isShowPageUpBtn: false,
     };
   },
-  methods: {},
+  methods: {
+    handleOnScroll() {
+      const HIDDEN_POS_Y = 50;
+      this.scrollY = window.scrollY;
+      this.isShowPageUpBtn = HIDDEN_POS_Y <= this.scrollY;
+    },
+  },
   created() {
     this.btns = [
       {
@@ -346,9 +370,17 @@ export default Vue.extend({
       },
     ];
   },
+  mounted() {
+    window.addEventListener("scroll", this.handleOnScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleOnScroll);
+  },
   computed: {},
   watch: {},
-  components: {},
+  components: {
+    PageUpBtn,
+  },
 });
 </script>
 

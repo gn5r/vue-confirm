@@ -62,6 +62,7 @@ export default Themeable.extend({
       type: Array,
       default: () => [],
     } as PropValidator<Array<VConfirmBtn>>,
+    hideHeader: Boolean,
   },
   data() {
     return {
@@ -141,7 +142,7 @@ export default Themeable.extend({
           ],
         },
         [
-          this.genHeader(),
+          this.hideHeader ? null : this.genHeader(),
           this.genMessage(),
           this.btns.length > 0 ? this.genActions() : null,
         ]

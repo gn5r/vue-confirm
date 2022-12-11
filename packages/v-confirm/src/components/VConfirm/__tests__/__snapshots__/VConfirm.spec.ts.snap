@@ -27,6 +27,16 @@ exports[`VConfirm.ts not render a divider when noActionsDivider is true 1`] = `
 </transition-stub>
 `;
 
+exports[`VConfirm.ts not render a header when hideHeader is true 1`] = `
+<transition-stub name="transition" appear="true">
+  <div class="v-confirm light">
+    <div class="v-confirm__content" style="width: 800px;">
+      <div class="v-confirm__message"></div>
+    </div>
+  </div>
+</transition-stub>
+`;
+
 exports[`VConfirm.ts render a close icon when closeable is true 1`] = `
 <transition-stub name="transition" appear="true">
   <div class="v-confirm light">

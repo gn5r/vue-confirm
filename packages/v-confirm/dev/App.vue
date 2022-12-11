@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-    <main></main>
+    <main>
+      <playground />
+    </main>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import Playground from "./Playground.vue";
 
 export default Vue.extend({
   name: "app",
@@ -19,7 +22,9 @@ export default Vue.extend({
   },
   computed: {},
   watch: {},
-  components: {},
+  components: {
+    Playground,
+  },
 });
 </script>
 

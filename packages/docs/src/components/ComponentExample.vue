@@ -222,8 +222,8 @@
         >
         <div class="col-8 col-md-4 col-xl-3">
           <select v-model="btnAlign" id="input-btn-align" class="form-select">
-            <template v-for="(align, i) in alignments">
-              <option :key="i" :value="align.id" v-text="align.value" />
+            <template v-for="(align, i) in alignments" :key="i">
+              <option :value="align.id" v-text="align.value" />
             </template>
           </select>
         </div>
@@ -272,9 +272,9 @@
       </div>
     </div>
 
-    <page-up-btn v-show="isShowPageUpBtn" />
+    <!-- <page-up-btn v-show="isShowPageUpBtn" /> -->
 
-    <v-confirm
+    <!-- <v-confirm
       v-model="dialog"
       :closeable="closeable"
       :persistent="persistent"
@@ -289,16 +289,16 @@
       :btn-align="btnAlign"
       :btns="btns"
       :hide-header="hideHeader"
-    />
+    /> -->
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
-import PageUpBtn from "./PageUpBtn";
+import { defineComponent } from "vue";
+// import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
+// import PageUpBtn from "./PageUpBtn";
 
-export default Vue.extend({
+export default defineComponent({
   name: "component-example",
   model: {},
   mixins: [],
@@ -316,7 +316,7 @@ export default Vue.extend({
       titleTextColor: "#ffffff",
       closeIconColor: "#ffffff",
       message: "test\nmessage",
-      btnAlign: "end" as Alignment,
+      btnAlign: "end",
       alignments: [
         {
           id: "start",
@@ -338,8 +338,8 @@ export default Vue.extend({
           id: "space-around",
           value: "space-around",
         },
-      ] as Array<{ id: Alignment; value: Alignment }>,
-      btns: [] as VConfirmBtn[],
+      ],
+      btns: [] as Record<string, any>[],
       hideHeader: false,
       scrollY: 0,
       isShowPageUpBtn: false,
@@ -373,13 +373,13 @@ export default Vue.extend({
   mounted() {
     window.addEventListener("scroll", this.handleOnScroll);
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener("scroll", this.handleOnScroll);
   },
   computed: {},
   watch: {},
   components: {
-    PageUpBtn,
+    // PageUpBtn,
   },
 });
 </script>

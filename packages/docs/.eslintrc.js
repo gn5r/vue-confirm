@@ -9,9 +9,10 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:vue/essential",
+    "plugin:vue/vue3-essential",
     "@vue/typescript/recommended",
   ],
+  plugins: ["vue", "@typescript-eslint"],
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: "module",

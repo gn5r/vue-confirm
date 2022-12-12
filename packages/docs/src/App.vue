@@ -41,21 +41,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import ComponentExample from "./components/ComponentExample.vue";
 
-export default Vue.extend({
+export default defineComponent({
   name: "App",
-  model: {},
-  mixins: [],
-  props: {},
-  data: () => ({}),
-  methods: {},
-  created() {
-    //
-  },
-  computed: {},
-  watch: {},
   components: {
     ComponentExample,
   },

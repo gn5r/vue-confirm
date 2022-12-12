@@ -1,13 +1,13 @@
-import Vue from "vue";
+import { defineComponent, h } from "vue";
 
 import MdiIcon from "@gn5r/vue-confirm/src/components/MdiIcon/MdiIcon";
 
 import { mdiArrowUpThick } from "@mdi/js";
 
-export default Vue.extend({
+export default defineComponent({
   name: "page-up-btn",
   render() {
-    return this.$createElement(
+    return h(
       MdiIcon,
       {
         class: "d-lg-none",
@@ -24,9 +24,7 @@ export default Vue.extend({
         props: {
           color: "#fff",
         },
-        on: {
-          click: () => window.scrollTo({ top: 0, behavior: "smooth" }),
-        },
+        onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
       },
       [mdiArrowUpThick]
     );

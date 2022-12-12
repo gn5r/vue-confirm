@@ -1,5 +1,4 @@
-import Vue, { PluginFunction } from "vue";
-import { ExtendedVue } from "vue/types/vue";
+import { Component, Plugin } from "vue";
 
 export type Alignment =
   | "start"
@@ -16,33 +15,27 @@ export type VConfirmBtn = {
   function: FunctionConstructor | VoidFunction;
 };
 
+type Props = {
+  btnAlign?: Alignment;
+  btns?: Array<VConfirmBtn>;
+  closeable?: boolean;
+  closeIconColor?: string;
+  dark?: boolean;
+  message?: string;
+  noActionsDivider?: boolean;
+  hideHeader?: boolean;
+  persistent?: boolean;
+  title?: string;
+  titleColor?: string;
+  titleTextColor?: string;
+  value?: boolean;
+  width?: string | number;
+};
+
 /* eslint-disable @typescript-eslint/ban-types */
-declare const VConfirm: ExtendedVue<
-  Vue,
-  {},
-  {},
-  {},
-  {
-    btnAlign?: Alignment;
-    btns?: Array<VConfirmBtn>;
-    closeable?: boolean;
-    closeIconColor?: string;
-    dark?: boolean;
-    message?: string;
-    noActionsDivider?: boolean;
-    hideHeader?: boolean;
-    persistent?: boolean;
-    title?: string;
-    titleColor?: string;
-    titleTextColor?: string;
-    value?: boolean;
-    width?: string | number;
-  }
->;
+declare const VConfirm: Component<Props, {}, {}, {}, {}>;
 /* eslint-enable */
 
 export default VConfirm;
 
-export class VConfirmPlugin {
-  static install: PluginFunction<Vue>;
-}
+export const VConfirmPlugin: Plugin;

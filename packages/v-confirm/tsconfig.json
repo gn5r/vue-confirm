@@ -4,5 +4,5 @@
     "baseUrl": ".",
     "paths": {}
   },
-  "include": ["src"]
+  "include": ["src", "dev"]
 }

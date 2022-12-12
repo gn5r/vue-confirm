@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@mdi/js": "^6.5.95",
-    "vue": "^2.6.14"
+    "vue": "^3.2.45"
   },
   "vetur": {
     "tags": "dist/tags.json",

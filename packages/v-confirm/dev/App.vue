@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <main>
       <playground />
     </main>
@@ -7,21 +7,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import Playground from "./Playground.vue";
 
-export default Vue.extend({
+export default defineComponent({
   name: "app",
-  model: {},
-  mixins: [],
-  props: {},
-  data: () => ({}),
-  methods: {},
-  created() {
-    //
-  },
-  computed: {},
-  watch: {},
   components: {
     Playground,
   },

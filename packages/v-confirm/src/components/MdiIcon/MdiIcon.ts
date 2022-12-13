@@ -12,7 +12,7 @@ import { setTextColor } from "../../utils/colorUtil";
 import Themeable from "../../mixins/themeable";
 
 export default defineComponent({
-  name: "icon",
+  name: "mdi-icon",
   mixins: [Themeable],
   props: {
     size: {
@@ -26,7 +26,7 @@ export default defineComponent({
   },
   computed: {
     hasClickListener(): boolean {
-      return Boolean(this.$attrs.click);
+      return Boolean(this.$attrs.onClick);
     },
     classes(): object {
       return {
@@ -48,7 +48,7 @@ export default defineComponent({
         width: `${fontSize}px`,
         height: `${fontSize + 12}px`,
       },
-      onClick: this.hasClickListener ? this.$attrs.click : undefined,
+      onClick: this.hasClickListener ? this.$attrs.onClick : undefined,
     };
     return h(
       this.hasClickListener ? "button" : "span",

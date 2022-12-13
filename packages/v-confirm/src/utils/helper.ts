@@ -1,10 +1,8 @@
-import { VNodeData } from "vue/types/umd";
-
 export function getSize(size: string | number) {
   return Number(String(size).replace(/[^0-9]/g, ""));
 }
 
-export function getClass(data?: VNodeData): Array<string> {
+export function getClass(data?: Record<string, any>): Array<string> {
   let arr: Array<string> = [];
   if (data) {
     if (data.staticClass) {

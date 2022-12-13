@@ -1,13 +1,11 @@
-import { VNodeData } from "vue/types/vnode";
-
 export function isCssColor(color?: string): boolean {
   return !!color && !!color.match(/^(#|var\(--)|(transparent|inherit)/);
 }
 
 export function setBackgroundColor(
   color?: string,
-  data: VNodeData = {}
-): VNodeData {
+  data: Record<string, any> = {}
+): Record<string, any> {
   if (isCssColor(color)) {
     data.style = {
       ...(data.style as object),
@@ -26,7 +24,10 @@ export function setBackgroundColor(
   return data;
 }
 
-export function setTextColor(color?: string, data: VNodeData = {}): VNodeData {
+export function setTextColor(
+  color?: string,
+  data: Record<string, any> = {}
+): Record<string, any> {
   if (isCssColor(color)) {
     data.style = {
       ...(data.style as object),

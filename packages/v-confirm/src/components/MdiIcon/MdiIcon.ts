@@ -1,5 +1,5 @@
-// Types
-import { VNode } from "vue";
+// Vue
+import { defineComponent, h } from "vue";
 
 // Style
 import "./MdiIcon.scss";
@@ -11,8 +11,9 @@ import { setTextColor } from "../../utils/colorUtil";
 // Mixins
 import Themeable from "../../mixins/themeable";
 
-export default Themeable.extend({
+export default defineComponent({
   name: "icon",
+  mixins: [Themeable],
   props: {
     size: {
       type: [Number, String],
@@ -25,7 +26,7 @@ export default Themeable.extend({
   },
   computed: {
     hasClickListener(): boolean {
-      return Boolean(this.$listeners.click);
+      return Boolean(this.$attrs.click);
     },
     classes(): object {
       return {
@@ -34,22 +35,20 @@ export default Themeable.extend({
       };
     },
   },
-  render(h): VNode {
+  render() {
     let iconName = "";
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    if (this.$slots.default) iconName = this.$slots.default[0].text!.trim();
+    if (this.$slots.default)
+      iconName = (this.$slots.default()[0].children as string).trim();
     const fontSize = getSize(this.size);
     const data = {
-      attrs: {
-        "area-hidden": !this.hasClickListener,
-        type: this.hasClickListener ? "button" : undefined,
-      },
+      "area-hidden": !this.hasClickListener,
+      type: this.hasClickListener ? "button" : undefined,
       class: this.classes,
       style: {
         width: `${fontSize}px`,
         height: `${fontSize + 12}px`,
       },
-      on: this.$listeners,
+      onClick: this.hasClickListener ? this.$attrs.click : undefined,
     };
     return h(
       this.hasClickListener ? "button" : "span",
@@ -58,12 +57,10 @@ export default Themeable.extend({
         h(
           "svg",
           {
-            attrs: {
-              xmlns: "http://www.w3.org/2000/svg",
-              viewBox: "0 0 24 24",
-              role: "img",
-              "area-hidden": true,
-            },
+            xmlns: "http://www.w3.org/2000/svg",
+            viewBox: "0 0 24 24",
+            role: "img",
+            "area-hidden": true,
             style: {
               "font-size": `${fontSize}px`,
               width: `${fontSize}px`,
@@ -72,11 +69,7 @@ export default Themeable.extend({
               "vertical-align": "middle",
             },
           },
-          [
-            h("path", {
-              attrs: { d: iconName },
-            }),
-          ]
+          [h("path", { d: iconName })]
         ),
       ]
     );

@@ -1,4 +1,4 @@
-import { Plugin } from "vue";
+import type { Plugin } from "vue";
 import VConfirm from "./components/VConfirm/VConfirm";
 
 export const VConfirmPlugin: Plugin = {

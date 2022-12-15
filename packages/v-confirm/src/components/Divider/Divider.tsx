@@ -1,4 +1,4 @@
-import { defineComponent, computed } from "vue";
+import { defineComponent } from "vue";
 import { useThemeProps, useThemeClasses } from "@/composables/theme";
 import "./Divider.scss";
 

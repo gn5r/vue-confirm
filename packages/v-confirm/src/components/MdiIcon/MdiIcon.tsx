@@ -21,6 +21,7 @@ export default defineComponent({
     },
     ...useThemeProps(),
   },
+  emits: ["click"],
   setup(props, { attrs, slots }) {
     const hasClickListener = computed(() => Boolean(attrs.onClick));
     const themeClasses = useThemeClasses(props);

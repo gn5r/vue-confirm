@@ -28,7 +28,7 @@
   transition: var.$v-confirm-transition-leave-active;
 }
 
-.transition-enter,
+.transition-enter-from,
 .transition-leave-to {
   opacity: 0;
 }

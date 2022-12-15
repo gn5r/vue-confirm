@@ -6,7 +6,8 @@ function handler(
   vnode: VNode,
   e: Event
 ) {
-  if (!vnode.appContext) return;
+  // TODO vnode.appContext is never null
+  // if (!vnode.appContext) return;
 
   const elements = e.composedPath();
   const target = e.target as HTMLElement;

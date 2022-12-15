@@ -2,7 +2,10 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src", "dev"]
+  "include": ["env.d.ts", "src", "dev", "types"],
+  "references": [{ "path": "./tsconfig.config.json" }]
 }

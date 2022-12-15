@@ -21,14 +21,14 @@ type Props = {
   closeable?: boolean;
   closeIconColor?: string;
   dark?: boolean;
-  message?: string;
-  noActionsDivider?: boolean;
   hideHeader?: boolean;
+  message?: string;
+  modelValue?: boolean;
+  noActionsDivider?: boolean;
   persistent?: boolean;
   title?: string;
   titleColor?: string;
   titleTextColor?: string;
-  value?: boolean;
   width?: string | number;
 };
 

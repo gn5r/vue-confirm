@@ -29,10 +29,10 @@
     "dist"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.ts --debug true",
+    "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.ts",
     "build": "rm -rf dist && cross-env NODE_ENV=production webpack --progress",
-    "lint": "eslint --ext .js,.ts src",
-    "lint:fix": "prettier --write src/**/*.{js,ts,css}",
+    "lint": "eslint --ext .js,.ts,.tsx src",
+    "lint:fix": "prettier --write src/**/*.{js,ts,tsx,css,scss,sass}",
     "test:unit": "cross-env NODE_ENV=test jest -i",
     "test:watch": "cross-env NODE_ENV=test jest -i --watch"
   },

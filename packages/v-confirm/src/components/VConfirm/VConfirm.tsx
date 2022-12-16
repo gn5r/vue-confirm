@@ -60,7 +60,7 @@ export default defineComponent({
     ...useThemeProps(),
   },
   emits: ["click:outside", "update:modelValue"],
-  setup(props, { emit }) {
+  setup(props, { emit, attrs }) {
     const dialog = ref<HTMLElement>();
     const isActive = ref(props.modelValue);
     const animated = ref(false);
@@ -86,7 +86,7 @@ export default defineComponent({
     function animateClick() {
       animated.value = false;
       nextTick(() => {
-        animated.value = false;
+        animated.value = true;
         window.clearTimeout(animateTimeout.value);
         animateTimeout.value = window.setTimeout(
           () => (animated.value = false),
@@ -108,47 +108,41 @@ export default defineComponent({
     }
 
     return () => (
-      <>
-        <Transition name="transition" appear>
+      <Transition name="transition" appear>
+        <div
+          v-show={isActive.value}
+          ref={dialog}
+          class={["v-confirm", classes.value, themeClasses.value]}
+          {...attrs}
+        >
           <div
-            v-show={isActive.value}
-            ref={dialog}
-            class={["v-confirm", classes.value, themeClasses.value]}
+            class="v-confirm__content"
+            v-click-outside={onClickOutside}
+            style={{ width: `${getSize(props.width)}px` }}
           >
-            <div
-              class="v-confirm__content"
-              v-click-outside={onClickOutside}
-              style={{ width: `${getSize(props.width)}px` }}
-            >
-              {props.hideHeader ? null : (
-                <>
-                  <VConfirmHeader
-                    dark={props.dark}
-                    color={props.titleColor}
-                    textColor={props.titleTextColor}
-                    closeable={props.closeable}
-                    onClick={() => (internalValue.value = false)}
-                  >
-                    {props.title}
-                  </VConfirmHeader>
-                </>
-              )}
-              <div class="v-confirm__message">{props.message}</div>
-              {props.btns.length > 0 ? (
-                <>
-                  {props.noActionsDivider ? null : (
-                    <Divider dark={props.dark} />
-                  )}
-                  <VConfirmActions
-                    btn-align={props.btnAlign}
-                    btns={props.btns}
-                  />
-                </>
-              ) : null}
-            </div>
+            {props.hideHeader ? null : (
+              <VConfirmHeader
+                dark={props.dark}
+                color={props.titleColor}
+                textColor={props.titleTextColor}
+                closeable={props.closeable}
+                onClick={() => {
+                  internalValue.value = false;
+                }}
+              >
+                {props.title}
+              </VConfirmHeader>
+            )}
+            <div class="v-confirm__message">{props.message}</div>
+            {props.btns.length > 0 && !props.noActionsDivider && (
+              <Divider dark={props.dark} style="margin: 0" />
+            )}
+            {props.btns.length > 0 && (
+              <VConfirmActions btn-align={props.btnAlign} btns={props.btns} />
+            )}
           </div>
-        </Transition>
-      </>
+        </div>
+      </Transition>
     );
   },
 });

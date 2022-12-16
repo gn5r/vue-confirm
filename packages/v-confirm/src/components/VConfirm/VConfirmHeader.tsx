@@ -29,33 +29,31 @@ export default defineComponent({
     );
 
     return () => (
-      <>
-        <header
-          class={["v-confirm__header", backgroundColorClasses.value]}
-          style={[backgroundColorStyles.value]}
+      <header
+        class={["v-confirm__header", backgroundColorClasses.value]}
+        style={[backgroundColorStyles.value]}
+      >
+        <div
+          class={textColorClasses.value}
+          style={[{ backgroundColor: "transparent" }, textColorStyles.value]}
         >
-          <div
-            class={textColorClasses.value}
-            style={[{ backgroundColor: "transparent" }, textColorStyles.value]}
-          >
-            {slots.default?.()}
+          {slots.default?.()}
+        </div>
+        {props.closeable && <div class="v-confirm__spacer" />}
+        {props.closeable && (
+          <div class="v-confirm__close-icon">
+            <MdiIcon
+              color={props.textColor}
+              dark={props.dark}
+              onClick={(e: Event) => {
+                emit("click", e);
+              }}
+            >
+              {mdiClose}
+            </MdiIcon>
           </div>
-          {props.closeable ? (
-            <>
-              <div class="v-confirm__spacer" />
-              <div class="v-confirm__close-icon">
-                <MdiIcon
-                  color={props.textColor}
-                  dark={props.dark}
-                  onClick={() => emit("click")}
-                >
-                  {mdiClose}
-                </MdiIcon>
-              </div>
-            </>
-          ) : null}
-        </header>
-      </>
+        )}
+      </header>
     );
   },
 });

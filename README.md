@@ -88,7 +88,7 @@ export default defineComponent({
       config.value.btns = [
         {
           text: "OK",
-          function: () => this.dialog = false,
+          function: () => config.value.dialog = false,
         },
       ];
       config.value.dialog = true;
@@ -134,7 +134,7 @@ export default defineComponent({
       config.value.btns = [
         {
           text: "OK",
-          function: () => this.dialog = false,
+          function: () => config.value.dialog = false,
         },
       ];
       config.value.dialog = true;

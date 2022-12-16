@@ -6,6 +6,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["env.d.ts", "src", "dev", "types"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.config.json" }]
 }

@@ -5,16 +5,15 @@ import "./Divider.scss";
 export default defineComponent({
   name: "divider",
   props: useThemeProps(),
-  setup(props) {
+  setup(props, { attrs }) {
     const themeClasses = useThemeClasses(props);
     return () => (
-      <>
-        <hr
-          role="separator"
-          aria-orientation="horizontal"
-          class={["divider", themeClasses.value]}
-        />
-      </>
+      <hr
+        role="separator"
+        aria-orientation="horizontal"
+        class={["divider", themeClasses.value]}
+        {...attrs}
+      />
     );
   },
 });

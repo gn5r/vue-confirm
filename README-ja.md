@@ -22,7 +22,8 @@
 | Vue.js version | Package version | Type definition |                       Branch                        |
 | :------------: | :-------------: | :-------------: | :-------------------------------------------------: |
 |      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
-|      2.x       |       2.x       |       Yes       |                        `2.x`                        |
+|      2.x       |       2.x       |       Yes       |                      `master`                       |
+|      3.x       |       3.x       |       Yes       |                       `next`                        |
 
 ## インストールの仕方
 
@@ -38,7 +39,7 @@
 
 - 依存関係(devDependencies)
 
-  - vue:^2.6.14
+  - vue:^3.2.45
   - @mdi/js:^6.5.95
 
 ## 使い方
@@ -46,55 +47,55 @@
 ## _Vue.use_ を使う場合
 
 ```ts:main.ts
-import Vue from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
 // PlugininFunction と cssをインポート
 import { VConfirmPlugin } from "@gn5r/vue-confirm";
 import "@gn5r/vue-confirm/dist/v-confirm.min.css";
 
-Vue.use(VConfirmPlugin);
-
-new Vue({
-  render: (h) => h(App)
-}).$mount("#app");
+createApp(App).use(VConfirmPlugin).mount("#app")
 ```
 
 ```vue:SampleComponent.vue
 <template>
   <button type="button" @click="show">show</button>
   <v-confirm
-    v-model="dialog"
-    :title="title"
-    :message="message"
-    :btns="btns"
+    v-model="config.dialog"
+    :title="config.title"
+    :message="config.message"
+    :btns="config.btns"
   />
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent, ref } from "vue";
 import { VConfirmBtn } from "@gn5r/vue-confirm";
 
-export default Vue.extend({
+export default defineComponent({
   name: "sample-component",
-  data: () => ({
-    dialog: false,
-    title: "",
-    message: "",
-    btns: [] as VConfirmBtn[]
-  }),
-  methods: {
-    show() {
-      this.title = "title";
-      this.message = "message!";
-      this.btns = [
+  setup() {
+    const config = ref({
+      dialog: false,
+      title: "title",
+      message: "message!",
+      btns: [] as VConfirmBtn[]
+    });
+
+    function show() {
+      config.value.btns = [
         {
           text: "OK",
           function: () => this.dialog = false,
-        }
-      ]
-      this.dialog = true;
+        },
+      ];
+      config.value.dialog = true;
     }
-  },
+
+    return {
+      config,
+      show,
+    }
+  }
 });
 </script>
 ```
@@ -105,36 +106,40 @@ export default Vue.extend({
 <template>
   <button type="button" @click="show">show</button>
   <v-confirm
-    v-model="dialog"
-    :title="title"
-    :message="message"
-    :btns="btns"
+    v-model="config.dialog"
+    :title="config.title"
+    :message="config.message"
+    :btns="config.btns"
   />
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent, ref } from "vue";
 import VConfirm, { VConfirmBtn } from "@gn5r/vue-confirm";
 
-export default Vue.extend({
+export default defineComponent({
   name: "sample-component",
-  data: () => ({
-    dialog: false,
-    title: "",
-    message: "",
-    btns: [] as VConfirmBtn[]
-  }),
-  methods: {
-    show() {
-      this.title = "title";
-      this.message = "message!";
-      this.btns = [
+  setup() {
+    const config = ref({
+      dialog: false,
+      title: "title",
+      message: "message!",
+      btns: [] as VConfirmBtn[]
+    });
+
+    function show() {
+      config.value.btns = [
         {
           text: "OK",
           function: () => this.dialog = false,
-        }
-      ]
-      this.dialog = true;
+        },
+      ];
+      config.value.dialog = true;
+    }
+
+    return {
+      config,
+      show,
     }
   },
   components: {
@@ -159,7 +164,6 @@ export default Vue.extend({
 |     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
 |    hide-header     |                                  デフォルトで描画されるヘッダーを非表示にします                                  |      boolean      |   false   |
 |    title-color     |                                               タイトルバーの背景色                                               |      string       |  inherit  |
-|  close-icon-color  |                                          タイトルバーの閉じるボタンの色                                          |      string       |  inherit  |
 |  title-text-color  |                                               タイトルバーの文字色                                               |      string       |  inherit  |
 | no-actions-divider |                          メッセージとアクションボタン間の境界線を表示/非表示するフラグ                           |      boolean      |   false   |
 

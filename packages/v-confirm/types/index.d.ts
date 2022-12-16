@@ -15,11 +15,10 @@ export type VConfirmBtn = {
   function: FunctionConstructor | VoidFunction;
 };
 
-type Props = {
+export type VConfirmProps = {
   btnAlign?: Alignment;
   btns?: Array<VConfirmBtn>;
   closeable?: boolean;
-  closeIconColor?: string;
   dark?: boolean;
   hideHeader?: boolean;
   message?: string;
@@ -33,7 +32,7 @@ type Props = {
 };
 
 /* eslint-disable @typescript-eslint/ban-types */
-declare const VConfirm: Component<Props, {}, {}, {}, {}>;
+declare const VConfirm: Component<VConfirmProps, {}, {}, {}, {}>;
 /* eslint-enable */
 
 export default VConfirm;

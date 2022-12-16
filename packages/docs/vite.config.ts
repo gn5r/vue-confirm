@@ -7,6 +7,7 @@ const resolve = (dir = "") => path.resolve(__dirname, dir);
 export default defineConfig({
   plugins: [vue()],
   root: "src",
+  base: "/vue-confirm/",
   build: {
     outDir: resolve("docs"),
   },

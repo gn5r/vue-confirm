@@ -14,7 +14,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.ts"],
+      files: ["**/*.ts", "**/*.tsx"],
       env: {
         es2021: true,
         browser: true,

@@ -167,7 +167,6 @@ export default defineComponent({
 |     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
 |    hide-header     |                                                  hidden default header                                                  |      boolean      |   false   |
 |    title-color     |                                                      Toolbar color                                                      |      string       |  inherit  |
-|  close-icon-color  |                                              Close icon color of title bar                                              |      string       |  inherit  |
 |  title-text-color  |                                                 Text color of title bar                                                 |      string       |  inherit  |
 | no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
 

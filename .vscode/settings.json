@@ -5,7 +5,7 @@
     "project",
     "v-confirm",
     "docs",
-    "vetur-helper-json"
+    "api-generator"
   ],
   "eslint.workingDirectories": [{ "mode": "auto" }]
 }

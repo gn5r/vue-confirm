@@ -2,8 +2,10 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "octref.vetur",
     "visualstudioexptteam.vscodeintellicode",
-    "vivaxy.vscode-conventional-commits"
+    "vivaxy.vscode-conventional-commits",
+    "syler.sass-indented",
+    "vue.vscode-typescript-vue-plugin",
+    "vue.volar"
   ]
 }

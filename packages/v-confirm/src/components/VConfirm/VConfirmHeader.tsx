@@ -6,7 +6,7 @@ import { useThemeProps } from "@/composables/theme";
 import { MdiIcon } from "@/components";
 import { mdiClose } from "@mdi/js";
 
-export default defineComponent({
+export const VConfirmHeader = defineComponent({
   name: "v-confirm-header",
   props: {
     color: {
@@ -57,3 +57,5 @@ export default defineComponent({
     );
   },
 });
+
+export type VConfirmHeader = InstanceType<typeof VConfirmHeader>;

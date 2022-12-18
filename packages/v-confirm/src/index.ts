@@ -1,5 +1,5 @@
 import type { Plugin } from "vue";
-import VConfirm from "./components/VConfirm/VConfirm";
+import { VConfirm } from "@/components";
 
 export const VConfirmPlugin: Plugin = {
   install(app) {

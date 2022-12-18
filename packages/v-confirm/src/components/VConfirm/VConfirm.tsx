@@ -3,24 +3,23 @@ import { defineComponent, ref, computed, nextTick, watch } from "vue";
 import { Transition } from "vue";
 
 // Types
-import { PropType } from "vue";
-import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
+import type { PropType } from "vue";
+import type { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
 
 // ClickOutside Directive
-import { clickOutside } from "../../directives";
+import { clickOutside } from "@/directives";
 
 // Components
-import VConfirmHeader from "./VConfirmHeader";
-import VConfirmActions from "./VConfirmActions";
+import { VConfirmHeader, VConfirmActions } from "@/components/VConfirm";
 import { Divider } from "@/components";
 
 // Helper
-import { getSize } from "../..//utils/helper";
+import { getSize } from "@/utils/helper";
 import { useThemeProps, useThemeClasses } from "@/composables/theme";
 
 import "./VConfirm.scss";
 
-export default defineComponent({
+export const VConfirm = defineComponent({
   name: "v-confirm",
   directives: {
     clickOutside,
@@ -142,3 +141,5 @@ export default defineComponent({
     );
   },
 });
+
+export type VConfirm = InstanceType<typeof VConfirm>;

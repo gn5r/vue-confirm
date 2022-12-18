@@ -1,14 +1,14 @@
 import { defineComponent, toRef, computed } from "vue";
 import type { ComputedRef } from "vue";
 
-import { getSize } from "../../utils/helper";
+import { getSize } from "@/utils/helper";
 
 import { useThemeProps, useThemeClasses } from "@/composables/theme";
 import { useTextColor } from "@/composables/color";
 
 import "./MdiIcon.scss";
 
-export default defineComponent({
+export const MdiIcon = defineComponent({
   name: "mdi-icon",
   props: {
     size: {
@@ -69,3 +69,5 @@ export default defineComponent({
     );
   },
 });
+
+export type MdiIcon = InstanceType<typeof MdiIcon>;

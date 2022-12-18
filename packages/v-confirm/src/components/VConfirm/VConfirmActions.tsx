@@ -1,11 +1,11 @@
 import { defineComponent, toRef } from "vue";
 
-import { PropType } from "vue";
+import type { PropType } from "vue";
 import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
 
 import { useBackgroundColor, useTextColor } from "@/composables/color";
 
-export default defineComponent({
+export const VConfirmActions = defineComponent({
   name: "v-confirm-footer",
   props: {
     btnAlign: {
@@ -55,3 +55,5 @@ export default defineComponent({
     );
   },
 });
+
+export type VConfirmActions = InstanceType<typeof VConfirmActions>;

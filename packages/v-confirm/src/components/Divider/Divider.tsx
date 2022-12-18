@@ -2,7 +2,7 @@ import { defineComponent } from "vue";
 import { useThemeProps, useThemeClasses } from "@/composables/theme";
 import "./Divider.scss";
 
-export default defineComponent({
+export const Divider = defineComponent({
   name: "divider",
   props: useThemeProps(),
   setup(props, { attrs }) {
@@ -17,3 +17,5 @@ export default defineComponent({
     );
   },
 });
+
+export type Divider = InstanceType<typeof Divider>;

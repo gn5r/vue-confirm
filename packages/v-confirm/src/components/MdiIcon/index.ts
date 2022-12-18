@@ -1,1 +1,1 @@
-export { default as MdiIcon } from "./MdiIcon";
+export { MdiIcon } from "./MdiIcon";

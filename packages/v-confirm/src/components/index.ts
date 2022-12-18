@@ -1,3 +1,3 @@
-export { default as Divider } from "./Divider/Divider";
-export { default as MdiIcon } from "./MdiIcon/MdiIcon";
-export { default as VConfirm } from "./VConfirm/VConfirm";
+export { Divider } from "./Divider/Divider";
+export { MdiIcon } from "./MdiIcon/MdiIcon";
+export { VConfirm } from "./VConfirm/VConfirm";

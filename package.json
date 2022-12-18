@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspace @gn5r/vue-confirm run build",
+    "build": "yarn workspace @gn5r/vue-confirm run build && yarn workspace @gn5r/api-generator run build",
     "lint": "lerna run lint --parallel --stream",
     "lint:fix": "lerna run lint:fix --parallel --stream",
     "clean": "lerna clean -y && rm -rf node_modules"

@@ -43,10 +43,6 @@ export default defineComponent({
       type: String,
       default: "inherit",
     },
-    closeIconColor: {
-      type: String,
-      default: "inherit",
-    },
     message: String,
     btnAlign: {
       type: String as PropType<Alignment>,

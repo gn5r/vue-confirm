@@ -156,29 +156,29 @@ export default defineComponent({
 
 |       props        |                                                       description                                                       |       type        |  default  |
 | :----------------: | :---------------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
-|        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
-|        dark        |                                                    Enable dark theme                                                    |      boolean      |   false   |
-|       title        |                                                       Title text                                                        |      string       | undefined |
-|       value        |                                               show / hide flag of dialog                                                |      boolean      |   false   |
-|       width        |                                                     Component width                                                     | number \| string  |   800px   |
-|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   false   |
-|      message       |                                                      Message text                                                       |      string       | undefined |
 |     btn-align      | justify-content css property.<br>Available options are **start**,**cenetr**,**end**,**space-between**,**space-around**. | Alignment(string) |    end    |
-|     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
+|        btns        |                                                     Action buttons                                                      |   VConfirmBtn[]   |    []     |
+|      closable      |                                        show / hide flag of close icon to dialog                                         |      boolean      |   false   |
+|        dark        |                                                    Enable dark theme                                                    |      boolean      |   false   |
 |    hide-header     |                                                  hidden default header                                                  |      boolean      |   false   |
+|      message       |                                                      Message text                                                       |      string       | undefined |
+|     modelValue     |                                               show / hide flag of dialog                                                |      boolean      |   false   |
+| no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
+|     persistent     |                                    Clicking outside of the element not deactivate it                                    |      boolean      |   false   |
+|       title        |                                                       Title text                                                        |      string       | undefined |
 |    title-color     |                                                      Toolbar color                                                      |      string       |  inherit  |
 |  title-text-color  |                                                 Text color of title bar                                                 |      string       |  inherit  |
-| no-actions-divider |                                 show / hide flag of between message and actions divider                                 |      boolean      |   false   |
+|       width        |                                                     Component width                                                     | number \| string  |   800px   |
 
 ### VConfirmBtn description
 
 |   name    |                                                                  description                                                                  |           type           |  default  |
 | :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
+|   class   |                                                            css classes for button                                                             |    string \| string[]    | undefined |
+|   color   | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |          string          | undefined |
+| function  |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
 |   text    |                                                                text in button                                                                 |          string          | undefined |
 | textColor |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |          string          | undefined |
-|   color   | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |          string          | undefined |
-|   class   |                                                            css classes for button                                                             |    string \| string[]    | undefined |
-| function  |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
 
 ## License
 

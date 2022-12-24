@@ -154,29 +154,29 @@ export default defineComponent({
 
 |       props        |                                                   description                                                    |       type        |  default  |
 | :----------------: | :--------------------------------------------------------------------------------------------------------------: | :---------------: | :-------: |
-|        btns        |                                                 アクションボタン                                                 |   VConfirmBtn[]   |    []     |
-|        dark        |                                          ダークテーマを有効にするフラグ                                          |      boolean      |   false   |
-|       title        |                                          タイトルバーに表示するテキスト                                          |      string       | undefined |
-|       value        |                                       ダイアログの表示/非表示をするフラグ                                        |      boolean      |   false   |
-|       width        |                                                 ダイアログの横幅                                                 | number \| string  |   800px   |
-|      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   false   |
-|      message       |                                                メッセージテキスト                                                |      string       | undefined |
 |     btn-align      | css の justify-content プロパティ<br>**start**,**cenetr**,**end**,**space-between**,**space-around**が有効値です | Alignment(string) |    end    |
-|     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
+|        btns        |                                                 アクションボタン                                                 |   VConfirmBtn[]   |    []     |
+|      closable      |                                タイトルバーに閉じるボタンを表示/非表示するフラグ                                 |      boolean      |   false   |
+|        dark        |                                          ダークテーマを有効にするフラグ                                          |      boolean      |   false   |
 |    hide-header     |                                  デフォルトで描画されるヘッダーを非表示にします                                  |      boolean      |   false   |
+|      message       |                                                メッセージテキスト                                                |      string       | undefined |
+|     modelValue     |                                       ダイアログの表示/非表示をするフラグ                                        |      boolean      |   false   |
+| no-actions-divider |                          メッセージとアクションボタン間の境界線を表示/非表示するフラグ                           |      boolean      |   false   |
+|     persistent     |                             ダイアログの外側をクリックしても閉じないようにするフラグ                             |      boolean      |   false   |
+|       title        |                                          タイトルバーに表示するテキスト                                          |      string       | undefined |
 |    title-color     |                                               タイトルバーの背景色                                               |      string       |  inherit  |
 |  title-text-color  |                                               タイトルバーの文字色                                               |      string       |  inherit  |
-| no-actions-divider |                          メッセージとアクションボタン間の境界線を表示/非表示するフラグ                           |      boolean      |   false   |
+|       width        |                                                 ダイアログの横幅                                                 | number \| string  |   800px   |
 
 ### VConfirmBtn
 
 |   name    |                                                              description                                                              |           type           |  default  |
 | :-------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
-|   text    |                                                            ボタンテキスト                                                             |          string          | undefined |
-| textColor | ボタンのテキストカラー<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます |          string          | undefined |
-|   color   |     ボタンの背景色<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます     |          string          | undefined |
 |   class   |                                                ボタンに対する css クラスを指定できます                                                |    string \| string[]    | undefined |
 | function  |                                                ボタンをクリックした時に実行される関数                                                 | Function \| VoidFunction | undefined |
+|   color   |     ボタンの背景色<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます     |          string          | undefined |
+|   text    |                                                            ボタンテキスト                                                             |          string          | undefined |
+| textColor | ボタンのテキストカラー<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます |          string          | undefined |
 
 ## License
 

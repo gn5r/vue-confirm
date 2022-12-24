@@ -1,11 +1,17 @@
+// Vue utils
 import { defineComponent, toRef, computed } from "vue";
+
+// Types
 import type { ComputedRef } from "vue";
 
-import { getSize } from "@/utils/helper";
+// Helpers
+import { convertToUnit } from "@/utils/helper";
 
+// Composables
 import { useThemeProps, useThemeClasses } from "@/composables/theme";
 import { useTextColor } from "@/composables/color";
 
+// Styles
 import "./MdiIcon.scss";
 
 export const MdiIcon = defineComponent({
@@ -32,7 +38,7 @@ export const MdiIcon = defineComponent({
       });
     }
     const themeClasses = useThemeClasses(props);
-    const fontSize = getSize(props.size);
+    const fontSize = convertToUnit(props.size);
     const { textColorClasses, textColorStyles } = useTextColor(
       toRef(props, "color")
     );
@@ -42,7 +48,7 @@ export const MdiIcon = defineComponent({
         type="button"
         class={["mdi-icon", themeClasses.value, textColorClasses.value]}
         style={[
-          { width: `${fontSize}px`, height: `${fontSize + 12}px` },
+          { width: fontSize, height: fontSize, "font-size": fontSize },
           textColorStyles.value,
         ]}
         onClick={(e: Event) => {
@@ -56,11 +62,7 @@ export const MdiIcon = defineComponent({
           role="img"
           aria-hidden="true"
           style={{
-            "font-size": `${fontSize}px`,
-            width: `${fontSize}px`,
-            height: `${fontSize}px`,
             fill: "currentColor",
-            "vertical-align": "middle",
           }}
         >
           <path d={slotIcon?.value} />

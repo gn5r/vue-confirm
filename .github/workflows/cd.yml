@@ -50,6 +50,7 @@ jobs:
           publish_dir: ./packages/docs/docs
 
   create-release:
+    needs: [ci]
     runs-on: ubuntu-latest
     if: startswith(github.ref, 'refs/tags/v')
     steps:
@@ -72,3 +73,28 @@ jobs:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.TAG_NAME }}
           body: ${{steps.github_release.outputs.changelog}}
+
+  publish-npm:
+    needs: [create-release]
+    runs-on: ubuntu-latest
+    if: startswith(github.ref, 'refs/tags/v')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        uses: actions/cache@v3
+        id: cache_dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
+          node-version: 18
+          registry-url: "https://registry.npmjs.org"
+          scope: "@gn5r"
+      - run: yarn --frozen-lockfile --non-interactive
+      - run: bash scripts/release.sh
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,51 @@
+// Vitest Snapshot v1
+
+exports[`VConfirmHeader.tsx > render a component 1`] = `
+"<header class=\\"v-confirm__header\\" style=\\"background-color: inherit;\\">
+  <div class=\\"\\" style=\\"background-color: transparent; caret-color: inherit;\\">
+    <!---->
+  </div>
+  <!---->
+  <!---->
+</header>"
+`;
+
+exports[`VConfirmHeader.tsx > render a header with class style background color 1`] = `
+"<header class=\\"v-confirm__header primary\\">
+  <div class=\\"\\" style=\\"background-color: transparent; caret-color: inherit;\\">Title</div>
+  <!---->
+  <!---->
+</header>"
+`;
+
+exports[`VConfirmHeader.tsx > render a header with class style color 1`] = `
+"<header class=\\"v-confirm__header\\" style=\\"background-color: inherit;\\">
+  <div class=\\"primary\\" style=\\"background-color: transparent;\\">Title</div>
+  <!---->
+  <!---->
+</header>"
+`;
+
+exports[`VConfirmHeader.tsx > render a header with css style background color 1`] = `
+"<header class=\\"v-confirm__header\\" style=\\"background-color: rgb(255, 255, 255);\\">
+  <div class=\\"\\" style=\\"background-color: transparent; caret-color: inherit;\\">Title</div>
+  <!---->
+  <!---->
+</header>"
+`;
+
+exports[`VConfirmHeader.tsx > render a header with css style color 1`] = `
+"<header class=\\"v-confirm__header\\" style=\\"background-color: inherit;\\">
+  <div class=\\"\\" style=\\"background-color: transparent; color: rgb(255, 255, 255); caret-color: #fff;\\">Title</div>
+  <!---->
+  <!---->
+</header>"
+`;
+
+exports[`VConfirmHeader.tsx > render a title in header 1`] = `
+"<header class=\\"v-confirm__header\\" style=\\"background-color: inherit;\\">
+  <div class=\\"\\" style=\\"background-color: transparent; caret-color: inherit;\\">Title</div>
+  <!---->
+  <!---->
+</header>"
+`;

@@ -84,17 +84,16 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
-
-      - name: Install dependencies
-        uses: actions/cache@v3
-        id: cache_dependencies
         with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
           node-version: 18
           registry-url: "https://registry.npmjs.org"
           scope: "@gn5r"
-      - run: yarn --frozen-lockfile --non-interactive
-      - run: bash scripts/release.sh
+          always-auth: true
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --non-interactive
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to npm
+        run: bash scripts/release.sh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

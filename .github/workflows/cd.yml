@@ -91,8 +91,6 @@ jobs:
           always-auth: true
       - name: Install dependencies
         run: yarn --frozen-lockfile --non-interactive
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish to npm
         run: bash scripts/release.sh
         env:

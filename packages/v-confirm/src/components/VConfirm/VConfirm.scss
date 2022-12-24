@@ -79,13 +79,6 @@
   padding: var.$v-confirm-header-padding;
   font-size: var.$v-confirm-header-font-size;
   font-weight: var.$v-confirm-header-font-weight;
-
-  .v-confirm__close-icon {
-    display: flex;
-    align-items: center;
-    min-height: var.$v-confirm-header-icon-size;
-    min-width: var.$v-confirm-header-icon-size;
-  }
 }
 
 .v-confirm__spacer {

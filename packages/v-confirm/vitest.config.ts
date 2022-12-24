@@ -11,6 +11,7 @@ export default mergeConfig(
       transformMode: {
         web: [/.[tj]sx$/],
       },
+      include: ["**/__tests__/**/*.{test,spec}.{ts,tsx}"],
     },
   })
 );

@@ -20,6 +20,7 @@ describe("helper.ts", () => {
     expect(convertToUnit(800)).toBe("800px");
     expect(convertToUnit(800, "pt")).toBe("800pt");
     expect(convertToUnit("800px")).toBe("800px");
-    expect(convertToUnit("800rem")).toBe("800px");
+    expect(convertToUnit("800rem")).toBe("800rem");
+    expect(convertToUnit("80%")).toBe("80%");
   });
 });

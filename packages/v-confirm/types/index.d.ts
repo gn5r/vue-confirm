@@ -8,11 +8,11 @@ export type Alignment =
   | "space-around";
 
 export type VConfirmBtn = {
+  class?: string | string[];
+  color?: string;
+  function: FunctionConstructor | VoidFunction;
   text?: string;
   textColor?: string;
-  color?: string;
-  class?: string | string[];
-  function: FunctionConstructor | VoidFunction;
 };
 
 export type VConfirmProps = {

@@ -14,7 +14,7 @@ import { VConfirmHeader, VConfirmActions } from "@/components/VConfirm";
 import { Divider } from "@/components";
 
 // Helper
-import { getSize } from "@/utils/helper";
+import { convertToUnit } from "@/utils/helper";
 import { useThemeProps, useThemeClasses } from "@/composables/theme";
 
 import "./VConfirm.scss";
@@ -113,7 +113,7 @@ export const VConfirm = defineComponent({
           <div
             class="v-confirm__content"
             v-click-outside={onClickOutside}
-            style={{ width: `${getSize(props.width)}px` }}
+            style={{ width: convertToUnit(props.width) }}
           >
             {props.hideHeader ? null : (
               <VConfirmHeader

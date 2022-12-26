@@ -157,9 +157,9 @@
     <page-up-btn v-show="isShowPageUpBtn" />
 
     <v-confirm v-model="config.dialog" :closeable="config.closeable" :persistent="config.persistent"
-      :no-actions-divider="config.noActionsDivider" :dark="config.dark" :width="`${config.width}px`"
-      :title="config.title" :title-color="config.titleColor" :title-text-color="config.titleTextColor"
-      :message="config.message" :btn-align="config.btnAlign" :btns="config.btns" :hide-header="config.hideHeader" />
+      :no-actions-divider="config.noActionsDivider" :dark="config.dark" :width="config.width" :title="config.title"
+      :title-color="config.titleColor" :title-text-color="config.titleTextColor" :message="config.message"
+      :btn-align="config.btnAlign" :btns="config.btns" :hide-header="config.hideHeader" />
   </div>
 </template>
 
@@ -177,7 +177,7 @@ export default defineComponent({
       persistent: false,
       noActionsDivider: false,
       dark: false,
-      width: 800,
+      width: "800",
       title: "titleeeeeeeeeeee",
       titleColor: "#2196f3",
       titleTextColor: "#ffffff",
@@ -205,7 +205,7 @@ export default defineComponent({
           id: "space-around",
           value: "space-around",
         },
-      ] as { id: Alignment, value: Alignment }[],
+      ] as { id: Alignment; value: Alignment }[],
       btns: [] as VConfirmBtn[],
       hideHeader: false,
     });
@@ -224,7 +224,7 @@ export default defineComponent({
         class: "btn btn-outline-danger fw-bold",
         function: () => (config.value.dialog = false),
       },
-    ]
+    ];
 
     const scrollY = ref(0);
     const isShowPageUpBtn = ref(false);
@@ -235,8 +235,8 @@ export default defineComponent({
       isShowPageUpBtn.value = HIDDEN_POS_Y <= scrollY.value;
     }
 
-    onMounted(() => (window.addEventListener("scroll", handleOnScroll)));
-    onUnmounted(() => (window.removeEventListener("scroll", handleOnScroll)));
+    onMounted(() => window.addEventListener("scroll", handleOnScroll));
+    onUnmounted(() => window.removeEventListener("scroll", handleOnScroll));
 
     return {
       config,

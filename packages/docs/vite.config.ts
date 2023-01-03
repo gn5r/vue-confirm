@@ -1,11 +1,12 @@
 import path from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import vuetify from "vite-plugin-vuetify";
 
 const resolve = (dir = "") => path.resolve(__dirname, dir);
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), vuetify({ autoImport: true })],
   root: "src",
   base: "/vue-confirm/",
   build: {

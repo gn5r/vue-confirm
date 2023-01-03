@@ -1,9 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar location="top" theme="dark" density="comfortable">
+    <v-app-bar location="top" theme="dark" density="comfortable" absolute>
       <template v-slot:prepend>
         <v-app-bar-nav-icon
-          v-if="!$vuetify.display.lgAndUp"
+          v-if="display.mdAndDown"
           @click="drawer = !drawer"
         />
       </template>
@@ -28,6 +28,24 @@
       </template>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" location="left"></v-navigation-drawer>
+    <v-main>
+      <v-container fluid>
+        <v-row justify="center" align="start">
+          <v-col cols="12" md="12" xl="8"></v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+    <v-footer
+      class="justify-center text-center text-grey-darken-2"
+      height="24"
+      app
+      absolute
+    >
+      <span>Development by</span>
+      <a href="https://github.com/gn5r" target="_blank" rel="author,noopener"
+        >&copy;shangyuan.tuolang</a
+      >
+    </v-footer>
   </v-app>
   <!-- <div id="app">
     <nav class="navbar navbar-dark bg-dark mb-3">
@@ -61,19 +79,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, inject } from "vue";
+import { defineComponent, ref, watch } from "vue";
 // import Demo from "./components/Demo.vue";
 
-// import { useVuetifyConfig } from "./composables/vuetify";
-import { Display } from "types/vuetify";
+import { useDisplay } from "vuetify";
 
 export default defineComponent({
   name: "App",
   setup() {
-    const display = inject<Display>("vuetify:display");
-    console.debug(display);
-    const drawer = ref(false);
-    return { drawer };
+    const display = useDisplay();
+    const drawer = ref(display.mdAndDown);
+
+    watch(display.mdAndDown, (val) => (drawer.value = val));
+
+    return { drawer, display };
   },
   components: {
     // Demo,

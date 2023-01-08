@@ -14,6 +14,18 @@
             <props-table :items="propsItems" />
           </v-col>
         </v-row>
+
+        <v-row>
+          <v-col>
+            <span class="text-h5">Events</span>
+          </v-col>
+        </v-row>
+
+        <v-row dense>
+          <v-col>
+            <events-table :items="eventsItems" />
+          </v-col>
+        </v-row>
       </v-container>
     </v-card-text>
   </v-card>
@@ -24,8 +36,9 @@ import { defineComponent, ref } from "vue";
 import { useI18n } from "vue-i18n"
 
 import PropsTable from "@/components/api/PropsTable.vue"
+import EventsTable from "@/components/api/EventsTable.vue"
 
-import type { PropsTableItem } from "types";
+import type { PropsTableItem, EventsTableItem } from "types";
 
 export default defineComponent({
   name: "VCApi",
@@ -121,9 +134,20 @@ export default defineComponent({
       },
     ]);
 
-    return { propsItems };
+    const eventsItems = ref<Array<EventsTableItem>>([
+      {
+        name: "click:outside",
+        type: "PointerEvent",
+      },
+      {
+        name: "update:modelValue",
+        type: "boolean"
+      },
+    ]);
+    
+    return { propsItems, eventsItems };
   },
-  components: { PropsTable },
+  components: { PropsTable, EventsTable },
 });
 </script>
 

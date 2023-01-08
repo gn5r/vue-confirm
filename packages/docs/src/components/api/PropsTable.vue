@@ -68,24 +68,4 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass" scoped>
-@use "vuetify/settings"
-@use "vuetify/tools"
-
-$table-header-font-size: tools.map-deep-get(settings.$typography, "subtitle-1", "size")
-$table-header-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity))
-.v-table
-  .v-table__wrapper
-    > table
-      > thead
-        > tr
-          > th
-            color: $table-header-color
-            font-size: $table-header-font-size
-      > tbody
-        > tr
-          > td
-            &.description
-              white-space: pre-wrap
-              word-wrap: break-word
-</style>
+<style lang="scss"></style>

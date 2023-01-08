@@ -13,7 +13,7 @@ export default createVuetify({
     themes: {
       light: {
         variables: {
-          "medium-emphasis-opacity": 0.8,
+          // "medium-emphasis-opacity": 0.8,
         },
         colors: {
           primary: "#1976D2",

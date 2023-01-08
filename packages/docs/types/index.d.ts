@@ -4,3 +4,8 @@ export type PropsTableItem = {
   default?: string;
   description?: string;
 };
+
+export type EventsTableItem = {
+  name?: string;
+  type?: string;
+};

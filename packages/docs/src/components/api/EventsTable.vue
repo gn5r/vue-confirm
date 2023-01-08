@@ -22,6 +22,7 @@
           <td>
             <prism-cell :code="item.type" />
           </td>
+          <td class="description">{{ item.description }}</td>
         </tr>
       </tbody>
     </v-table>
@@ -47,11 +48,11 @@ export default defineComponent({
     },
   },
   setup() {
-    const headers = ref<Array<string>>(["Name", "Type"]);
+    const headers = ref<Array<string>>(["Name", "Type", "Description"]);
 
     const { current: theme } = useTheme();
 
-    return { headers, theme }
+    return { headers, theme };
   },
   components: { PrismCell },
 });

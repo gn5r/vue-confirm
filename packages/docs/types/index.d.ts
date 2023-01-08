@@ -8,4 +8,5 @@ export type PropsTableItem = {
 export type EventsTableItem = {
   name?: string;
   type?: string;
+  description?: string;
 };

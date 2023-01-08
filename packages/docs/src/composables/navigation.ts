@@ -2,7 +2,8 @@ import { ref } from "vue";
 
 export interface NavigationItem {
   title?: string;
-  icon?: string;
+  inactiveIcon?: string,
+  activeIcon?: string;
   to?: string;
 }
 
@@ -10,17 +11,20 @@ export function useNavigation() {
   return ref<Array<NavigationItem>>([
     {
       title: "Component Demo",
-      icon: "mdi-view-dashboard",
+      inactiveIcon: "mdi-view-dashboard-outline",
+      activeIcon: "mdi-view-dashboard",
       to: "/"
     },
     {
       title: "API",
-      icon: "mdi-flask-outline",
+      inactiveIcon: "mdi-api",
+      activeIcon: "mdi-api",
       to: "/api"
     },
     {
       title: "SASS Variables",
-      icon: "mdi-palette",
+      inactiveIcon: "mdi-palette-outline",
+      activeIcon: "mdi-palette",
       to: "/sass"
     }
   ]);

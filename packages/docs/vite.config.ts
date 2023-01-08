@@ -7,6 +7,11 @@ const resolve = (dir = "") => path.resolve(__dirname, dir);
 
 export default defineConfig({
   plugins: [vue(), vuetify({ autoImport: true })],
+  resolve: {
+    alias: {
+      "@": resolve("src/"),
+    },
+  },
   root: "src",
   base: "/vue-confirm/",
   build: {

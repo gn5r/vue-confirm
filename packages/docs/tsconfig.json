@@ -4,8 +4,8 @@
     "outDir": "docs",
     "baseUrl": ".",
     "paths": {
-      "@*": ["src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["env.d.ts", "vite.config.ts", "src"]
 }

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar location="top" theme="dark" density="comfortable" absolute>
+    <v-app-bar location="top" theme="dark" density="comfortable">
       <template v-slot:prepend>
         <v-app-bar-nav-icon
           v-if="$vuetify.display.mdAndDown"
@@ -29,21 +29,7 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" location="left">
-      <v-list density="compact" nav>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          :value="item"
-          :to="item.to"
-          color="primary"
-          link
-        >
-          <template v-slot:prepend>
-            <v-icon :icon="item.icon" />
-          </template>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
+      <v-list :items="computedItems" color="primary" item-props nav />
     </v-navigation-drawer>
 
     <v-main class="bg-grey-lighten-3">
@@ -71,9 +57,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, computed } from "vue";
 
 import { useDisplay } from "vuetify";
+import { useRoute } from "vue-router";
 import { useNavigation } from "@/composables/navigation";
 
 export default defineComponent({
@@ -81,9 +68,22 @@ export default defineComponent({
   setup() {
     const display = useDisplay();
     const drawer = ref(display.lgAndUp);
-    const items = useNavigation();
 
-    return { drawer, display, items };
+    const route = useRoute();
+
+    const items = useNavigation();
+    const computedItems = computed(() =>
+      items.value.flatMap((i) => ({
+        title: i.title,
+        value: i.title,
+        prependIcon: route.path.includes(i.to ?? "")
+          ? i.activeIcon
+          : i.inactiveIcon,
+        to: i.to,
+      }))
+    );
+
+    return { drawer, display, computedItems };
   },
   components: {},
 });

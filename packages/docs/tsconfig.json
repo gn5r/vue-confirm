@@ -5,7 +5,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "resolveJsonModule": true
   },
-  "include": ["env.d.ts", "vite.config.ts", "src"]
+  "include": ["env.d.ts", "vite.config.ts", "src", "types"]
 }

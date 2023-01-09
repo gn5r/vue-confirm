@@ -1,15 +1,15 @@
 <template>
   <v-app>
-    <v-app-bar location="top" theme="dark" density="comfortable">
+    <v-app-bar theme="dark" density="comfortable" flat>
       <template v-slot:prepend>
         <v-app-bar-nav-icon
           v-if="$vuetify.display.mdAndDown"
           @click="drawer = !drawer"
         />
+        <v-app-bar-title v-if="$vuetify.display.mdAndUp"
+          >Vue Confirm</v-app-bar-title
+        >
       </template>
-      <v-app-bar-title v-if="$vuetify.display.lgAndUp"
-        >Vue Confirm</v-app-bar-title
-      >
       <template v-slot:append>
         <v-btn
           :icon="theme.dark ? 'mdi-brightness-4' : 'mdi-brightness-5'"

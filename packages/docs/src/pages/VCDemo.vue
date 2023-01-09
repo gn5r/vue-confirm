@@ -246,21 +246,11 @@
       :title="config.title"
       :width="config.width"
     />
-
-    <v-btn
-      v-show="isShowPageUpBtn"
-      class="text-white"
-      color="#607d8b"
-      icon="mdi-arrow-up-thick"
-      position="fixed"
-      style="right: 8px; bottom: 12px"
-      @click="scrollTop"
-    />
   </v-card>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, onUnmounted } from "vue";
+import { defineComponent, ref } from "vue";
 import type { Alignment, VConfirmBtn } from "@gn5r/vue-confirm";
 
 export default defineComponent({
@@ -322,23 +312,7 @@ export default defineComponent({
       },
     ];
 
-    const scrollY = ref(0);
-    const isShowPageUpBtn = ref(false);
-
-    function handleOnScroll() {
-      const HIDDEN_POS_Y = 50;
-      scrollY.value = window.scrollY;
-      isShowPageUpBtn.value = HIDDEN_POS_Y <= scrollY.value;
-    }
-
-    onMounted(() => window.addEventListener("scroll", handleOnScroll));
-    onUnmounted(() => window.removeEventListener("scroll", handleOnScroll));
-
-    return {
-      config,
-      isShowPageUpBtn,
-      scrollTop: () => window.scrollTo({ top: 0, behavior: "smooth" }),
-    };
+    return { config };
   },
   components: {},
 });

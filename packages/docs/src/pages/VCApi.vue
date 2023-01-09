@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 import PropsTable from "@/components/api/PropsTable.vue";
@@ -45,7 +45,7 @@ export default defineComponent({
   props: {},
   setup() {
     const { t } = useI18n();
-    const propsItems = ref<Array<PropsTableItem>>([
+    const propsItems = computed<Array<PropsTableItem>>(() => [
       {
         name: "btn-align",
         type: "'start' | 'center' | 'end' | 'space-between' | 'space-around'",
@@ -134,7 +134,7 @@ export default defineComponent({
       },
     ]);
 
-    const eventsItems = ref<Array<EventsTableItem>>([
+    const eventsItems = computed<Array<EventsTableItem>>(() => [
       {
         name: "click:outside",
         type: "PointerEvent",

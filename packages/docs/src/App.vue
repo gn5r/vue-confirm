@@ -7,8 +7,20 @@
           @click="drawer = !drawer"
         />
       </template>
-      <v-app-bar-title>Vue Confirm</v-app-bar-title>
+      <v-app-bar-title v-if="$vuetify.display.lgAndUp"
+        >Vue Confirm</v-app-bar-title
+      >
       <template v-slot:append>
+        <v-btn
+          :icon="theme.dark ? 'mdi-brightness-4' : 'mdi-brightness-5'"
+          @click="toggleTheme"
+        />
+        <v-menu :theme="theme.dark ? 'dark' : 'light'">
+          <template v-slot:activator="{ props }">
+            <v-btn v-bind="props" icon="mdi-translate-variant" />
+          </template>
+          <v-list :items="languages" color="primary" item-props />
+        </v-menu>
         <a
           class="text-white"
           href="https://github.com/gn5r/vue-confirm"
@@ -32,7 +44,7 @@
       <v-list :items="computedItems" color="primary" item-props nav />
     </v-navigation-drawer>
 
-    <v-main class="bg-grey-lighten-3">
+    <v-main :class="theme.dark ? 'bg-grey-darken-3' : 'bg-grey-lighten-3'">
       <v-container fluid>
         <v-row justify="center" align="start">
           <v-col cols="12" lg="10">
@@ -40,10 +52,21 @@
           </v-col>
         </v-row>
       </v-container>
+
+      <v-btn
+        v-show="isShowPageUpBtn"
+        class="text-white"
+        color="#607d8b"
+        icon="mdi-arrow-up-thick"
+        position="fixed"
+        style="right: 8px; bottom: 12px"
+        @click="scrollTop"
+      />
     </v-main>
 
     <v-footer
-      class="justify-center text-center text-grey-darken-2 bg-transparent"
+      class="justify-center text-center bg-transparent"
+      :class="theme.dark ? 'text-grey-lighten-2' : 'text-grey-darken-2'"
       height="24"
       app
       absolute
@@ -57,20 +80,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from "vue";
+import { defineComponent, ref, computed, onMounted, onUnmounted } from "vue";
 
-import { useDisplay } from "vuetify";
+import { useDisplay, useTheme } from "vuetify";
 import { useRoute } from "vue-router";
 import { useNavigation } from "@/composables/navigation";
+import { useI18nList } from "@/composables/i18n";
 
 export default defineComponent({
   name: "App",
   setup() {
     const display = useDisplay();
     const drawer = ref(display.lgAndUp);
+    const vuetifyTheme = useTheme();
+    const { current: theme } = vuetifyTheme;
 
     const route = useRoute();
-
     const items = useNavigation();
     const computedItems = computed(() =>
       items.value.flatMap((i) => ({
@@ -82,8 +107,37 @@ export default defineComponent({
         to: i.to,
       }))
     );
+    const languages = useI18nList();
+    const linkMenu = ref<boolean>(false);
 
-    return { drawer, display, computedItems };
+    const scrollY = ref(0);
+    const isShowPageUpBtn = ref(false);
+    function handleOnScroll() {
+      const HIDDEN_POS_Y = 50;
+      scrollY.value = window.scrollY;
+      isShowPageUpBtn.value = HIDDEN_POS_Y <= scrollY.value;
+    }
+    function scrollTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    onMounted(() => window.addEventListener("scroll", handleOnScroll));
+    onUnmounted(() => window.removeEventListener("scroll", handleOnScroll));
+
+    function toggleTheme() {
+      vuetifyTheme.global.name.value = theme.value.dark ? "light" : "dark";
+    }
+
+    return {
+      display,
+      drawer,
+      theme,
+      computedItems,
+      languages,
+      linkMenu,
+      isShowPageUpBtn,
+      scrollTop,
+      toggleTheme,
+    };
   },
   components: {},
 });

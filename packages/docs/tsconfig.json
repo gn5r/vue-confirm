@@ -4,8 +4,9 @@
     "outDir": "docs",
     "baseUrl": ".",
     "paths": {
-      "@*": ["src/*"]
-    }
+      "@/*": ["src/*"]
+    },
+    "resolveJsonModule": true
   },
-  "include": ["src"]
+  "include": ["env.d.ts", "vite.config.ts", "src", "types"]
 }

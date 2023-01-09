@@ -10,3 +10,8 @@ export type EventsTableItem = {
   type?: string;
   description?: string;
 };
+
+export type SassTableItem = {
+  name?: string;
+  default?: string;
+};

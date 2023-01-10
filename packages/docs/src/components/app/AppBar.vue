@@ -42,7 +42,7 @@
 
 <script lang="ts">
 // Vue
-import { defineComponent, ref, computed } from "vue";
+import { defineComponent, ref, computed, watch } from "vue";
 
 // Composables
 import { useTheme } from "vuetify";
@@ -65,6 +65,12 @@ export default defineComponent({
         return lazyValue.value;
       },
     });
+
+    watch(
+      () => props.modelValue,
+      (val) => (lazyValue.value = val)
+    );
+
     const languages = useI18nList();
     const vuetifyTheme = useTheme();
     const { current: theme } = vuetifyTheme;

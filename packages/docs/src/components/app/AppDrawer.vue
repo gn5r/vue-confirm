@@ -6,7 +6,7 @@
 
 <script lang="ts">
 // Vue
-import { defineComponent, ref, computed } from "vue";
+import { defineComponent, ref, computed, watch } from "vue";
 
 // Composables
 import { useRoute } from "vue-router";
@@ -29,6 +29,11 @@ export default defineComponent({
         return lazyValue.value;
       },
     });
+
+    watch(
+      () => props.modelValue,
+      (val) => (lazyValue.value = val)
+    );
 
     const route = useRoute();
     const items = useNavigation();

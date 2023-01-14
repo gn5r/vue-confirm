@@ -82,16 +82,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/cache@v3
+        id: cache_dependencies
         with:
-          node-version: 18
-          registry-url: "https://registry.npmjs.org"
-          scope: "@gn5r"
-          always-auth: true
-      - name: Install dependencies
-        run: yarn --frozen-lockfile --non-interactive
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
+      - run: yarn --frozen-lockfile --non-interactive
+      - run: yarn run build
+
       - name: Publish to npm
         run: bash scripts/release.sh
         env:

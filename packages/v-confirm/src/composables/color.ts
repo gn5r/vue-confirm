@@ -1,14 +1,9 @@
-import { computed, isRef, ref } from "vue";
+import { computed, isRef, reactive, toRefs, watchSyncEffect } from "vue";
 import { isCssColor } from "@/utils/colorUtil";
 
-import type { Ref, CSSProperties, ComputedRef } from "vue";
+import type { Ref, CSSProperties, ComputedGetter } from "vue";
 
 type ColorValue = string | false | null | undefined;
-
-export interface ComputedColor {
-  colorClasses: Ref<string[]>;
-  colorStyles: Ref<CSSProperties>;
-}
 
 export interface TextColor {
   textColorClasses: Ref<string[]>;
@@ -20,10 +15,21 @@ export interface BackgroundColor {
   backgroundColorStyles: Ref<CSSProperties>;
 }
 
+function reactiveComputed<T extends object>(getters: ComputedGetter<T>) {
+  const refs = reactive({}) as T;
+  const base = computed(getters);
+  watchSyncEffect(() => {
+    for (const key in base.value) {
+      refs[key] = base.value[key];
+    }
+  });
+  return toRefs(refs);
+}
+
 export function useColor(
   colors: Ref<{ background?: ColorValue; text?: ColorValue }>
-): ComputedRef<ComputedColor> {
-  return computed(() => {
+) {
+  return reactiveComputed(() => {
     const classes: string[] = [];
     const styles: CSSProperties = {};
 
@@ -44,7 +50,7 @@ export function useColor(
       }
     }
 
-    return { colorClasses: ref(classes), colorStyles: ref(styles) };
+    return { colorClasses: classes, colorStyles: styles };
   });
 }
 
@@ -52,18 +58,16 @@ export function useTextColor(props: Ref<ColorValue>, name?: string): TextColor {
   const colors = computed(() => ({
     text: isRef(props) ? props.value : name ? props[name] : null,
   }));
-  const { colorClasses, colorStyles } = useColor(colors).value;
+  const { colorClasses, colorStyles } = useColor(colors);
   return { textColorClasses: colorClasses, textColorStyles: colorStyles };
 }
 
-export function useBackgroundColor(
-  props: Ref<ColorValue>,
-  name?: string
-): BackgroundColor {
+export function useBackgroundColor(props: Ref<ColorValue>, name?: string) {
   const colors = computed(() => ({
     background: isRef(props) ? props.value : name ? props[name] : null,
   }));
-  const { colorClasses, colorStyles } = useColor(colors).value;
+  const { colorClasses, colorStyles } = useColor(colors);
+
   return {
     backgroundColorClasses: colorClasses,
     backgroundColorStyles: colorStyles,

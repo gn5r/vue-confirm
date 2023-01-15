@@ -55,7 +55,7 @@ export const VConfirm = defineComponent({
     ...useThemeProps(),
   },
   emits: ["click:outside", "update:modelValue"],
-  setup(props, { emit, attrs }) {
+  setup(props, { emit, attrs, slots }) {
     const dialog = ref<HTMLElement>();
     const isActive = ref(props.modelValue);
     const animated = ref(false);
@@ -129,11 +129,14 @@ export const VConfirm = defineComponent({
               </VConfirmHeader>
             )}
             <div class="v-confirm__message">{props.message}</div>
-            {props.btns.length > 0 && !props.noActionsDivider && (
-              <Divider dark={props.dark} style="margin: 0" />
-            )}
-            {props.btns.length > 0 && (
-              <VConfirmActions btn-align={props.btnAlign} btns={props.btns} />
+            {(props.btns.length > 0 || slots.actions) &&
+              !props.noActionsDivider && (
+                <Divider dark={props.dark} style="margin: 0" />
+              )}
+            {(props.btns.length > 0 || slots.actions) && (
+              <VConfirmActions btn-align={props.btnAlign} btns={props.btns}>
+                {{ default: slots.actions }}
+              </VConfirmActions>
             )}
           </div>
         </div>

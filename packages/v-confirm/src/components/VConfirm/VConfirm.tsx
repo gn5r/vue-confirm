@@ -133,9 +133,11 @@ export const VConfirm = defineComponent({
               !props.noActionsDivider && (
                 <Divider dark={props.dark} style="margin: 0" />
               )}
-            <VConfirmActions btn-align={props.btnAlign} btns={props.btns}>
-              {{ default: slots.actions }}
-            </VConfirmActions>
+            {(props.btns.length > 0 || slots.actions) && (
+              <VConfirmActions btn-align={props.btnAlign} btns={props.btns}>
+                {{ default: slots.actions }}
+              </VConfirmActions>
+            )}
           </div>
         </div>
       </Transition>

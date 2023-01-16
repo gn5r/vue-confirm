@@ -15,3 +15,8 @@ export type SassTableItem = {
   name?: string;
   default?: string;
 };
+
+export type SlotsTableItem = {
+  name?: string;
+  type?: string;
+};

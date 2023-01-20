@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["dev", "**/__tests__"],
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./lib",
+    "stripInternal": true
+  }
+}

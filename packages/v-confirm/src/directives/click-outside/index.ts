@@ -1,19 +1,13 @@
-import { DirectiveOptions, VNode } from "vue";
-import { DirectiveBinding } from "vue/types/options";
-
-function isServer(vNode: VNode): boolean {
-  return (
-    vNode.componentInstance !== undefined && vNode.componentInstance.$isServer
-  );
-}
+import { ObjectDirective, VNode, DirectiveBinding } from "vue";
 
 function handler(
   el: HTMLElement,
   binding: DirectiveBinding,
-  vNode: VNode,
+  vnode: VNode,
   e: Event
 ) {
-  if (!vNode.context) return;
+  // TODO vnode.appContext is never null
+  // if (!vnode.appContext) return;
 
   const elements = e.composedPath();
   const target = e.target as HTMLElement;
@@ -23,22 +17,20 @@ function handler(
   binding.value(e);
 }
 
-const clickOutside: DirectiveOptions = {
-  bind: (el, binding, vNode) => {
+const clickOutside: ObjectDirective<HTMLElement> = {
+  beforeMount: (el, binding, vnode) => {
     const clickHandler =
       "ontouchstart" in document.documentElement ? "touchstart" : "click";
-    !isServer(vNode) &&
-      document.addEventListener(clickHandler, (e) =>
-        handler(el, binding, vNode, e)
-      );
+    document.addEventListener(clickHandler, (e) =>
+      handler(el, binding, vnode, e)
+    );
   },
-  unbind: (el, binding, vNode) => {
+  unmounted: (el, binding, vnode) => {
     const clickHandler =
       "ontouchstart" in document.documentElement ? "touchstart" : "click";
-    !isServer(vNode) &&
-      document.removeEventListener(clickHandler, (e) =>
-        handler(el, binding, vNode, e)
-      );
+    document.removeEventListener(clickHandler, (e) =>
+      handler(el, binding, vnode, e)
+    );
   },
 };
 

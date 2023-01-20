@@ -1,12 +1,14 @@
-import Vue from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/js/all.min.js";
+import "@/styles/main.scss";
+
 import { VConfirmPlugin } from "@gn5r/vue-confirm";
 import "@gn5r/vue-confirm/dist/v-confirm.min.css";
+import "@fortawesome/fontawesome-free/js/all.min.js";
 
-Vue.use(VConfirmPlugin);
+import vuetify from "@/plugins/vuetify";
+import router from "@/plugins/router";
+import i18n from "@/plugins/i18n";
 
-new Vue({
-  render: (h) => h(App),
-}).$mount("#app");
+const app = createApp(App);
+app.use(router).use(vuetify).use(VConfirmPlugin).use(i18n).mount("#app");

@@ -1,63 +1,73 @@
 <template>
-  <div id="app">
-    <nav class="navbar navbar-dark bg-dark mb-3">
-      <div class="container-fluid">
-        <span class="navbar-brand">Vue Confirm</span>
-        <div class="d-flex">
-          <a
-            class="text-light"
-            href="https://github.com/gn5r/vue-confirm"
-            target="_blank"
-            :style="{ 'font-size': '24px' }"
-          >
-            <i class="fab fa-github fa-lg"></i>
-          </a>
-          <a
-            class="text-light ms-3"
-            href="https://www.npmjs.com/package/@gn5r/vue-confirm"
-            target="_blank"
-            :style="{ 'font-size': '24px' }"
-          >
-            <i class="fab fa-npm fa-lg"></i>
-          </a>
-        </div>
-      </div>
-    </nav>
-    <main class="container">
-      <div class="row justify-content-center align-items-start">
-        <div class="col-12 col-md-12 col-xl-8">
-          <component-example />
-        </div>
-      </div>
-    </main>
+  <v-app>
+    <app-bar v-model="drawer" />
 
-    <footer class="text-center text-muted mt-3 px-3">
-      Development by
-      <a href="https://github.com/gn5r" target="_blank" rel="author,noopener"
-        >&copy;shangyuan.tuolang</a
-      >
-    </footer>
-  </div>
+    <app-drawer v-model="drawer" />
+
+    <v-main :class="theme.dark ? 'bg-grey-darken-3' : 'bg-grey-lighten-3'">
+      <v-container fluid>
+        <v-row justify="center" align="start">
+          <v-col cols="12" lg="10">
+            <router-view />
+          </v-col>
+        </v-row>
+      </v-container>
+
+      <v-btn
+        v-show="isShowPageUpBtn"
+        class="text-white"
+        color="#607d8b"
+        icon="mdi-arrow-up-thick"
+        position="fixed"
+        style="right: 8px; bottom: 12px"
+        @click="scrollTop"
+      />
+    </v-main>
+
+    <app-footer />
+  </v-app>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import ComponentExample from "./components/ComponentExample.vue";
+// Vue
+import { defineComponent, ref, onMounted, onUnmounted } from "vue";
 
-export default Vue.extend({
+// Composables
+import { useDisplay, useTheme } from "vuetify";
+
+// Components
+import AppBar from "@/components/app/AppBar.vue";
+import AppDrawer from "@/components/app/AppDrawer.vue";
+import AppFooter from "@/components/app/AppFooter.vue";
+
+export default defineComponent({
   name: "App",
-  model: {},
-  mixins: [],
-  props: {},
-  data: () => ({}),
-  methods: {},
-  created() {
-    //
+  setup() {
+    const display = useDisplay();
+    const drawer = ref(display.lgAndUp);
+    const { current: theme } = useTheme();
+
+    const scrollY = ref(0);
+    const isShowPageUpBtn = ref(false);
+    function handleOnScroll() {
+      const HIDDEN_POS_Y = 50;
+      scrollY.value = window.scrollY;
+      isShowPageUpBtn.value = HIDDEN_POS_Y <= scrollY.value;
+    }
+    function scrollTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    onMounted(() => window.addEventListener("scroll", handleOnScroll));
+    onUnmounted(() => window.removeEventListener("scroll", handleOnScroll));
+
+    return {
+      display,
+      drawer,
+      theme,
+      isShowPageUpBtn,
+      scrollTop,
+    };
   },
-  computed: {},
-  watch: {},
-  components: {
-    ComponentExample,
-  },
+  components: { AppBar, AppDrawer, AppFooter },
 });
 </script>

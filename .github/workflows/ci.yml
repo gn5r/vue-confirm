@@ -6,6 +6,9 @@ on:
     paths-ignore:
       - ".github/**"
       - "**/README*"
+      - ".vscode/**"
+      - .yarnrc
+      - ".yarn/**"
     branches-ignore:
       - master
 

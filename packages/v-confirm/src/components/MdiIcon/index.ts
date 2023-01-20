@@ -1,0 +1,1 @@
+export { MdiIcon } from "./MdiIcon";

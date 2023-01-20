@@ -1,5 +1,4 @@
-import Vue, { PluginFunction } from "vue";
-import { ExtendedVue } from "vue/types/vue";
+import { Component, Plugin } from "vue";
 
 export type Alignment =
   | "start"
@@ -9,40 +8,47 @@ export type Alignment =
   | "space-around";
 
 export type VConfirmBtn = {
+  class?: string | string[];
+  color?: string;
+  function: FunctionConstructor | VoidFunction;
   text?: string;
   textColor?: string;
-  color?: string;
-  class?: string | string[];
-  function: FunctionConstructor | VoidFunction;
+};
+
+export type VConfirmProps = {
+  btnAlign?: Alignment;
+  btns?: Array<VConfirmBtn>;
+  closeable?: boolean;
+  dark?: boolean;
+  hideHeader?: boolean;
+  message?: string;
+  modelValue?: boolean;
+  noActionsDivider?: boolean;
+  persistent?: boolean;
+  title?: string;
+  titleColor?: string;
+  titleTextColor?: string;
+  width?: string | number;
 };
 
 /* eslint-disable @typescript-eslint/ban-types */
-declare const VConfirm: ExtendedVue<
-  Vue,
-  {},
-  {},
-  {},
-  {
-    btnAlign?: Alignment;
-    btns?: Array<VConfirmBtn>;
-    closeable?: boolean;
-    closeIconColor?: string;
-    dark?: boolean;
-    message?: string;
-    noActionsDivider?: boolean;
-    hideHeader?: boolean;
-    persistent?: boolean;
-    title?: string;
-    titleColor?: string;
-    titleTextColor?: string;
-    value?: boolean;
-    width?: string | number;
-  }
->;
+declare const VConfirm: Component<VConfirmProps, {}, {}, {}, {}>;
 /* eslint-enable */
 
 export default VConfirm;
 
-export class VConfirmPlugin {
-  static install: PluginFunction<Vue>;
+export const VConfirmPlugin: Plugin;
+
+// for Vue 2.6.14 <=
+declare module "@vue/runtime-dom" {
+  export interface GlobalComponents {
+    VConfirm: typeof import("@gn5r/vue-confirm/lib/components")["VConfirm"];
+  }
+}
+
+// for Vue 2.7.x >=
+declare module "@vue/runtime-core" {
+  export interface GlobalComponents {
+    VConfirm: typeof import("@gn5r/vue-confirm/lib/components")["VConfirm"];
+  }
 }

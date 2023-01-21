@@ -3,7 +3,7 @@
 ![downloads](https://img.shields.io/npm/dt/@gn5r/vue-confirm?color=green&style=for-the-badge)
 ![latest](https://img.shields.io/npm/v/@gn5r/vue-confirm/latest?color=green&style=for-the-badge)
 ![beta version](https://img.shields.io/npm/v/@gn5r/vue-confirm/beta?color=green&style=for-the-badge)
-![next version](https://img.shields.io/npm/v/@gn5r/vue-confirm/next?color=green&style=for-the-badge)
+![legacy version](https://img.shields.io/npm/v/@gn5r/vue-confirm/legacy?color=green&style=for-the-badge)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=green&style=for-the-badge)](https://opensource.org/licenses/MIT)
 ![typed](https://img.shields.io/npm/types/@gn5r/vue-confirm?color=green&style=for-the-badge)
@@ -23,8 +23,8 @@
 | Vue.js version | Package version | Type definition |                       Branch                        |
 | :------------: | :-------------: | :-------------: | :-------------------------------------------------: |
 |      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
-|      2.x       |       2.x       |       Yes       |                      `master`                       |
-|      3.x       |       3.x       |       Yes       |                       `next`                        |
+|      2.x       |       2.x       |       Yes       | [2.x](https://github.com/gn5r/vue-confirm/tree/2.x) |
+|      3.x       |       3.x       |       Yes       |                      `master`                       |
 
 ## インストールの仕方
 
@@ -37,11 +37,6 @@
   # yarn
   yarn add @gn5r/vue-confirm
   ```
-
-- 依存関係(devDependencies)
-
-  - vue:^3.2.45
-  - @mdi/js:^6.5.95
 
 ## 使い方
 

@@ -30,6 +30,16 @@
 
 ## Installation
 
+### npm tag martix
+
+| Package version |  tag   | Volar support |
+| :-------------: | :----: | :-----------: |
+|       1.x       |   -    |       -       |
+|       2.x       | legacy |       -       |
+|       3.x       | latest |      Yes      |
+|     \*-beta     |  beta  |       -       |
+|     \*-next     |  next  |       -       |
+
 - commands
 
   ```

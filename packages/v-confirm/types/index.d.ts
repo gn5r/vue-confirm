@@ -39,14 +39,7 @@ export default VConfirm;
 
 export const VConfirmPlugin: Plugin;
 
-// for Vue 2.6.14 <=
-declare module "@vue/runtime-dom" {
-  export interface GlobalComponents {
-    VConfirm: typeof import("@gn5r/vue-confirm/lib/components")["VConfirm"];
-  }
-}
-
-// for Vue 2.7.x >=
+// for Volar
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
     VConfirm: typeof import("@gn5r/vue-confirm/lib/components")["VConfirm"];

@@ -39,7 +39,7 @@ describe("VConfirmHeader.tsx", () => {
   });
 
   it("render a title in header", () => {
-    const wrapper = mount(VConfirmHeader, { slots: { default: "Title" } });
+    const wrapper = mount(VConfirmHeader, { props: { title: "Title" } });
     expect(wrapper.find("header > div").text()).toBe("Title");
     expect(wrapper.html()).toMatchSnapshot();
   });
@@ -52,7 +52,7 @@ describe("VConfirmHeader.tsx", () => {
   });
 
   it("default text color of header is inherit", () => {
-    const wrapper = mount(VConfirmHeader, { slots: { default: "Title" } });
+    const wrapper = mount(VConfirmHeader, { props: { title: "Title" } });
     expect(wrapper.find("header > div").attributes().style).toContain(
       "color: inherit"
     );
@@ -60,8 +60,7 @@ describe("VConfirmHeader.tsx", () => {
 
   it("render a header with class style background color", () => {
     const wrapper = mount(VConfirmHeader, {
-      props: { color: "primary" },
-      slots: { default: "Title" },
+      props: { color: "primary", title: "Title" },
     });
     expect(wrapper.find("header").classes()).toContain("primary");
     expect(wrapper.html()).toMatchSnapshot();
@@ -69,8 +68,7 @@ describe("VConfirmHeader.tsx", () => {
 
   it("render a header with css style background color", () => {
     const wrapper = mount(VConfirmHeader, {
-      props: { color: "#fff" },
-      slots: { default: "Title" },
+      props: { color: "#fff", title: "Title" },
     });
     expect(wrapper.find("header").attributes().style).toContain(
       "background-color: rgb(255, 255, 255)"
@@ -80,8 +78,7 @@ describe("VConfirmHeader.tsx", () => {
 
   it("render a header with class style color", () => {
     const wrapper = mount(VConfirmHeader, {
-      props: { textColor: "primary" },
-      slots: { default: "Title" },
+      props: { textColor: "primary", title: "Title" },
     });
     expect(wrapper.find("header > div").classes()).toContain("primary");
     expect(wrapper.html()).toMatchSnapshot();
@@ -89,8 +86,7 @@ describe("VConfirmHeader.tsx", () => {
 
   it("render a header with css style color", () => {
     const wrapper = mount(VConfirmHeader, {
-      props: { textColor: "#fff" },
-      slots: { default: "Title" },
+      props: { textColor: "#fff", title: "Title" },
     });
     expect(wrapper.find("header > div").attributes().style).toContain(
       "color: rgb(255, 255, 255)"

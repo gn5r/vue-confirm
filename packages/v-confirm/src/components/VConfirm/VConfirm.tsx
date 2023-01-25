@@ -121,11 +121,12 @@ export const VConfirm = defineComponent({
                 color={props.titleColor}
                 textColor={props.titleTextColor}
                 closeable={props.closeable}
+                title={props.title}
                 onClick={() => {
                   internalValue.value = false;
                 }}
               >
-                {props.title}
+                {{ default: slots.header }}
               </VConfirmHeader>
             )}
             <div class="v-confirm__message">{props.message}</div>

@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["vue-router", "vuetify", "prismjs"]
   },
-  "include": ["env.d.ts", "vite.config.ts", "src", "types"]
+  "include": ["env.d.ts", "vite.config.ts", "src/**/*", "types/**/*"]
 }

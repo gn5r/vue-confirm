@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <main>
+  <v-app>
+    <v-main>
       <playground />
-    </main>
-  </div>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts">

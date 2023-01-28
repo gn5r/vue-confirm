@@ -1,36 +1,38 @@
 {
-  "vue template | .vue": {
-    "prefix": "vue template",
+  "vue3 template": {
+    "prefix": "vue3 template",
     "body": [
       "<template>",
       "\t<div></div>",
       "</template>",
       "",
       "<script lang=\"ts\">",
-      "import Vue from \"vue\";",
-      "type DataType = {",
-      "\t//",
-      "};",
+      "import { defineComponent } from \"vue\";",
       "",
-      "export default Vue.extend({",
+      "export default defineComponent({",
       "\tname: \"${1}\",",
-      "\tmodel: {},",
-      "\tmixins: [],",
       "\tprops: {},",
-      "\tdata (): DataType {",
-      "\t\treturn{};",
-      "\t},",
-      "\tmethods: {},",
-      "\tcreated() {",
+      "\tsetup() {",
       "\t\t//",
       "\t},",
-      "\tcomputed: {},",
-      "\twatch: {},",
-      "\tcomponents: {}",
+      "\tcomponents: {},",
       "});",
       "</script>",
       "",
       "<style scoped></style>"
+    ]
+  },
+  "vue3 setup template": {
+    "prefix": "vue3 setup",
+    "body": [
+      "<template>",
+      "${1}",
+      "</template>",
+      "",
+      "<script setup lang=\"ts\">",
+      "</script>",
+      "",
+      "<style lang=\"sass\" scoped></style>"
     ]
   }
 }

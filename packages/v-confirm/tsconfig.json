@@ -4,8 +4,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vuetify"]
   },
-  "include": ["src"],
+  "include": ["env.d.ts", "src/**/*", "dev/**/*"],
   "references": [{ "path": "./tsconfig.config.json" }]
 }

@@ -129,7 +129,11 @@ export const VConfirm = defineComponent({
                 {{ default: slots.header }}
               </VConfirmHeader>
             )}
-            <div class="v-confirm__message">{props.message}</div>
+            {slots.body ? (
+              slots.body({ attrs: { class: "v-confirm__message" } })
+            ) : (
+              <div class="v-confirm__message">{props.message}</div>
+            )}
             {(props.btns.length > 0 || slots.actions) &&
               !props.noActionsDivider && (
                 <Divider dark={props.dark} style="margin: 0" />

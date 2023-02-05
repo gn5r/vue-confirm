@@ -48,7 +48,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/docs/docs
+          publish_dir: ./packages/docs/dist
 
   create-release:
     needs: [ci]

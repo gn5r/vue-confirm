@@ -32,10 +32,12 @@
 
 <script setup lang="ts">
 // Utilities
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, watch } from "vue";
 
 // Composables
 import { useDisplay, useTheme } from "vuetify";
+import { useAppStore } from "@/store/app";
+import { useI18n } from "vue-i18n";
 
 // Components
 import AppBar from "@/components/app/AppBar.vue";
@@ -44,7 +46,7 @@ import AppFooter from "@/components/app/AppFooter.vue";
 
 const display = useDisplay();
 const drawer = ref(display.lgAndUp);
-const { current: theme } = useTheme();
+const { current: theme, global } = useTheme();
 
 const scrollY = ref(0);
 const isShowPageUpBtn = ref(false);
@@ -56,6 +58,20 @@ function handleOnScroll() {
 function scrollTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-onMounted(() => window.addEventListener("scroll", handleOnScroll));
+
+const app = useAppStore();
+const i18n = useI18n({ useScope: "global" });
+
+onMounted(() => {
+  window.addEventListener("scroll", handleOnScroll);
+  global.name.value = app.dark ? "dark" : "light";
+  i18n.locale.value = app.locale;
+});
 onUnmounted(() => window.removeEventListener("scroll", handleOnScroll));
+
+watch(
+  () => app,
+  () => app.save(),
+  { deep: true }
+);
 </script>

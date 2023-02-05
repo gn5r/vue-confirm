@@ -47,6 +47,7 @@ import { defineProps, defineEmits, ref, computed, watch } from "vue";
 // Composables
 import { useTheme } from "vuetify";
 import { useI18nList } from "@/composables/i18n";
+import { useAppStore } from "@/store/app";
 
 const props = defineProps({
   modelValue: Boolean,
@@ -69,12 +70,14 @@ watch(
   (val) => (lazyValue.value = val)
 );
 
+const app = useAppStore();
+
 const languages = useI18nList();
-const vuetifyTheme = useTheme();
-const { current: theme } = vuetifyTheme;
+const { global, current: theme } = useTheme();
 
 function toggleTheme() {
-  vuetifyTheme.global.name.value = theme.value.dark ? "light" : "dark";
+  global.name.value = theme.value.dark ? "light" : "dark";
+  app.dark = theme.value.dark;
 }
 </script>
 

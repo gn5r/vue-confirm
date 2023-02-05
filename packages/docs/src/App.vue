@@ -8,7 +8,9 @@
       <v-container fluid>
         <v-row justify="center" align="start">
           <v-col cols="12" lg="10">
-            <router-view />
+            <router-view v-slot="{ Component }">
+              <component :is="Component" />
+            </router-view>
           </v-col>
         </v-row>
       </v-container>
@@ -28,9 +30,9 @@
   </v-app>
 </template>
 
-<script lang="ts">
-// Vue
-import { defineComponent, ref, onMounted, onUnmounted } from "vue";
+<script setup lang="ts">
+// Utilities
+import { ref, onMounted, onUnmounted } from "vue";
 
 // Composables
 import { useDisplay, useTheme } from "vuetify";
@@ -40,34 +42,20 @@ import AppBar from "@/components/app/AppBar.vue";
 import AppDrawer from "@/components/app/AppDrawer.vue";
 import AppFooter from "@/components/app/AppFooter.vue";
 
-export default defineComponent({
-  name: "App",
-  setup() {
-    const display = useDisplay();
-    const drawer = ref(display.lgAndUp);
-    const { current: theme } = useTheme();
+const display = useDisplay();
+const drawer = ref(display.lgAndUp);
+const { current: theme } = useTheme();
 
-    const scrollY = ref(0);
-    const isShowPageUpBtn = ref(false);
-    function handleOnScroll() {
-      const HIDDEN_POS_Y = 50;
-      scrollY.value = window.scrollY;
-      isShowPageUpBtn.value = HIDDEN_POS_Y <= scrollY.value;
-    }
-    function scrollTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    onMounted(() => window.addEventListener("scroll", handleOnScroll));
-    onUnmounted(() => window.removeEventListener("scroll", handleOnScroll));
-
-    return {
-      display,
-      drawer,
-      theme,
-      isShowPageUpBtn,
-      scrollTop,
-    };
-  },
-  components: { AppBar, AppDrawer, AppFooter },
-});
+const scrollY = ref(0);
+const isShowPageUpBtn = ref(false);
+function handleOnScroll() {
+  const HIDDEN_POS_Y = 50;
+  scrollY.value = window.scrollY;
+  isShowPageUpBtn.value = HIDDEN_POS_Y <= scrollY.value;
+}
+function scrollTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+onMounted(() => window.addEventListener("scroll", handleOnScroll));
+onUnmounted(() => window.removeEventListener("scroll", handleOnScroll));
 </script>

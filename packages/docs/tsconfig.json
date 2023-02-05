@@ -1,13 +1,19 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "docs",
+    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
+    "module": "esnext",
     "resolveJsonModule": true,
-    "types": ["vue-router", "vuetify", "prismjs"]
+    "types": [
+      "vue-router",
+      "vuetify",
+      "prismjs",
+      "vite-plugin-pages/client"
+    ]
   },
   "include": ["env.d.ts", "vite.config.ts", "src/**/*", "types/**/*"]
 }

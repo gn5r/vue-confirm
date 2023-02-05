@@ -40,49 +40,42 @@
   </v-app-bar>
 </template>
 
-<script lang="ts">
-// Vue
-import { defineComponent, ref, computed, watch } from "vue";
+<script setup lang="ts">
+// Utilities
+import { defineProps, defineEmits, ref, computed, watch } from "vue";
 
 // Composables
 import { useTheme } from "vuetify";
 import { useI18nList } from "@/composables/i18n";
 
-export default defineComponent({
-  name: "app-bar",
-  props: {
-    modelValue: Boolean,
-  },
-  emits: ["update:modelValue"],
-  setup(props, { emit }) {
-    const lazyValue = ref(props.modelValue);
-    const drawer = computed({
-      set(val: boolean) {
-        lazyValue.value = val;
-        emit("update:modelValue", val);
-      },
-      get() {
-        return lazyValue.value;
-      },
-    });
-
-    watch(
-      () => props.modelValue,
-      (val) => (lazyValue.value = val)
-    );
-
-    const languages = useI18nList();
-    const vuetifyTheme = useTheme();
-    const { current: theme } = vuetifyTheme;
-
-    function toggleTheme() {
-      vuetifyTheme.global.name.value = theme.value.dark ? "light" : "dark";
-    }
-
-    return { drawer, languages, theme, toggleTheme };
-  },
-  components: {},
+const props = defineProps({
+  modelValue: Boolean,
 });
+const emits = defineEmits(["update:modelValue"]);
+
+const lazyValue = ref(props.modelValue);
+const drawer = computed({
+  set(val: boolean) {
+    lazyValue.value = val;
+    emits("update:modelValue", val);
+  },
+  get() {
+    return lazyValue.value;
+  },
+});
+
+watch(
+  () => props.modelValue,
+  (val) => (lazyValue.value = val)
+);
+
+const languages = useI18nList();
+const vuetifyTheme = useTheme();
+const { current: theme } = vuetifyTheme;
+
+function toggleTheme() {
+  vuetifyTheme.global.name.value = theme.value.dark ? "light" : "dark";
+}
 </script>
 
 <style scoped></style>

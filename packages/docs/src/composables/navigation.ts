@@ -2,7 +2,7 @@ import { ref } from "vue";
 
 export interface NavigationItem {
   title?: string;
-  inactiveIcon?: string,
+  inactiveIcon?: string;
   activeIcon?: string;
   to?: string;
 }
@@ -10,22 +10,28 @@ export interface NavigationItem {
 export function useNavigation() {
   return ref<Array<NavigationItem>>([
     {
+      title: "Installation",
+      inactiveIcon: "mdi-information-outline",
+      activeIcon: "mdi-information",
+      to: "/",
+    },
+    {
       title: "Component Demo",
       inactiveIcon: "mdi-view-dashboard-outline",
       activeIcon: "mdi-view-dashboard",
-      to: "/"
+      to: "/demo",
     },
     {
       title: "API",
       inactiveIcon: "mdi-api",
       activeIcon: "mdi-api",
-      to: "/api"
+      to: "/api",
     },
     {
       title: "SASS Variables",
       inactiveIcon: "mdi-palette-outline",
       activeIcon: "mdi-palette",
-      to: "/sass"
-    }
+      to: "/sass",
+    },
   ]);
 }

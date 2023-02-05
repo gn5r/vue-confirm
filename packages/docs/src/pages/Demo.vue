@@ -226,13 +226,16 @@
       </v-container>
     </v-card-text>
     <v-card-actions>
-      <v-btn color="primary" variant="outlined" @click="config.dialog = true"
+      <v-btn
+        color="primary"
+        variant="outlined"
+        @click="config.modelValue = true"
         >show dialog</v-btn
       >
     </v-card-actions>
 
     <v-confirm
-      v-model="config.dialog"
+      v-model="config.modelValue"
       :btn-align="config.btnAlign"
       :btns="config.btns"
       :closeable="config.closeable"
@@ -249,73 +252,65 @@
   </v-card>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 import type { Alignment, VConfirmBtn } from "@gn5r/vue-confirm";
 
-export default defineComponent({
-  name: "VCDemo",
-  setup() {
-    const config = ref({
-      dialog: false,
-      closeable: false,
-      persistent: false,
-      noActionsDivider: false,
-      dark: false,
-      width: "800",
-      title: "titleeeeeeeeeeee",
-      titleColor: "#2196f3",
-      titleTextColor: "#ffffff",
-      closeIconColor: "#ffffff",
-      message: "test\nmessage",
-      btnAlign: "end",
-      alignments: [
-        {
-          id: "start",
-          value: "start",
-        },
-        {
-          id: "center",
-          value: "center",
-        },
-        {
-          id: "end",
-          value: "end",
-        },
-        {
-          id: "space-between",
-          value: "space-between",
-        },
-        {
-          id: "space-around",
-          value: "space-around",
-        },
-      ] as { id: Alignment; value: Alignment }[],
-      btns: [] as VConfirmBtn[],
-      hideHeader: false,
-    });
-    config.value.btns = [
-      {
-        text: "ok",
-        textColor: "#ffffff",
-        color: "#2196F3",
-        class: "",
-        function: () => (config.value.dialog = false),
-      },
-      {
-        text: "NO",
-        textColor: "",
-        color: "",
-        class:
-          "v-btn v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined",
-        function: () => (config.value.dialog = false),
-      },
-    ];
-
-    return { config };
-  },
-  components: {},
+const config = ref({
+  modelValue: false,
+  closeable: false,
+  persistent: false,
+  noActionsDivider: false,
+  dark: false,
+  width: "800",
+  title: "titleeeeeeeeeeee",
+  titleColor: "#2196f3",
+  titleTextColor: "#ffffff",
+  closeIconColor: "#ffffff",
+  message: "test\nmessage",
+  btnAlign: "end",
+  alignments: [
+    {
+      id: "start",
+      value: "start",
+    },
+    {
+      id: "center",
+      value: "center",
+    },
+    {
+      id: "end",
+      value: "end",
+    },
+    {
+      id: "space-between",
+      value: "space-between",
+    },
+    {
+      id: "space-around",
+      value: "space-around",
+    },
+  ] as { id: Alignment; value: Alignment }[],
+  btns: [] as VConfirmBtn[],
+  hideHeader: false,
 });
+config.value.btns = [
+  {
+    text: "ok",
+    textColor: "#ffffff",
+    color: "#2196F3",
+    class: "",
+    function: () => (config.value.modelValue = false),
+  },
+  {
+    text: "NO",
+    textColor: "",
+    color: "",
+    class:
+      "v-btn v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined",
+    function: () => (config.value.modelValue = false),
+  },
+];
 </script>
 
-<style scoped></style>
+<style lang="sass" scoped></style>

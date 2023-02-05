@@ -1,6 +1,6 @@
 <template>
   <v-sheet border rounded>
-    <v-table>
+    <v-table class="api-table">
       <thead>
         <tr>
           <th
@@ -29,8 +29,8 @@
   </v-sheet>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "vue";
+<script setup lang="ts">
+import { defineProps, ref } from "vue";
 
 import { useTheme } from "vuetify";
 
@@ -39,23 +39,15 @@ import type { EventsTableItem } from "types";
 
 import PrismCell from "./PrismCell.vue";
 
-export default defineComponent({
-  name: "events-table",
-  props: {
-    items: {
-      type: Array as PropType<Array<EventsTableItem>>,
-      default: () => [],
-    },
+defineProps({
+  items: {
+    type: Array as PropType<Array<EventsTableItem>>,
+    default: () => [],
   },
-  setup() {
-    const headers = ref<Array<string>>(["Name", "Type", "Description"]);
-
-    const { current: theme } = useTheme();
-
-    return { headers, theme };
-  },
-  components: { PrismCell },
 });
+
+const headers = ref<Array<string>>(["Name", "Type", "Description"]);
+const { current: theme } = useTheme();
 </script>
 
 <style scoped></style>

@@ -130,7 +130,10 @@ export const VConfirm = defineComponent({
               </VConfirmHeader>
             )}
             {slots.body ? (
-              slots.body({ attrs: { class: "v-confirm__message" } })
+              slots.body({
+                attrs: { class: "v-confirm__message" },
+                message: props.message,
+              })
             ) : (
               <div class="v-confirm__message">{props.message}</div>
             )}

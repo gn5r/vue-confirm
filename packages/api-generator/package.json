@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/api-generator",
-  "version": "3.1.0-beta.1",
+  "version": "3.1.0",
   "private": true,
   "license": "ISC",
   "scripts": {
@@ -9,7 +9,7 @@
     "lint:fix": "yarn run lint --fix"
   },
   "dependencies": {
-    "@gn5r/vue-confirm": "^3.1.0-beta.1"
+    "@gn5r/vue-confirm": "^3.1.0"
   },
   "devDependencies": {
     "@types/shelljs": "^0.8.11",

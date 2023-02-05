@@ -132,7 +132,12 @@ export function useSlotsTableItems() {
     },
     {
       name: "body",
-      type: ["{", "\tattrs: Record<string, unknown>", "}"].join("\n"),
+      type: [
+        "{",
+        "\tattrs: Record<string, unknown>",
+        "\tmessage: string",
+        "}",
+      ].join("\n"),
     },
     {
       name: "header",

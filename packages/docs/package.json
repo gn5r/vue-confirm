@@ -4,8 +4,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "cross-env NODE_ENV=production vite build",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue src",
     "lint:fix": "prettier --write src/**/*.{js,ts,css,vue}"
   },
@@ -23,7 +24,11 @@
     "@types/prismjs": "^1.26.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "eslint-plugin-vue": "^9.8.0",
+    "markdown-it-anchor": "^8.6.6",
+    "markdown-it-prism": "^2.3.0",
     "sass": "^1.57.1",
+    "vite-plugin-pages": "^0.28.0",
+    "vite-plugin-vue-markdown": "^0.22.2",
     "vite-plugin-vuetify": "^1.0.1"
   }
 }

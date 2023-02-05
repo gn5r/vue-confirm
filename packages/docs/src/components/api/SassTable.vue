@@ -1,6 +1,6 @@
 <template>
   <v-sheet border rounded>
-    <v-table>
+    <v-table class="api-table">
       <thead>
         <tr>
           <th class="font-weight-medium" style="width: 40%">Name</th>
@@ -23,8 +23,8 @@
   </v-sheet>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { defineProps } from "vue";
 
 import { useTheme } from "vuetify";
 
@@ -33,21 +33,13 @@ import type { SassTableItem } from "types";
 
 import PrismCell from "./PrismCell.vue";
 
-export default defineComponent({
-  name: "sass-table",
-  props: {
-    items: {
-      type: Array as PropType<Array<SassTableItem>>,
-      default: () => [],
-    },
+defineProps({
+  items: {
+    type: Array as PropType<Array<SassTableItem>>,
+    default: () => [],
   },
-  setup() {
-    const { current: theme } = useTheme();
-
-    return { theme };
-  },
-  components: { PrismCell },
 });
+const { current: theme } = useTheme();
 </script>
 
 <style scoped></style>

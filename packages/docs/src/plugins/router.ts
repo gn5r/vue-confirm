@@ -1,30 +1,11 @@
-import * as VueRouter from "vue-router";
-import type { RouteRecordRaw } from "vue-router";
-import VCDemo from "@/pages/VCDemo.vue";
-import VCApi from "@/pages/VCApi.vue";
-import VCSass from "@/pages/VCSass.vue";
+import { createRouter, createWebHashHistory } from "vue-router";
+import generatedPages from "virtual:generated-pages";
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: "/",
-    name: "VCDemo",
-    component: VCDemo
-  },
-  {
-    path: "/api",
-    name: "VCApi",
-    component: VCApi
-  },
-  {
-    path: "/sass",
-    name: "VCSass",
-    component: VCSass
-  },
-];
+export const routes = [...generatedPages];
 
-const router = VueRouter.createRouter({
-  history: VueRouter.createWebHashHistory(),
-  routes
+const router = createRouter({
+  history: createWebHashHistory(import.meta.url),
+  routes,
 });
 
 export default router;

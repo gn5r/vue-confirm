@@ -1,24 +1,5 @@
-@forward "./variables";
-@use "../../styles/index" as *;
+@use "../../styles/theme" as *;
 @use "./variables" as var;
-
-@include theme(v-confirm) using ($theme) {
-  > .v-confirm__content {
-    background: map-get($theme, "background");
-
-    .v-confirm__header {
-      color: map-get($theme, "text-color");
-
-      header {
-        color: inherit;
-      }
-    }
-
-    .v-confirm__message {
-      color: map-get($theme, "text-color");
-    }
-  }
-}
 
 .transition-enter-active {
   transition: var.$v-confirm-transition-enter-active;
@@ -35,7 +16,7 @@
 
 .v-confirm {
   position: fixed;
-  z-index: 200;
+  z-index: var.$v-confirm-z-index;
   top: 0;
   left: 0;
   width: 100%;
@@ -45,6 +26,26 @@
   justify-content: center;
   align-items: center;
   outline: none;
+
+  @at-root {
+    @include theme("v-confirm") using ($theme) {
+      > .v-confirm__content {
+        background: map-get($theme, "background");
+
+        .v-confirm__header {
+          color: map-get($theme, "text-color");
+
+          header {
+            color: inherit;
+          }
+        }
+
+        .v-confirm__message {
+          color: map-get($theme, "text-color");
+        }
+      }
+    }
+  }
 }
 
 .v-confirm--animated {

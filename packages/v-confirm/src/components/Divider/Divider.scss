@@ -1,8 +1,4 @@
-@use "../../styles/index" as styles;
-
-@include styles.theme(divider) using ($theme) {
-  border-color: map-get($theme, "divider");
-}
+@use "../../styles/theme" as *;
 
 .divider {
   display: block;
@@ -14,4 +10,10 @@
   border-width: thin 0 0 0;
   transition: inherit;
   overflow: visible;
+
+  @at-root {
+    @include theme(divider) using ($theme) {
+      border-color: map-get($theme, "divider");
+    }
+  }
 }

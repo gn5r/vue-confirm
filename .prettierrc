@@ -13,5 +13,6 @@
   "htmlWhitespaceSensitivity": "css",
   "vueIndentScriptAndStyle": false,
   "embeddedLanguageFormatting": "auto",
-  "endOfLine": "crlf"
+  "endOfLine": "lf"
 }
+

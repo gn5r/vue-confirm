@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/docs",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@gn5r/vue-confirm": "^3.1.0",
+    "@gn5r/vue-confirm": "^3.2.0",
     "@mdi/font": "^7.1.96",
     "pinia": "^2.0.30",
     "prismjs": "^1.29.0",

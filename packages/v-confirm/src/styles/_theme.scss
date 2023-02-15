@@ -1,0 +1,20 @@
+$light-theme: (
+  "background": #eee,
+  "text-color": #000,
+  "divider": rgba(#000, 0.12),
+) !default;
+
+$dark-theme: (
+  "background": #1e1e1e,
+  "text-color": #fff,
+  "divider": rgba(#fff, 0.12),
+) !default;
+
+@mixin theme($component) {
+  .light.#{$component} {
+    @content ($light-theme);
+  }
+  .dark.#{$component} {
+    @content ($dark-theme);
+  }
+}

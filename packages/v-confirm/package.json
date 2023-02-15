@@ -22,11 +22,14 @@
   "main": "dist/v-confirm-umd.js",
   "module": "dist/v-confirm-es.js",
   "types": "types/index.d.ts",
+  "sass": "lib/styles/main.sass",
+  "styles": "dist/v-confirm.min.css",
   "files": [
     "src",
     "lib",
     "types",
-    "dist"
+    "dist",
+    "_styles.sass"
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.ts",

@@ -21,4 +21,6 @@ export default {
     "update:modelValue": "更新されたバウンドモデル",
   },
   "copy-text": "テキストをコピー",
+  "sass-vars": "SASS変数",
+  usage: "使い方",
 };

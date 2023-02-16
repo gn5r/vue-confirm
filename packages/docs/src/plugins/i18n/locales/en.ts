@@ -21,4 +21,6 @@ export default {
     "update:modelValue": "The updated bound model",
   },
   "copy-text": "Copy text",
+  "sass-vars": "SASS Variables",
+  usage: "Usage",
 };

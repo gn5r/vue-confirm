@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "title": "## 🚀 New Features",
+      "labels": ["feature", "feat"]
+    },
+    {
+      "title": "## 🐛 Bug Fixes",
+      "labels": ["fix", "bug"]
+    },
+    {
+      "title": "## 🧪 Tests",
+      "labels": ["test"]
+    },
+    {
+      "title": "## 💬 Other",
+      "labels": ["other"]
+    },
+    {
+      "title": "## 📦 Dependencies",
+      "labels": ["dependencies"]
+    },
+    {
+      "title": "## 📦 Uncategorized",
+      "labels": []
+    },
+    {
+      "title": "## 💥 Braking changes",
+      "labels": ["breaking change"]
+    },
+    {
+      "title": "## ♻️ Code Refactoring",
+      "labels": ["refactor"]
+    }
+  ],
+  "pr_template": "- ${{TITLE}} (#${{NUMBER}})"
+}

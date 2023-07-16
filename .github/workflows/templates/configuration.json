@@ -27,6 +27,10 @@
     {
       "title": "## 💥 Braking changes",
       "labels": ["breaking change"]
+    },
+    {
+      "title": "## ♻️ Code Refactoring",
+      "labels": ["refactor"]
     }
   ],
   "pr_template": "- ${{TITLE}} (#${{NUMBER}})"

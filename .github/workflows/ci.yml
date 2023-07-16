@@ -11,6 +11,7 @@ on:
       - ".yarn/**"
     branches-ignore:
       - master
+      - main
 
 jobs:
   lint:
@@ -27,6 +28,8 @@ jobs:
       - name: Install dependencies
         uses: actions/cache@v3
         id: cache_dependencies
+        env:
+          cache-name: cache
         with:
           path: node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
@@ -50,6 +53,8 @@ jobs:
       - name: Install dependencies
         uses: actions/cache@v3
         id: cache_dependencies
+        env:
+          cache-name: cache
         with:
           path: node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}

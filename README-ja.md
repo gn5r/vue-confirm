@@ -24,7 +24,7 @@
 | :------------: | :-------------: | :-------------: | :-------------------------------------------------: |
 |      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
 |      2.x       |       2.x       |       Yes       | [2.x](https://github.com/gn5r/vue-confirm/tree/2.x) |
-|      3.x       |       3.x       |       Yes       |                      `master`                       |
+|      3.x       |       3.x       |       Yes       |                       `main`                        |
 
 ## インストールの仕方
 

@@ -21,16 +21,16 @@
       "labels": ["dependencies"]
     },
     {
-      "title": "## 📦 Uncategorized",
-      "labels": []
-    },
-    {
-      "title": "## 💥 Braking changes",
+      "title": "## 💥 Braking Changes",
       "labels": ["breaking change"]
     },
     {
       "title": "## ♻️ Code Refactoring",
       "labels": ["refactor"]
+    },
+    {
+      "title": "## 📝 Documentation",
+      "labels": ["docs"]
     }
   ],
   "pr_template": "- ${{TITLE}} (#${{NUMBER}})"

@@ -37,7 +37,7 @@
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
     "lint": "eslint --ext .js,.ts,.tsx src",
-    "lint:fix": "prettier --write src/**/*.{js,ts,tsx,css,scss,sass}",
+    "lint:fix": "prettier --write src/**/*.{js,ts,tsx}",
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },

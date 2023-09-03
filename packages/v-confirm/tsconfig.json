@@ -6,6 +6,8 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["env.d.ts", "src/**/*", "dev/**/*"],
-  "references": [{ "path": "./tsconfig.config.json" }]
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.app.json" }
+  ]
 }

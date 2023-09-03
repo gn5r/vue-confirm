@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["dev", "**/__tests__"],
+  "exclude": ["dev", "src/**/__tests__"],
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,

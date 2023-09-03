@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "build": "ts-node src/index.ts",
-    "lint": "eslint --ext js src",
+    "lint": "eslint --ext ts src",
     "lint:fix": "yarn run lint --fix"
   },
   "dependencies": {

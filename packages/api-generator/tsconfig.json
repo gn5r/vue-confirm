@@ -1,13 +1,9 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src"],
   "compilerOptions": {
     "baseUrl": ".",
     "module": "commonjs",
     "noEmitOnError": false,
-    "types": [
-      "node",
-      "shelljs"
-    ]
+    "types": ["node", "shelljs"]
   }
 }

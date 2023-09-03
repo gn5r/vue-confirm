@@ -9,14 +9,14 @@ module.exports = {
   },
   extends: ["eslint:recommended"],
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: "latest",
     sourceType: "script",
   },
   overrides: [
     {
       files: ["**/*.ts", "**/*.tsx"],
       env: {
-        es2021: true,
+        es2023: true,
         browser: true,
         node: true,
       },
@@ -26,10 +26,12 @@ module.exports = {
       ],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        ecmaVersion: 2021,
+        ecmaVersion: "latest",
         sourceType: "module",
       },
-      rules: {},
+      rules: {
+        "@typescript-eslint/no-explicit-any": "warn",
+      },
     },
   ],
 };

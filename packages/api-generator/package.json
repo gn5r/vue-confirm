@@ -12,7 +12,7 @@
     "@gn5r/vue-confirm": "^3.2.2"
   },
   "devDependencies": {
-    "@types/shelljs": "^0.8.11",
+    "@types/shelljs": "^0.8.12",
     "ts-node": "^10.9.1"
   }
 }

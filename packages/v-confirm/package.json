@@ -37,7 +37,7 @@
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
     "lint": "eslint --ext .js,.ts,.tsx src",
-    "lint:fix": "prettier --write src/**/*.{js,ts,tsx,css,scss,sass}",
+    "lint:fix": "prettier --write src/**/*.{js,ts,tsx,css,scss}",
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },
@@ -45,7 +45,13 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@mdi/js": "^6.5.95",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "babel-plugin-module-resolver": "^4.1.0",
     "vue": "^3.2.45"
   },
   "vetur": {

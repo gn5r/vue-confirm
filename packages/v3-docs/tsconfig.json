@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "module": "esnext",
+    "resolveJsonModule": true,
+    // "types": [
+    //   "node",
+    //   "prismjs",
+    //   "vuetify",
+    //   "vite/client"
+    // ]
+  },
+  "include": [
+    "src/**/*",
+    "src/**/*.vue",
+    "src/.vitepress/**/*",
+    "src/.vitepress/**/*.mts",
+    "src/.vitepress/**/*.vue"
+  ]
+}

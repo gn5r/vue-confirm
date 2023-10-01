@@ -6,6 +6,5 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["env.d.ts", "src/**/*", "dev/**/*"],
-  "references": [{ "path": "./tsconfig.config.json" }]
+  "include": ["env.d.ts", "src/**/*", "dev/**/*", "vite.config.*", "vite.*.conifg.*", "vitest.config.*"],
 }

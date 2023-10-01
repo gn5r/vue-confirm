@@ -3,9 +3,9 @@ name: CD
 on:
   push:
     branches:
-      - master
       - main
       - next
+      - dev
     tags:
       - "v*"
     paths-ignore:
@@ -23,7 +23,7 @@ jobs:
   deploy-docs:
     needs: [ci]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref == 'refs/heads/dev'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -48,13 +48,13 @@ jobs:
 
       - name: Build docs
         run: yarn run build
-        working-directory: ./packages/docs
+        working-directory: ./packages/v3-docs
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/docs/dist
+          publish_dir: ./packages/v3-docs/dist
 
   create-release:
     needs: [ci]

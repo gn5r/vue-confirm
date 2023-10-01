@@ -5,9 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev src",
-    "docs:build": "vitepress build src",
-    "docs:preview": "vitepress preview src --base /vue-confirm/",
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "preview": "vitepress preview src --base /vue-confirm/",
     "lint": "eslint --ext .js,.ts,.vue src --ignore-path ../../.gitignore",
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{md,js,ts,css,vue}"
   },

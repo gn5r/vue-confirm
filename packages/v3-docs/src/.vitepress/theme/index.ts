@@ -1,9 +1,9 @@
 // https://vitepress.dev/guide/custom-theme
-import DefaultTheme from "vitepress/theme";
-import { Theme } from "vitepress/client";
-import "./style.css";
-import "./style.scss";
-import LayoutProvider from "./LayoutProvider.vue";
+import "./styles/style.css";
+import "./styles/style.scss";
+import LayoutProvider from "./components/LayoutProvider.vue";
+
+import type { Theme } from "vitepress/client";
 
 import "@fortawesome/fontawesome-free/js/all.min.js";
 import vuetify from "../plugins/vuetify";
@@ -12,7 +12,6 @@ import { VConfirmPlugin } from "@gn5r/vue-confirm";
 import "@gn5r/vue-confirm/dist/v-confirm.min.css";
 
 export default {
-  extends: DefaultTheme,
   Layout: LayoutProvider,
   enhanceApp({ app, router, siteData }) {
     app.use(i18n);

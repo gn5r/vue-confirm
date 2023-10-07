@@ -1,4 +1,13 @@
-@use "vuetify";
+$body-font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans", Meiryo, sans-serif;
+
+@use "vuetify" with (
+  $body-font-family: $body-font-family
+);
+
+body {
+  font-family: initial;
+}
 
 $table-header-font-size: map-get(vuetify.$typography, "subtitle-1", "size");
 
@@ -10,13 +19,15 @@ $table-header-color: rgba(
 .v-table {
   .v-table__wrapper {
     > table {
+      margin: 0px;
+      display: table;
       > thead {
         > tr {
           background: rgba(var(--v-theme-surface));
           > th {
             background: rgba(var(--v-theme-surface));
-            color: $table-header-color !important;
-            font-size: $table-header-font-size !important;
+            color: $table-header-color;
+            font-size: $table-header-font-size;
           }
         }
       }
@@ -31,11 +42,8 @@ $table-header-color: rgba(
         }
       }
     }
-  }
-}
-
-.api-table {
-  .token.operator {
-    background: none;
+    .token.operator {
+      background: none;
+    }
   }
 }

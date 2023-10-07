@@ -13,6 +13,19 @@ export default defineConfig({
   outDir: `${process.cwd()}/dist`,
   title: "Vue Confirm",
   description: "A confirm component for Vue.js",
+  head: [
+    ["meta", { name: "og:type", content: "website" }],
+    ["meta", { name: "og:locale", content: "en" }],
+    ["meta", { name: "og:site_name", content: "Vue Confirm" }],
+    [
+      "meta",
+      { name: "og:description", content: "A confirm component for Vue.js" },
+    ],
+    [
+      "meta",
+      { name: "og:url", content: "https://gn5r.github.io/vue-confirm/" },
+    ],
+  ],
   locales: {
     root: {
       label: "English",

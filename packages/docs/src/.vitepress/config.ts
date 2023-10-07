@@ -24,17 +24,17 @@ export default defineConfig({
         },
       },
     },
-    // ja: {
-    //   label: "日本語",
-    //   lang: "ja",
-    //   link: "/ja/",
-    //   themeConfig: {
-    //     nav: nav("ja"),
-    //     sidebar: {
-    //       "/ja/guide/": { base: "/ja/guide/", items: sidebarGuide() },
-    //     },
-    //   },
-    // },
+    ja: {
+      label: "日本語",
+      lang: "ja",
+      link: "/ja/",
+      themeConfig: {
+        nav: navJa(),
+        sidebar: {
+          "/ja/guide/": { base: "/ja/guide/", items: sidebarGuideJa() },
+        },
+      },
+    },
   },
   // global theme config
   themeConfig: {
@@ -70,26 +70,36 @@ export default defineConfig({
   },
 });
 
-function nav(locale?: string) {
-  const nav: any[] = [
+function nav() {
+  return [
     { text: "Guide", link: "/guide/getting-started" },
     { text: "Reference", link: "/guide/component-api" },
+    {
+      text: pkg.version,
+      items: [
+        {
+          text: "Releases",
+          link: "https://github.com/gn5r/vue-confirm/releases",
+        },
+      ],
+    },
   ];
-  if (locale) {
-    nav.forEach((n) => {
-      n.link = `/${locale}/${n.link}`;
-    });
-  }
-  nav.push({
-    text: pkg.version,
-    items: [
-      {
-        text: "Releases",
-        link: "https://github.com/gn5r/vue-confirm/releases",
-      },
-    ],
-  });
-  return nav;
+}
+
+function navJa() {
+  return [
+    { text: "ガイド", link: "/ja/guide/getting-started" },
+    { text: "リファレンス", link: "/ja/guide/component-api" },
+    {
+      text: pkg.version,
+      items: [
+        {
+          text: "Releases",
+          link: "https://github.com/gn5r/vue-confirm/releases",
+        },
+      ],
+    },
+  ];
 }
 
 function sidebarGuide() {
@@ -122,6 +132,43 @@ function sidebarGuide() {
             { text: "theme", link: "sass-variables#theme" },
             { text: "v-confirm", link: "sass-variables#v-confirm" },
             { text: "usage", link: "sass-variables#usage" },
+          ],
+        },
+      ],
+    },
+  ];
+}
+
+function sidebarGuideJa() {
+  return [
+    {
+      text: "紹介",
+      collapsed: false,
+      items: [
+        { text: "始めましょう", link: "getting-started" },
+        { text: "プレイグラウンド", link: "playground" },
+      ],
+    },
+    {
+      text: "リファレンス",
+      collapsed: false,
+      items: [
+        {
+          text: "コンポーネントAPI",
+          link: "component-api",
+          items: [
+            { text: "Props", link: "component-api#props" },
+            { text: "イベント", link: "component-api#events" },
+            { text: "スロット", link: "component-api#slots" },
+          ],
+        },
+        {
+          text: "SASS変数",
+          link: "sass-variables",
+          items: [
+            { text: "テーマ", link: "sass-variables#theme" },
+            { text: "v-confirm", link: "sass-variables#v-confirm" },
+            { text: "使い方", link: "sass-variables#usage" },
           ],
         },
       ],

@@ -5,7 +5,6 @@ import LayoutProvider from "./components/LayoutProvider.vue";
 
 import type { Theme } from "vitepress/client";
 
-
 import "@fortawesome/fontawesome-free/js/all.min.js";
 import vuetify from "../plugins/vuetify";
 import i18n from "../plugins/i18n";

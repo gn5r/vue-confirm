@@ -6,7 +6,7 @@ $body-font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
 );
 
 body {
-  font-family: initial;
+  font-family: inherit;
 }
 
 $table-header-font-size: map-get(vuetify.$typography, "subtitle-1", "size");

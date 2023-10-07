@@ -4,22 +4,15 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@theme/*": ["src/.vitepress/theme/*"],
     },
     "module": "esnext",
     "resolveJsonModule": true,
-    // "types": [
-    //   "node",
-    //   "prismjs",
-    //   "vuetify",
-    //   "vite/client"
-    // ]
   },
   "include": [
     "src/**/*",
-    "src/**/*.vue",
     "src/.vitepress/**/*",
-    "src/.vitepress/**/*.mts",
-    "src/.vitepress/**/*.vue"
+    "src/.vitepress/**/*.vue",
   ]
 }

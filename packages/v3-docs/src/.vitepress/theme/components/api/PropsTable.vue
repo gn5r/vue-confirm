@@ -39,7 +39,7 @@ import { defineProps, ref } from "vue";
 import { useTheme } from "vuetify";
 
 import type { PropType } from "vue";
-import type { PropsTableItem } from "../../composables/api";
+import type { PropsTableItem } from "@theme/composables/api";
 
 import PrismCell from "./PrismCell.vue";
 

@@ -29,8 +29,7 @@ const LANG = {
 function highlight(val: string) {
   const code = typeof val === "object" ? JSON.stringify(val) : val;
   const [grammar, lang] = LANG[props.lang];
-  const highlighted = Prism.highlight(code, grammar, lang);
-  return highlighted;
+  return Prism.highlight(code, grammar, lang);
 }
 </script>
 

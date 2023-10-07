@@ -13,12 +13,11 @@
           :key="i"
           :class="theme.dark ? 'bg-grey-darken-3' : 'bg-grey-lighten-4'"
         >
-          <!-- <td class="font-weight-medium">{{ item.name }}</td> -->
           <td>
-            <prism-cell :code="item.name" lang="scss" />
+            <prism-cell :code="item.name" lang="sass" />
           </td>
           <td>
-            <prism-cell :code="item.default" lang="scss" />
+            <prism-cell :code="item.default" lang="sass" />
           </td>
         </tr>
       </tbody>
@@ -31,7 +30,7 @@ import { defineProps } from "vue";
 import { useTheme } from "vuetify";
 
 import type { PropType } from "vue";
-import type { SassTableItem } from "../../composables/sass";
+import type { SassTableItem } from "@theme/composables/sass";
 
 import PrismCell from "./PrismCell.vue";
 

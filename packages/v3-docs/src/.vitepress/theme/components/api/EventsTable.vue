@@ -22,6 +22,7 @@
           <td>
             <prism-cell :code="item.type" />
           </td>
+          <td class="description">{{ item.description }}</td>
         </tr>
       </tbody>
     </v-table>
@@ -33,19 +34,19 @@ import { defineProps, ref } from "vue";
 import { useTheme } from "vuetify";
 
 import type { PropType } from "vue";
-import type { SlotsTableItem } from "../../composables/api";
+import type { EventsTableItem } from "@theme/composables/api";
 
 import PrismCell from "./PrismCell.vue";
 
 defineProps({
   items: {
-    type: Array as PropType<Array<SlotsTableItem>>,
+    type: Array as PropType<Array<EventsTableItem>>,
     default: () => [],
   },
 });
 
-const headers = ref<Array<string>>(["Name", "Type"]);
+const headers = ref<Array<string>>(["Name", "Type", "Description"]);
 const { current: theme } = useTheme();
 </script>
 
-<style scoped></style>
+<style lang="scss"></style>

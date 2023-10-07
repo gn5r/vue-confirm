@@ -1,0 +1,40 @@
+@use "vuetify";
+
+$table-header-font-size: map-get(vuetify.$typography, "subtitle-1", "size");
+
+$table-header-color: rgba(
+  var(--v-theme-on-surface),
+  var(--v-medium-emphasis-opacity)
+);
+
+.v-table {
+  .v-table__wrapper {
+    > table {
+      margin: 0px;
+      display: table;
+      > thead {
+        > tr {
+          background: rgba(var(--v-theme-surface));
+          > th {
+            background: rgba(var(--v-theme-surface));
+            color: $table-header-color;
+            font-size: $table-header-font-size;
+          }
+        }
+      }
+      > tbody {
+        > tr {
+          > td {
+            &.description {
+              white-space: pre-wrap;
+              word-wrap: break-word;
+            }
+          }
+        }
+      }
+    }
+    .token.operator {
+      background: none;
+    }
+  }
+}

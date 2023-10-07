@@ -48,13 +48,13 @@ jobs:
 
       - name: Build docs
         run: yarn run build
-        working-directory: ./packages/v3-docs
+        working-directory: ./packages/docs
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/v3-docs/dist
+          publish_dir: ./packages/docs/dist
 
   create-release:
     needs: [ci]

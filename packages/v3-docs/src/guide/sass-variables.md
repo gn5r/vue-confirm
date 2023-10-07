@@ -1,7 +1,7 @@
 <script setup>
-import { useThemeSassItems, useVConfirmSassItems } from "../composables/sass";
+import { useThemeSassItems, useVConfirmSassItems } from "@theme/composables/sass";
 
-import SassTable from "../components/api/SassTable.vue"
+import SassTable from "@theme/components/api/SassTable.vue"
 
 const themeItems = useThemeSassItems();
 const vconfirmItems = useVConfirmSassItems();

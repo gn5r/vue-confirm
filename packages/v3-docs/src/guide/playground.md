@@ -1,5 +1,5 @@
 <script setup>
-import Playground from "../components/Playground.vue";
+import Playground from "@theme/components/Playground.vue";
 </script>
 
 # Playground

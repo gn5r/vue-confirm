@@ -1,17 +1,62 @@
 import { defineConfig } from "vitepress";
+import path from "node:path";
 import pkg from "../../package.json";
 
 const base = process.env.NODE_ENV === "production" ? "/vue-confirm/" : "/";
 console.debug("base:", base);
+
+const resolve = (dir = "") => path.resolve(__dirname, dir);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: base,
   outDir: `${process.cwd()}/dist`,
   title: "Vue Confirm",
-  description: "A confirm component demo site",
+  description: "A confirm component for Vue.js",
+  locales: {
+    root: {
+      label: "English",
+      lang: "en",
+      themeConfig: {
+        nav: nav(),
+        sidebar: {
+          "/guide/": { base: "/guide/", items: sidebarGuide() },
+        },
+      },
+    },
+    // ja: {
+    //   label: "日本語",
+    //   lang: "ja",
+    //   link: "/ja/",
+    //   themeConfig: {
+    //     nav: nav("ja"),
+    //     sidebar: {
+    //       "/ja/guide/": { base: "/ja/guide/", items: sidebarGuide() },
+    //     },
+    //   },
+    // },
+  },
+  // global theme config
+  themeConfig: {
+    // https://vitepress.dev/reference/default-theme-config
+    aside: false,
+    i18nRouting: true,
+    socialLinks: [
+      { icon: "github", link: "https://github.com/gn5r/vue-confirm" },
+    ],
+    footer: {
+      message: "",
+      copyright: "Development by © shangyuan.tuolang",
+    },
+  },
   // vite config
   vite: {
+    resolve: {
+      alias: {
+        "@": resolve("./"),
+        "@theme": resolve("./theme/"),
+      },
+    },
     ssr: {
       noExternal: ["vuetify"],
     },
@@ -23,48 +68,12 @@ export default defineConfig({
       __VUE_I18N_LEGACY_API__: false,
     },
   },
-  // i18n
-  locales: {
-    root: {
-      label: "English",
-      lang: "en",
-    },
-    // ja: {
-    //   label: "日本語",
-    //   lang: "ja",
-    //   link: "/ja/",
-    //   themeConfig: {
-    //     aside: false,
-    //     i18nRouting: true,
-    //     nav: nav("ja"),
-    //     sidebar: {
-    //       "/ja/guide/": { base: "/ja/guide/", items: sidebarGuide() },
-    //     },
-    //   },
-    // },
-  },
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    aside: false,
-    i18nRouting: true,
-    nav: nav(),
-    sidebar: {
-      "/guide/": { base: "/guide/", items: sidebarGuide() },
-    },
-    socialLinks: [
-      { icon: "github", link: "https://github.com/gn5r/vue-confirm" },
-    ],
-    footer: {
-      message: "",
-      copyright: "Development by © shangyuan.tuolang",
-    },
-  },
 });
 
 function nav(locale?: string) {
   const nav: any[] = [
     { text: "Guide", link: "/guide/getting-started" },
-    { text: "Reference", link: "/guide/reference" },
+    { text: "Reference", link: "/guide/component-api" },
   ];
   if (locale) {
     nav.forEach((n) => {
@@ -99,11 +108,11 @@ function sidebarGuide() {
       items: [
         {
           text: "Component API",
-          link: "reference",
+          link: "component-api",
           items: [
-            { text: "Props", link: "reference#props" },
-            { text: "Events", link: "reference#events" },
-            { text: "Slots", link: "reference#slots" },
+            { text: "Props", link: "component-api#props" },
+            { text: "Events", link: "component-api#events" },
+            { text: "Slots", link: "component-api#slots" },
           ],
         },
         {

@@ -1,11 +1,41 @@
 import "@mdi/font/css/materialdesignicons.css";
 
 import { createVuetify } from "vuetify";
-import * as components from "vuetify/components";
+import {
+  VSheet,
+  VTable,
+  VCard,
+  VCardTitle,
+  VCardText,
+  VCardActions,
+  VContainer,
+  VRow,
+  VCol,
+  VCheckbox,
+  VTextField,
+  VTextarea,
+  VSelect,
+  VBtn,
+} from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 export default createVuetify({
-  components,
+  components: {
+    VSheet,
+    VTable,
+    VCard,
+    VCardTitle,
+    VCardText,
+    VCardActions,
+    VContainer,
+    VRow,
+    VCol,
+    VCheckbox,
+    VTextField,
+    VTextarea,
+    VSelect,
+    VBtn,
+  },
   directives,
   theme: {
     themes: {

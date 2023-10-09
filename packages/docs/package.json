@@ -11,6 +11,11 @@
     "lint": "eslint --ext .js,.ts,.vue src/.vitepress --ignore-path ../../.gitignore",
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{md,js,ts,css,vue}"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "vue-i18n": "^9.5.0"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.20"
+  }
 }

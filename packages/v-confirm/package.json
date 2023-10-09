@@ -41,19 +41,8 @@
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },
-  "peerDependencies": {
-    "vue": "^3.2.45"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.16.7",
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
-    "@mdi/js": "^6.5.95",
-    "@vue/babel-plugin-jsx": "^1.1.1",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "vue": "^3.2.45"
-  },
+  "peerDependencies": {},
+  "devDependencies": {},
   "vetur": {
     "tags": "dist/tags.json",
     "attributes": "dist/attributes.json"

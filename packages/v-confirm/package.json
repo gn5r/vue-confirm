@@ -33,14 +33,16 @@
   ],
   "exports": {
     ".": {
-      "default": "./lib/index.mjs",
+      "import": "./dist/v-confirm-es.js",
+      "require": "./dist/v-confirm-umd.js",
       "types": "./types/index.d.ts",
       "style": "./dist/v-confirm.min.css",
       "sass": "./lib/styles/main.sass"
     },
     "./styles": {
       "sass": "./lib/styles/main.sass",
-      "default": "./dist/v-confirm.min.css"
+      "import": "./dist/v-confirm.min.css",
+      "require": "./dist/v-confirm.min.css"
     },
     "./styles/*": "./lib/styles/*",
     "./components": "./lib/components/index.d.ts",

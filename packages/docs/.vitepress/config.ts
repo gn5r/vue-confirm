@@ -1,6 +1,6 @@
 import { defineConfig } from "vitepress";
 import path from "node:path";
-import pkg from "../../package.json";
+import pkg from "../package.json";
 
 const base = process.env.NODE_ENV === "production" ? "/vue-confirm/" : "/";
 console.debug("base:", base);
@@ -71,7 +71,7 @@ export default defineConfig({
       },
     },
     ssr: {
-      noExternal: ["vuetify", "vue-i18n"],
+      noExternal: ["vuetify", "vue-i18n", "@gn5r/vue-confirm"],
     },
     esbuild: {
       drop: ["console", "debugger"],

@@ -47,6 +47,7 @@
     "./styles/*": "./lib/styles/*",
     "./components": "./lib/components/index.d.ts",
     "./components/*": "./lib/components/*/index.d.ts",
+    "./types": "./types/index.d.ts",
     "./*": "./*"
   },
   "typesVersions": {

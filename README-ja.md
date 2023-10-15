@@ -1,22 +1,22 @@
 # Vue Confirm Component
 
-![downloads](https://img.shields.io/npm/dt/@gn5r/vue-confirm?color=green&style=for-the-badge)
-![latest](https://img.shields.io/npm/v/@gn5r/vue-confirm/latest?color=green&style=for-the-badge)
-![beta version](https://img.shields.io/npm/v/@gn5r/vue-confirm/beta?color=green&style=for-the-badge)
-![legacy version](https://img.shields.io/npm/v/@gn5r/vue-confirm/legacy?color=green&style=for-the-badge)
+![downloads](https://img.shields.io/npm/dt/%40gn5r/vue-confirm?style=for-the-badge)
+![latest](https://img.shields.io/npm/v/%40gn5r/vue-confirm/latest?style=for-the-badge&label=npm%40latest&color=green)
+![beta](https://img.shields.io/npm/v/%40gn5r/vue-confirm/beta?style=for-the-badge&label=npm%40beta&color=green)
+![legacy](https://img.shields.io/npm/v/%40gn5r/vue-confirm/legacy?style=for-the-badge&label=npm%40legacy&color=green)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=green&style=for-the-badge)](https://opensource.org/licenses/MIT)
-![typed](https://img.shields.io/npm/types/@gn5r/vue-confirm?color=green&style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gn5r/vue-confirm/ci?event=push&label=CI&logo=GitHub&style=for-the-badge)
+[![license](https://img.shields.io/npm/l/%40gn5r%2Fvue-confirm?style=for-the-badge)](https://opensource.org/licenses/MIT)
+![npm type definitions](https://img.shields.io/npm/types/%40gn5r%2Fvue-confirm?style=for-the-badge&color=green)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/gn5r/vue-confirm/ci.yml?style=for-the-badge&logo=GitHub&label=CI)
 
 ## 依存関係のバージョン
 
-![vue version](https://img.shields.io/npm/dependency-version/@gn5r/vue-confirm/dev/vue?style=for-the-badge)
-![@mdi/js version](https://img.shields.io/npm/dependency-version/@gn5r/vue-confirm/dev/@mdi/js?style=for-the-badge)
+![vue version](https://img.shields.io/npm/dependency-version/%40gn5r%2Fvue-confirm/dev/vue?style=for-the-badge)
+![@mdi/js version](https://img.shields.io/npm/dependency-version/%40gn5r%2Fvue-confirm/dev/%40mdi%2Fjs?style=for-the-badge)
 
-## デモ
+## プレイグラウンド
 
-[vue-confirm Demo](https://gn5r.github.io/vue-confirm/)
+[プレイグラウンド | Vue Confirm](https://gn5r.github.io/vue-confirm/ja/guide/playground.html)
 
 ## バージョンマトリクス
 
@@ -52,17 +52,19 @@
 
 ## _Vue.use_ を使う場合
 
-```ts:main.ts
+```ts
+// main.ts
 import { createApp } from "vue";
 import App from "./App.vue";
-// PlugininFunction と cssをインポート
+// Plugin Function と cssをインポート
 import { VConfirmPlugin } from "@gn5r/vue-confirm";
 import "@gn5r/vue-confirm/dist/v-confirm.min.css";
 
-createApp(App).use(VConfirmPlugin).mount("#app")
+createApp(App).use(VConfirmPlugin).mount("#app");
 ```
 
-```vue:SampleComponent.vue
+```vue
+<!-- SampleComponent.vue -->
 <template>
   <button type="button" @click="show">show</button>
   <v-confirm
@@ -84,14 +86,14 @@ export default defineComponent({
       dialog: false,
       title: "title",
       message: "message!",
-      btns: [] as VConfirmBtn[]
+      btns: [] as VConfirmBtn[],
     });
 
     function show() {
       config.value.btns = [
         {
           text: "OK",
-          function: () => config.value.dialog = false,
+          function: () => (config.value.dialog = false),
         },
       ];
       config.value.dialog = true;
@@ -100,15 +102,16 @@ export default defineComponent({
     return {
       config,
       show,
-    }
-  }
+    };
+  },
 });
 </script>
 ```
 
 ## _Vue.use_ を使わない場合
 
-```vue:SampleComponent.vue
+```vue
+<!-- SampleComponent.vue -->
 <template>
   <button type="button" @click="show">show</button>
   <v-confirm
@@ -130,14 +133,14 @@ export default defineComponent({
       dialog: false,
       title: "title",
       message: "message!",
-      btns: [] as VConfirmBtn[]
+      btns: [] as VConfirmBtn[],
     });
 
     function show() {
       config.value.btns = [
         {
           text: "OK",
-          function: () => config.value.dialog = false,
+          function: () => (config.value.dialog = false),
         },
       ];
       config.value.dialog = true;
@@ -146,11 +149,11 @@ export default defineComponent({
     return {
       config,
       show,
-    }
+    };
   },
   components: {
-    VConfirm
-  }
+    VConfirm,
+  },
 });
 </script>
 ```

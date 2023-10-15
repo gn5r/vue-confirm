@@ -5,14 +5,13 @@
   "license": "ISC",
   "scripts": {
     "build": "ts-node src/index.ts",
-    "lint": "eslint --ext .ts src",
-    "lint:fix": "prettier --write src/**/*.ts"
+    "lint": "eslint --ext .ts src --ignore-path ../../.gitignore",
+    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.ts"
   },
   "dependencies": {
     "@gn5r/vue-confirm": "^3.2.4"
   },
   "devDependencies": {
-    "@types/shelljs": "^0.8.11",
     "ts-node": "^10.9.1"
   }
 }

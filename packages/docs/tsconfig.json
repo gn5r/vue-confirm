@@ -7,7 +7,6 @@
       "@/*": ["src/*"],
       "@theme/*": ["src/.vitepress/theme/*"],
     },
-    "module": "esnext",
     "resolveJsonModule": true,
   },
   "include": [

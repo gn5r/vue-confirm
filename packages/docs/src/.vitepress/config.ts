@@ -71,14 +71,10 @@ export default defineConfig({
       },
     },
     ssr: {
-      noExternal: ["vuetify"],
+      noExternal: ["vuetify", "vue-i18n"],
     },
     esbuild: {
       drop: ["console", "debugger"],
-    },
-    define: {
-      __VUE_I18N_FULL_INSTALL__: true,
-      __VUE_I18N_LEGACY_API__: false,
     },
   },
 });

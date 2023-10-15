@@ -9,7 +9,7 @@ import "@fortawesome/fontawesome-free/js/all.min.js";
 import vuetify from "../plugins/vuetify";
 import i18n from "../plugins/i18n";
 import { VConfirmPlugin } from "@gn5r/vue-confirm";
-import "@gn5r/vue-confirm/dist/v-confirm.min.css";
+import "@gn5r/vue-confirm/styles";
 
 export default {
   Layout: LayoutProvider,

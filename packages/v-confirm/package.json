@@ -31,28 +31,66 @@
     "dist",
     "_styles.sass"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/v-confirm-es.js",
+      "require": "./dist/v-confirm-umd.js",
+      "types": "./types/index.d.ts",
+      "style": "./dist/v-confirm.min.css",
+      "sass": "./lib/styles/main.sass"
+    },
+    "./styles": {
+      "sass": "./lib/styles/main.sass",
+      "import": "./dist/v-confirm.min.css",
+      "require": "./dist/v-confirm.min.css"
+    },
+    "./styles/*": "./lib/styles/*",
+    "./components": "./lib/components/index.d.ts",
+    "./components/*": "./lib/components/*/index.d.ts",
+    "./types": "./types/index.d.ts",
+    "./*": "./*"
+  },
+  "typesVersions": {
+    "*": {
+      "types": [
+        "types/index.d.ts"
+      ],
+      "*": [
+        "*",
+        "dist/*",
+        "lib/index.d.ts",
+        "lib/*.d.ts",
+        "lib/*/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.ts",
     "build": "cross-env NODE_ENV=production vite build && yarn build:lib && yarn build:types",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
-    "lint": "eslint --ext .js,.ts,.tsx src",
-    "lint:fix": "prettier --write src/**/*.{js,ts,tsx,css,scss}",
+    "lint": "eslint --ext .js,.ts,.tsx src  --ignore-path ../../.gitignore",
+    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{js,ts,tsx,css,scss}",
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },
   "peerDependencies": {
-    "vue": "^3.2.45"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.7",
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
-    "@mdi/js": "^6.5.95",
-    "@vue/babel-plugin-jsx": "^1.1.1",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "vue": "^3.2.45"
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.23.0",
+    "@mdi/js": "^7.3.67",
+    "@vue/babel-plugin-jsx": "^1.1.5",
+    "@vue/test-utils": "^2.4.1",
+    "autoprefixer": "^10.4.16",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "jsdom": "^22.1.0",
+    "postcss": "^8.4.31",
+    "vitest": "^0.34.6",
+    "vue": "^3.3.4"
   },
   "vetur": {
     "tags": "dist/tags.json",

@@ -2,6 +2,8 @@
   "extends": "./tsconfig.json",
   "exclude": ["vite.*", "vitest.*", "dev", "**/__tests__"],
   "compilerOptions": {
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "declaration": true,
     "emitDeclarationOnly": true,
     "sourceMap": true,

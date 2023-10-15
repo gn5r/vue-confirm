@@ -4,14 +4,12 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@theme/*": ["src/.vitepress/theme/*"],
+      "@theme/*": [".vitepress/theme/*"],
     },
     "resolveJsonModule": true,
   },
   "include": [
-    "src/**/*",
-    "src/.vitepress/**/*",
-    "src/.vitepress/**/*.vue",
+    ".vitepress/**/*",
+    ".vitepress/**/*.vue",
   ]
 }

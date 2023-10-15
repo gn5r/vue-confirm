@@ -5,11 +5,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev src",
-    "build": "vitepress build src",
-    "preview": "vitepress preview src --base /vue-confirm/",
-    "lint": "eslint --ext .js,.ts,.vue src/.vitepress --ignore-path ../../.gitignore",
-    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{md,js,ts,css,vue}"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview --base /vue-confirm/",
+    "lint": "eslint --ext .js,.ts,.vue .vitepress --ignore-path ../../.gitignore",
+    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write ./**/*.{md,js,ts,css,vue}"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

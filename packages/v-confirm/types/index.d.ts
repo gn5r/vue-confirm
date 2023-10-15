@@ -42,6 +42,6 @@ export const VConfirmPlugin: Plugin;
 // for Volar
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
-    VConfirm: typeof import("@gn5r/vue-confirm/lib/components")["VConfirm"];
+    VConfirm: (typeof import("@gn5r/vue-confirm/components"))["VConfirm"];
   }
 }

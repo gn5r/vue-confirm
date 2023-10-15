@@ -58,7 +58,7 @@
       "*": [
         "*",
         "dist/*",
-        "lib/index.d.ts",
+        "lib/*",
         "lib/*.d.ts",
         "lib/*/index.d.ts"
       ]

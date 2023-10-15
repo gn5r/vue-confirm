@@ -38,15 +38,19 @@
 |     \*-beta     |  beta  |       -       |
 |     \*-next     |  next  |       -       |
 
-- コマンド
+### コマンド
 
-  ```
-  # npm
-  npm i @gn5r/vue-confirm
+#### npm
 
-  # yarn
-  yarn add @gn5r/vue-confirm
-  ```
+```
+npm i @gn5r/vue-confirm
+```
+
+#### yarn
+
+```
+yarn add @gn5r/vue-confirm
+```
 
 ## 使い方
 

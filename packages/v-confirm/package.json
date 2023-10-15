@@ -49,6 +49,9 @@
   },
   "typesVersions": {
     "*": {
+      "types": [
+        "types/index.d.ts"
+      ],
       "*": [
         "*",
         "dist/*",

@@ -2,11 +2,14 @@
 
 ![downloads](https://img.shields.io/npm/dt/%40gn5r/vue-confirm?style=for-the-badge)
 ![latest](https://img.shields.io/npm/v/%40gn5r/vue-confirm/latest?style=for-the-badge&label=npm%40latest&color=green)
+
+![next](https://img.shields.io/npm/v/%40gn5r/vue-confirm/next?style=for-the-badge&label=npm%40next&color=green)
 ![beta](https://img.shields.io/npm/v/%40gn5r/vue-confirm/beta?style=for-the-badge&label=npm%40beta&color=green)
 ![legacy](https://img.shields.io/npm/v/%40gn5r/vue-confirm/legacy?style=for-the-badge&label=npm%40legacy&color=green)
 
 [![license](https://img.shields.io/npm/l/%40gn5r%2Fvue-confirm?style=for-the-badge)](https://opensource.org/licenses/MIT)
 ![npm type definitions](https://img.shields.io/npm/types/%40gn5r%2Fvue-confirm?style=for-the-badge&color=green)
+
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/gn5r/vue-confirm/ci.yml?style=for-the-badge&logo=GitHub&label=CI)
 
 [日本語版 README はこちら](README-ja.md)

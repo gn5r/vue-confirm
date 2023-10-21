@@ -102,7 +102,7 @@ export default defineComponent({
       config.value.btns = [
         {
           text: "OK",
-          function: () => (config.value.dialog = false),
+          onClick: () => (config.value.dialog = false),
         },
       ];
       config.value.dialog = true;
@@ -149,7 +149,7 @@ export default defineComponent({
       config.value.btns = [
         {
           text: "OK",
-          function: () => (config.value.dialog = false),
+          onClick: () => (config.value.dialog = false),
         },
       ];
       config.value.dialog = true;
@@ -187,13 +187,14 @@ export default defineComponent({
 
 ### VConfirmBtn description
 
-|   name    |                                                                  description                                                                  |           type           |  default  |
-| :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
-|   class   |                                                            css classes for button                                                             |    string \| string[]    | undefined |
-|   color   | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |          string          | undefined |
-| function  |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
-|   text    |                                                                text in button                                                                 |          string          | undefined |
-| textColor |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |          string          | undefined |
+|           name           |                                                                  description                                                                  |           type           |  default  |
+| :----------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
+|          class           |                                                            css classes for button                                                             |    string \| string[]    | undefined |
+|          color           | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |          string          | undefined |
+| function(**Deprecated**) |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
+|         onClick          |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
+|           text           |                                                                text in button                                                                 |          string          | undefined |
+|        textColor         |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |          string          | undefined |
 
 ## License
 

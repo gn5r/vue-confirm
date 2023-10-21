@@ -1,22 +1,23 @@
 // Vue
 import { defineComponent, ref, computed, nextTick, watch } from "vue";
-import { Transition } from "vue";
-
-// Types
-import type { PropType } from "vue";
-import type { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
-
-// ClickOutside Directive
-import { clickOutside } from "@/directives";
 
 // Components
-import { VConfirmHeader, VConfirmActions } from "@/components/VConfirm";
+import { Transition } from "vue";
+import { VConfirmHeader } from "./VConfirmHeader";
+import { VConfirmActions } from "./VConfirmActions";
 import { Divider } from "@/components";
+
+// Composables
+import { useThemeProps, useThemeClasses } from "@/composables/theme";
+import { useBtnProps } from "@/composables/btn";
+
+// Directives
+import { clickOutside } from "@/directives";
 
 // Helper
 import { convertToUnit } from "@/utils/helper";
-import { useThemeProps, useThemeClasses } from "@/composables/theme";
 
+// Styles
 import "./VConfirm.scss";
 
 export const VConfirm = defineComponent({
@@ -43,16 +44,9 @@ export const VConfirm = defineComponent({
       default: "inherit",
     },
     message: String,
-    btnAlign: {
-      type: String as PropType<Alignment>,
-      default: "end",
-    },
-    btns: {
-      type: Array as PropType<Array<VConfirmBtn>>,
-      default: () => [],
-    },
     hideHeader: Boolean,
     ...useThemeProps(),
+    ...useBtnProps(),
   },
   emits: ["click:outside", "update:modelValue"],
   setup(props, { emit, attrs, slots }) {

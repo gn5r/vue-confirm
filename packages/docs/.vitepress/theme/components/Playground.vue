@@ -276,7 +276,7 @@ config.btns = [
     textColor: "#ffffff",
     color: "#2196F3",
     class: "",
-    function: () => (config.modelValue = false),
+    onClick: () => (config.modelValue = false),
   },
   {
     text: "NO",
@@ -284,7 +284,7 @@ config.btns = [
     color: "",
     class:
       "v-btn v-theme--light text-error v-btn--density-default v-btn--size-default v-btn--variant-outlined",
-    function: () => (config.modelValue = false),
+    onClick: () => (config.modelValue = false),
   },
 ];
 </script>

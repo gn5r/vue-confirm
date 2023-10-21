@@ -1,21 +1,17 @@
+// Vue
 import { defineComponent, toRef, computed } from "vue";
 
-import type { PropType, ButtonHTMLAttributes } from "vue";
-import { Alignment, VConfirmBtn } from "@gn5r/vue-confirm/types";
-
+// Composables
 import { useBackgroundColor, useTextColor } from "@/composables/color";
+import { useBtnProps } from "@/composables/btn";
+
+// Types
+import type { ButtonHTMLAttributes } from "vue";
 
 export const VConfirmActions = defineComponent({
   name: "v-confirm-footer",
   props: {
-    btnAlign: {
-      type: String as PropType<Alignment>,
-      default: "end",
-    },
-    btns: {
-      type: Array as PropType<Array<VConfirmBtn>>,
-      default: () => [],
-    },
+    ...useBtnProps(),
   },
   setup(props, { slots }) {
     const items = computed(() =>
@@ -41,7 +37,13 @@ export const VConfirmActions = defineComponent({
               ...textColorClasses.value,
             ],
             style: { ...backgroundColorStyles.value, ...textColorStyles.value },
-            onClick: () => btn.function(),
+            onClick: () => {
+              if (btn.onClick) {
+                return btn.onClick();
+              } else if(btn.function) {
+                return btn.function();
+              }
+            },
           },
           ...btn,
         };

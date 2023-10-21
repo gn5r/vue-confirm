@@ -1,10 +1,13 @@
+// Vue
 import { defineComponent, toRef } from "vue";
 
+// Components
+import { MdiIcon } from "@/components/MdiIcon";
+import { mdiClose } from "@mdi/js";
+
+// Composables
 import { useBackgroundColor, useTextColor } from "@/composables/color";
 import { useThemeProps } from "@/composables/theme";
-
-import { MdiIcon } from "@/components";
-import { mdiClose } from "@mdi/js";
 
 export const VConfirmHeader = defineComponent({
   name: "v-confirm-header",

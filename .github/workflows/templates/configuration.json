@@ -30,7 +30,11 @@
     },
     {
       "title": "## 📝 Documentation",
-      "labels": ["docs"]
+      "labels": ["docs", "documentation"]
+    },
+    {
+      "title": "## 🗑️ Deprecated",
+      "labels": ["deprecated"]
     }
   ],
   "pr_template": "- ${{TITLE}} (#${{NUMBER}})"

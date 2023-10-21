@@ -12,6 +12,7 @@ export type VConfirmBtn = {
   color?: string;
   /** @deprecated */
   function?: FunctionConstructor | VoidFunction;
+  onClick?: FunctionConstructor | VoidFunction;
   text?: string;
   textColor?: string;
 };

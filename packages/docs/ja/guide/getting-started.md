@@ -54,7 +54,7 @@ function show() {
   config.value.btns = [
     {
       text: "OK",
-      function: () => (config.value.modelValue = false),
+      onClick: () => (config.value.modelValue = false),
     },
   ];
   config.value.modelValue = true;

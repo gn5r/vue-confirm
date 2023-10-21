@@ -32,11 +32,11 @@ describe("VConfirmActions.tsx", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
       {
         text: "NO",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -48,7 +48,7 @@ describe("VConfirmActions.tsx", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -59,7 +59,7 @@ describe("VConfirmActions.tsx", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -73,7 +73,7 @@ describe("VConfirmActions.tsx", () => {
       {
         text: "OK",
         class: "btn",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -90,7 +90,7 @@ describe("VConfirmActions.tsx", () => {
       {
         text: "OK",
         color: "primary",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -104,7 +104,7 @@ describe("VConfirmActions.tsx", () => {
       {
         text: "OK",
         color: "#fff",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -118,7 +118,7 @@ describe("VConfirmActions.tsx", () => {
       {
         text: "OK",
         textColor: "white--text",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -132,7 +132,7 @@ describe("VConfirmActions.tsx", () => {
       {
         text: "OK",
         textColor: "#fff",
-        function: vi.fn(),
+        onClick: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
@@ -146,7 +146,7 @@ describe("VConfirmActions.tsx", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
-        function: btnFunc,
+        onClick: btnFunc,
       },
     ];
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });

@@ -37,5 +37,6 @@
       "labels": ["deprecated"]
     }
   ],
-  "pr_template": "- ${{TITLE}} (#${{NUMBER}})"
+  "pr_template": "- ${{TITLE}} (#${{NUMBER}})",
+  "ignore_labels": ["ignore"]
 }

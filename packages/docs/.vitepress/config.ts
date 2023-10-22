@@ -143,6 +143,24 @@ function sidebarGuide() {
             { text: "usage", link: "sass-variables#usage" },
           ],
         },
+        {
+          text: "Create global functions",
+          link: "create-global-functions",
+          items: [
+            {
+              text: "Store sample",
+              link: "create-global-functions#store-sample",
+            },
+            {
+              text: "App.vue",
+              link: "create-global-functions#app-vue",
+            },
+            {
+              text: "Usage actions",
+              link: "create-global-functions#usage-actions",
+            },
+          ],
+        },
       ],
     },
   ];
@@ -178,6 +196,24 @@ function sidebarGuideJa() {
             { text: "テーマ", link: "sass-variables#theme" },
             { text: "v-confirm", link: "sass-variables#v-confirm" },
             { text: "使い方", link: "sass-variables#usage" },
+          ],
+        },
+        {
+          text: "グローバル関数を作成する",
+          link: "create-global-functions",
+          items: [
+            {
+              text: "ストアサンプル",
+              link: "create-global-functions#store-sample",
+            },
+            {
+              text: "App.vue",
+              link: "create-global-functions#app-vue",
+            },
+            {
+              text: "アクションの使い方",
+              link: "create-global-functions#usage-actions",
+            },
           ],
         },
       ],

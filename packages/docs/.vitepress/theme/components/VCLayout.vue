@@ -18,7 +18,7 @@
     color="#607d8b"
     icon="mdi-arrow-up-thick"
     position="fixed"
-    style="right: 8px; bottom: 12px"
+    style="right: 8px; bottom: 12px; z-index: 300"
     @click="scrollTop"
   />
   <v-confirm

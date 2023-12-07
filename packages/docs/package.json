@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/v3-docs",
-  "version": "3.3.0-beta.3",
+  "version": "3.3.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@gn5r/vue-confirm": "3.3.0-beta.3",
+    "@gn5r/vue-confirm": "3.3.0",
     "pinia": "^2.1.7",
     "vue-i18n": "^9.5.0"
   },

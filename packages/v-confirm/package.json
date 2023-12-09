@@ -69,8 +69,8 @@
     "build": "cross-env NODE_ENV=production vite build && yarn build:lib && yarn build:types",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
-    "lint": "eslint --ext .js,.ts,.tsx src  --ignore-path ../../.gitignore",
-    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{js,ts,tsx,css,scss}",
+    "lint": "eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts src  --ignore-path ../../.gitignore",
+    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },

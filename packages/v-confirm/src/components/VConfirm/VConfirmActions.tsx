@@ -40,7 +40,7 @@ export const VConfirmActions = defineComponent({
             onClick: () => {
               if (btn.onClick) {
                 return btn.onClick();
-              } else if(btn.function) {
+              } else if (btn.function) {
                 return btn.function();
               }
             },

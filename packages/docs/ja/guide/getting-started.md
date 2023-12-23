@@ -2,17 +2,17 @@
 
 ## インストールの仕方
 
-### npm を使う場合
+::: code-group
 
-```sh
+```sh [npm]
 npm i @gn5r/vue-confirm
 ```
 
-### yarn を使う場合
-
-```sh
+```sh [yarn]
 yarn add @gn5r/vue-confirm
 ```
+
+:::
 
 ## 使い方
 

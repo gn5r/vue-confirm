@@ -66,10 +66,12 @@ yarn add @gn5r/vue-confirm
 import { createApp } from "vue";
 import App from "./App.vue";
 // Importing Plugin Function and css
-import { VConfirmPlugin } from "@gn5r/vue-confirm";
-import "@gn5r/vue-confirm/dist/v-confirm.min.css";
+import { createVConfirm } from "@gn5r/vue-confirm";
+import "@gn5r/vue-confirm/styles";
 
-createApp(App).use(VConfirmPlugin).mount("#app");
+const app = createApp(App);
+const vconfirm = createVConfirm();
+app.use(vconfirm).mount("#app");
 ```
 
 ```vue

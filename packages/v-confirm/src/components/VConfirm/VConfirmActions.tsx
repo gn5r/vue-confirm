@@ -37,13 +37,7 @@ export const VConfirmActions = defineComponent({
               ...textColorClasses.value,
             ],
             style: { ...backgroundColorStyles.value, ...textColorStyles.value },
-            onClick: () => {
-              if (btn.onClick) {
-                return btn.onClick();
-              } else if (btn.function) {
-                return btn.function();
-              }
-            },
+            onClick: btn.onClick,
           },
           ...btn,
         };

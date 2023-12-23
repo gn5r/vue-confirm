@@ -10,9 +10,7 @@ export type Alignment =
 export type VConfirmBtn = {
   class?: string | string[];
   color?: string;
-  /** @deprecated */
-  function?: FunctionConstructor | VoidFunction;
-  onClick?: FunctionConstructor | VoidFunction;
+  onClick?: (event?: MouseEvent) => void;
   text?: string;
   textColor?: string;
 };

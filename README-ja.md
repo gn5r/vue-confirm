@@ -28,6 +28,7 @@
 |      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
 |      2.x       |       2.x       |       Yes       | [2.x](https://github.com/gn5r/vue-confirm/tree/2.x) |
 |      3.x       |       3.x       |       Yes       |                       `main`                        |
+|      3.x       |       4.x       |       Yes       |                       `next`                        |
 
 ## インストールの仕方
 
@@ -187,14 +188,13 @@ export default defineComponent({
 
 ### VConfirmBtn
 
-|         name         |                                                              description                                                              |           type           |  default  |
-| :------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
-|        class         |                                                ボタンに対する css クラスを指定できます                                                |    string \| string[]    | undefined |
-| function(**非推奨**) |                                                ボタンをクリックした時に実行される関数                                                 | Function \| VoidFunction | undefined |
-|       onClick        |                                                ボタンをクリックした時に実行される関数                                                 | Function \| VoidFunction | undefined |
-|        color         |     ボタンの背景色<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます     |          string          | undefined |
-|         text         |                                                            ボタンテキスト                                                             |          string          | undefined |
-|      textColor       | ボタンのテキストカラー<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます |          string          | undefined |
+|   name    |                                                              description                                                              |           type           |  default  |
+| :-------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
+|   class   |                                                ボタンに対する css クラスを指定できます                                                |    string \| string[]    | undefined |
+|   color   |     ボタンの背景色<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます     |          string          | undefined |
+|  onClick  |                                                ボタンをクリックした時に実行される関数                                                 | Function \| VoidFunction | undefined |
+|   text    |                                                            ボタンテキスト                                                             |          string          | undefined |
+| textColor | ボタンのテキストカラー<br>css color スタイル (`#fff`、`transparent` 、`inherit`) または class スタイル (`btn-primary`) を指定できます |          string          | undefined |
 
 ## License
 

@@ -30,6 +30,7 @@
 |      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
 |      2.x       |       2.x       |       Yes       | [2.x](https://github.com/gn5r/vue-confirm/tree/2.x) |
 |      3.x       |       3.x       |       Yes       |                       `main`                        |
+|      3.x       |       4.x       |       Yes       |                       `next`                        |
 
 ## Installation
 
@@ -189,14 +190,13 @@ export default defineComponent({
 
 ### VConfirmBtn description
 
-|           name           |                                                                  description                                                                  |           type           |  default  |
-| :----------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
-|          class           |                                                            css classes for button                                                             |    string \| string[]    | undefined |
-|          color           | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |          string          | undefined |
-| function(**Deprecated**) |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
-|         onClick          |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
-|           text           |                                                                text in button                                                                 |          string          | undefined |
-|        textColor         |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |          string          | undefined |
+|   name    |                                                                  description                                                                  |           type           |  default  |
+| :-------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------: | :-------: |
+|   class   |                                                            css classes for button                                                             |    string \| string[]    | undefined |
+|   color   | background-color for button.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`) |          string          | undefined |
+|  onClick  |                                                 function executed when the button is clicked                                                  | Function \| VoidFunction | undefined |
+|   text    |                                                                text in button                                                                 |          string          | undefined |
+| textColor |    color for button text.<br>It can be specify css style color (`#fff` or `transparent` or `inherit`) or class style color (`btn-primary`)    |          string          | undefined |
 
 ## License
 

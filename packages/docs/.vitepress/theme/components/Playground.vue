@@ -233,8 +233,9 @@
               color="primary"
               variant="outlined"
               @click="config.modelValue = true"
-              >show dialog</v-btn
             >
+              show dialog
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>

@@ -19,6 +19,7 @@ yarn add @gn5r/vue-confirm
 ```ts
 // main.ts
 import { createApp } from "vue";
+import App from "./App.vue";
 
 import { createVConfirm } from "@gn5r/vue-confirm";
 import "@gn5r/vue-confirm/styles";

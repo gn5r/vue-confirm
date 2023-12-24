@@ -19,11 +19,12 @@ yarn add @gn5r/vue-confirm
 ```ts
 // main.ts
 import { createApp } from "vue";
+import App from "./App.vue";
 
 import { createVConfirm } from "@gn5r/vue-confirm";
 import "@gn5r/vue-confirm/styles";
 
-const app = createApp();
+const app = createApp(App);
 const vconfirm = createVConfirm();
 app.use(vconfirm).mount("#app");
 ```

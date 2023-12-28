@@ -23,4 +23,11 @@ export default {
   "copy-text": "Copy text",
   "sass-vars": "SASS Variables",
   usage: "Usage",
+  playground: {
+    "component-options": "Component Options",
+    "title-options": "Title Options",
+    "message-options": "Message Options",
+    "action-buttons": "Action Buttons",
+    "show-dialog": "show dialog",
+  },
 };

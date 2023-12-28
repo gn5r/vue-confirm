@@ -23,4 +23,11 @@ export default {
   "copy-text": "テキストをコピー",
   "sass-vars": "SASS変数",
   usage: "使い方",
+  playground: {
+    "component-options": "コンポーネントオプション",
+    "title-options": "タイトルオプション",
+    "message-options": "メッセージオプション",
+    "action-buttons": "アクションボタン",
+    "show-dialog": "表示",
+  },
 };

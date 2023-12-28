@@ -1,0 +1,24 @@
+# EXAMPLE USAGE
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+#
+commit-msg:
+  commands:
+    commit-lint:
+      run: yarn commitlint --edit "$1"
+
+pre-commit:
+  parallel: true
+  commands:
+    "lint-staged:v-confirm":
+      root: packages/v-confirm
+      glob: "**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}"
+      run: yarn run lint && yarn run lint:fix && git add {staged_files}
+    "lint-staged:docs":
+      root: packages/docs
+      glob: "**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}"
+      run: yarn run lint && yarn run lint:fix && git add {staged_files}
+    "lint-staged:api-generator":
+      root: packages/api-generator
+      glob: "**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}"
+      run: yarn run lint && yarn run lint:fix && git add {staged_files}

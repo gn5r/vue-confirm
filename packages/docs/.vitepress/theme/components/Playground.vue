@@ -7,7 +7,7 @@
             <v-container fluid>
               <v-row align="center" dense>
                 <v-col>
-                  <span class="text-h5">Component Options</span>
+                  <span class="text-h5">{{ title.componentOptions }}</span>
                 </v-col>
               </v-row>
               <v-row no-gutters>
@@ -67,7 +67,7 @@
 
               <v-row>
                 <v-col>
-                  <span class="text-h5">Title Options</span>
+                  <span class="text-h5">{{ title.titleOptions }}</span>
                 </v-col>
               </v-row>
 
@@ -126,7 +126,7 @@
 
               <v-row>
                 <v-col>
-                  <span class="text-h5">Message Option</span>
+                  <span class="text-h5">{{ title.messageOptions }}</span>
                 </v-col>
               </v-row>
 
@@ -145,7 +145,7 @@
 
               <v-row>
                 <v-col>
-                  <span class="text-h5">Action Buttons</span>
+                  <span class="text-h5">{{ title.actionButtons }}</span>
                 </v-col>
               </v-row>
 
@@ -234,7 +234,7 @@
               variant="outlined"
               @click="config.modelValue = true"
             >
-              show dialog
+              {{ title.showDialog }}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -245,9 +245,12 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { usePlaygroundTitles } from "@theme/composables/playground";
 import { useVConfirmStore } from "@theme/store/vconfirm";
+
 import type { Alignment } from "@gn5r/vue-confirm";
 
+const title = usePlaygroundTitles();
 const config = useVConfirmStore();
 const alignments = ref<{ id: Alignment; value: Alignment }[]>([
   {

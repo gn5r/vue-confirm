@@ -2,29 +2,31 @@
 
 ## Installation
 
-### Using npm
+::: code-group
 
-```sh
+```sh [npm]
 npm i @gn5r/vue-confirm
 ```
 
-### Using yarn
-
-```sh
+```sh [yarn]
 yarn add @gn5r/vue-confirm
 ```
+
+:::
 
 ## Usage
 
 ```ts
 // main.ts
 import { createApp } from "vue";
+import App from "./App.vue";
 
-import { VConfirmPlugin } from "@gn5r/vue-confirm";
-import "@gn5r/vue-confirm/dist/v-confirm.min.css";
+import { createVConfirm } from "@gn5r/vue-confirm";
+import "@gn5r/vue-confirm/styles";
 
-const app = createApp();
-app.use(VConfirmPlugin).mount("#app");
+const app = createApp(App);
+const vconfirm = createVConfirm();
+app.use(vconfirm).mount("#app");
 ```
 
 ```vue

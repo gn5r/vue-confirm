@@ -1,4 +1,4 @@
-import { Component, Plugin } from "vue";
+import type { Component, App } from "vue";
 
 export type Alignment =
   | "start"
@@ -10,9 +10,7 @@ export type Alignment =
 export type VConfirmBtn = {
   class?: string | string[];
   color?: string;
-  /** @deprecated */
-  function?: FunctionConstructor | VoidFunction;
-  onClick?: FunctionConstructor | VoidFunction;
+  onClick?: (event?: MouseEvent) => void;
   text?: string;
   textColor?: string;
 };
@@ -37,9 +35,11 @@ export type VConfirmProps = {
 declare const VConfirm: Component<VConfirmProps, {}, {}, {}, {}>;
 /* eslint-enable */
 
-export default VConfirm;
+declare function createVConfirm(): { install: (app: App) => void };
 
-export const VConfirmPlugin: Plugin;
+export { createVConfirm };
+
+export default VConfirm;
 
 // for Volar
 declare module "@vue/runtime-core" {

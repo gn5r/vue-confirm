@@ -7,10 +7,10 @@
     "build": "yarn workspace @gn5r/vue-confirm run build && yarn workspace @gn5r/api-generator run build",
     "lint": "lerna run lint --parallel --stream",
     "lint:fix": "lerna run lint:fix --parallel --stream",
-    "clean": "lerna clean -y && rm -rf node_modules",
-    "prepare": "husky install"
+    "clean": "lerna clean -y && rm -rf node_modules"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.7.7",
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@mdi/font": "^7.3.67",
@@ -24,9 +24,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.51.0",
     "eslint-plugin-vue": "^9.17.0",
-    "husky": "^8.0.3",
     "lerna": "^7.3.0",
-    "lint-staged": "^15.2.0",
     "prettier": "^3.0.3",
     "sass": "^1.69.0",
     "shelljs": "^0.8.5",

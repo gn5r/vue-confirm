@@ -20,6 +20,6 @@
   "devDependencies": {
     "@types/prismjs": "^1.26.1",
     "prismjs": "^1.29.0",
-    "vitepress": "^1.0.0-rc.20"
+    "vitepress": "^1.0.0-rc.33"
   }
 }

@@ -13,6 +13,7 @@ export default defineConfig({
   outDir: `${process.cwd()}/dist`,
   title: "Vue Confirm",
   description: "A confirm component for Vue.js",
+  lastUpdated: true,
   head: [
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
@@ -31,6 +32,12 @@ export default defineConfig({
       label: "English",
       lang: "en",
       themeConfig: {
+        lastUpdated: {
+          formatOptions: {
+            dateStyle: "medium",
+            timeStyle: "short",
+          },
+        },
         nav: nav(),
         sidebar: {
           "/guide/": { base: "/guide/", items: sidebarGuide() },
@@ -42,6 +49,13 @@ export default defineConfig({
       lang: "ja",
       link: "/ja/",
       themeConfig: {
+        lastUpdated: {
+          text: "最終更新日",
+          formatOptions: {
+            dateStyle: "medium",
+            timeStyle: "short",
+          },
+        },
         nav: navJa(),
         sidebar: {
           "/ja/guide/": { base: "/ja/guide/", items: sidebarGuideJa() },

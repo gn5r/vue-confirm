@@ -1,3 +1,9 @@
+---
+next:
+  text: "SASS Variables"
+  link: "/guide/sass-variables"
+---
+
 <script setup>
 import {
   usePropsTableItems,

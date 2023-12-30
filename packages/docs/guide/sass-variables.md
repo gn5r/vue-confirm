@@ -1,3 +1,12 @@
+---
+prev:
+  text: "Component API"
+  link: "/guide/component-api"
+next:
+  text: "Create global functions"
+  link: "/guide/create-global-functions"
+---
+
 <script setup>
 import { useThemeSassItems, useVConfirmSassItems } from "@theme/composables/sass";
 

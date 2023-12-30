@@ -1,3 +1,9 @@
+---
+next:
+  text: "SASS変数"
+  link: "/ja/guide/sass-variables"
+---
+
 <script setup>
 import {
   usePropsTableItems,

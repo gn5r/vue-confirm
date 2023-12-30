@@ -1,3 +1,12 @@
+---
+prev:
+  text: "コンポーネントAPI"
+  link: "/ja/guide/component-api"
+next:
+  text: "グローバル関数を作成する"
+  link: "/ja/guide/create-global-functions"
+---
+
 <script setup>
 import { useThemeSassItems, useVConfirmSassItems } from "@theme/composables/sass";
 

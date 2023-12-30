@@ -29,12 +29,15 @@ $table-header-color: rgba(
               white-space: pre-wrap;
               word-wrap: break-word;
             }
+            > pre.shiki {
+              > code {
+                font-size: inherit;
+                padding: 0px;
+              }
+            }
           }
         }
       }
-    }
-    .token.operator {
-      background: none;
     }
   }
 }

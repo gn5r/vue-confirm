@@ -13,12 +13,14 @@
           :key="i"
           :class="theme.dark ? 'bg-grey-darken-3' : 'bg-grey-lighten-4'"
         >
-          <td>
-            <prism-cell :code="item.name" lang="sass" />
-          </td>
-          <td>
-            <prism-cell :code="item.default" lang="sass" />
-          </td>
+          <td
+            class="language-scss vp-adaptive-theme"
+            v-html="highlight(item.name)"
+          />
+          <td
+            class="language-scss vp-adaptive-theme"
+            v-html="highlight(item.default)"
+          />
         </tr>
       </tbody>
     </v-table>
@@ -26,13 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, type PropType } from "vue";
 import { useTheme } from "vuetify";
+import { useHighlighter, useShikijiOptions } from "@theme/composables/shikiji";
 
-import type { PropType } from "vue";
 import type { SassTableItem } from "@theme/composables/sass";
-
-import PrismCell from "./PrismCell.vue";
 
 defineProps({
   items: {
@@ -40,7 +40,19 @@ defineProps({
     default: () => [],
   },
 });
+
 const { current: theme } = useTheme();
+const highlighter = await useHighlighter();
+
+function highlight(val?: string) {
+  let code = "";
+  if (val) {
+    code = typeof val === "object" ? JSON.stringify(val) : val;
+  }
+  return highlighter.codeToHtml(code, {
+    ...useShikijiOptions("scss"),
+  });
+}
 </script>
 
-<style scoped></style>
+<style lang="sass" scoped></style>

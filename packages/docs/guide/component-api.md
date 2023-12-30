@@ -18,12 +18,27 @@ const slotsItems = useSlotsTableItems();
 
 ## Props
 
-<PropsTable :items="propsItems" />
+<Suspense>
+  <PropsTable :items="propsItems" />
+  <template #fallback>
+    Loading...
+  </template>
+</Suspense>
 
 ## Events
 
-<EventsTable :items="eventsItems" />
+<Suspense>
+  <EventsTable :items="eventsItems" />
+  <template #fallback>
+    Loading...
+  </template>
+</Suspense>
 
 ## Slots
 
-<SlotsTable :items="slotsItems" />
+<Suspense>
+  <SlotsTable :items="slotsItems" />
+  <template #fallback>
+    Loading...
+  </template>
+</Suspense>

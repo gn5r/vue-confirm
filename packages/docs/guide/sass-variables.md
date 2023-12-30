@@ -11,11 +11,21 @@ const vconfirmItems = useVConfirmSassItems();
 
 ## theme
 
-<SassTable :items="themeItems" />
+<Suspense>
+  <SassTable :items="themeItems" />
+  <template #fallback>
+    Loading...
+  </template>
+</Suspense>
 
 ## v-confirm
 
-<SassTable :items="vconfirmItems" />
+<Suspense>
+  <SassTable :items="vconfirmItems" />
+  <template #fallback>
+    Loading...
+  </template>
+</Suspense>
 
 ## Usage
 

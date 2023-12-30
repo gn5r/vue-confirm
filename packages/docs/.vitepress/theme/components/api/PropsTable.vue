@@ -19,12 +19,14 @@
           :class="theme.dark ? 'bg-grey-darken-3' : 'bg-grey-lighten-4'"
         >
           <td class="font-weight-medium">{{ item.name }}</td>
-          <td>
-            <prism-cell :code="item.type" />
-          </td>
-          <td>
-            <prism-cell :code="item.default" />
-          </td>
+          <td
+            class="language-ts vp-adaptive-theme"
+            v-html="highlight(item.type)"
+          />
+          <td
+            class="language-ts vp-adaptive-theme"
+            v-html="highlight(item.default)"
+          />
           <td class="description">
             {{ item.description }}
           </td>
@@ -35,13 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { defineProps, ref, type PropType } from "vue";
 import { useTheme } from "vuetify";
+import { useHighlighter, useShikijiOptions } from "@theme/composables/shikiji";
 
-import type { PropType } from "vue";
 import type { PropsTableItem } from "@theme/composables/api";
-
-import PrismCell from "./PrismCell.vue";
 
 defineProps({
   items: {
@@ -49,9 +49,20 @@ defineProps({
     default: () => [],
   },
 });
-const headers = ref<Array<string>>(["Name", "Type", "Default", "Description"]);
 
+const headers = ref<Array<string>>(["Name", "Type", "Default", "Description"]);
 const { current: theme } = useTheme();
+const highlighter = await useHighlighter();
+
+function highlight(val?: string) {
+  let code = "";
+  if (val) {
+    code = typeof val === "object" ? JSON.stringify(val) : val;
+  }
+  return highlighter.codeToHtml(code, {
+    ...useShikijiOptions(),
+  });
+}
 </script>
 
-<style lang="scss"></style>
+<style lang="sass" scoped></style>

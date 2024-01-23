@@ -1,0 +1,76 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - next
+      - dev
+    paths-ignore:
+      - ".github/**"
+      - "**/README*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  build-docs:
+    needs: [ci]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref == 'refs/heads/dev'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Install dependencies
+        uses: actions/cache@v3
+        id: cache_dependencies
+        env:
+          cache-name: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
+      - run: yarn --frozen-lockfile --non-interactive
+
+      - name: Build v-confirm
+        run: yarn run build
+
+      - name: Build docs
+        run: |
+          yarn run build
+          touch dist/.nojekyll
+        working-directory: ./packages/docs
+
+      - name: Upload artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./packages/docs/dist
+
+  deploy-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    needs: [build-docs]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

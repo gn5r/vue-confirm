@@ -1,16 +1,9 @@
-name: CD
+name: Release
 
 on:
   push:
-    branches:
-      - main
-      - next
-      - dev
     tags:
       - "v*"
-    paths-ignore:
-      - ".github/**"
-      - "**/README*"
   workflow_dispatch:
 
 permissions:
@@ -19,42 +12,6 @@ permissions:
 jobs:
   ci:
     uses: ./.github/workflows/ci.yml
-
-  deploy-docs:
-    needs: [ci]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref == 'refs/heads/dev'
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        uses: actions/cache@v3
-        id: cache_dependencies
-        env:
-          cache-name: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
-      - run: yarn --frozen-lockfile --non-interactive
-
-      - name: Build v-confirm
-        run: yarn run build
-
-      - name: Build docs
-        run: yarn run build
-        working-directory: ./packages/docs
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/docs/dist
 
   create-release:
     needs: [ci]

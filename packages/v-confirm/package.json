@@ -92,10 +92,6 @@
     "vitest": "^0.34.6",
     "vue": "^3.3.4"
   },
-  "vetur": {
-    "tags": "dist/tags.json",
-    "attributes": "dist/attributes.json"
-  },
   "publishConfig": {
     "access": "public"
   }

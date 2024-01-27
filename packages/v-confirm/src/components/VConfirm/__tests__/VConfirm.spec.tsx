@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { VConfirm } from "../VConfirm";
 import type { VConfirmBtn } from "@gn5r/vue-confirm";
 
@@ -85,7 +85,6 @@ describe("VConfirm.tsx", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
-        function: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirm, {
@@ -98,7 +97,6 @@ describe("VConfirm.tsx", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
-        function: vi.fn(),
       },
     ];
     const wrapper = mount(VConfirm, {

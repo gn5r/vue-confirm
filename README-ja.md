@@ -27,20 +27,21 @@
 | :------------: | :-------------: | :-------------: | :-------------------------------------------------: |
 |      2.x       |       1.x       |       No        | [1.x](https://github.com/gn5r/vue-confirm/tree/1.x) |
 |      2.x       |       2.x       |       Yes       | [2.x](https://github.com/gn5r/vue-confirm/tree/2.x) |
-|      3.x       |       3.x       |       Yes       |                       `main`                        |
-|      3.x       |       4.x       |       Yes       |                       `next`                        |
+|      3.x       |       3.x       |       Yes       | [3.x](https://github.com/gn5r/vue-confirm/tree/3.x) |
+|      3.x       |       4.x       |       Yes       |                       `main`                        |
 
 ## インストールの仕方
 
 ### npm タグマトリクス
 
-| Package version |  tag   | Volar support |
-| :-------------: | :----: | :-----------: |
-|       1.x       |   -    |       -       |
-|       2.x       | legacy |       -       |
-|       3.x       | latest |      Yes      |
-|     \*-beta     |  beta  |       -       |
-|     \*-next     |  next  |       -       |
+| Package version |  tag   | Volar support |  EOL   |
+| :-------------: | :----: | :-----------: | :----: |
+|       1.x       |   -    |       -       |   ○    |
+|       2.x       | legacy |       -       |   ○    |
+|       3.x       | stable |      Yes      |   ×    |
+|       4.x       | latest |      Yes      |   ×    |
+|     \*-beta     |  beta  |       -       |   -    |
+|     \*-next     |  next  |       -       |   -    |
 
 ### コマンド
 

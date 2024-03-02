@@ -1,3 +1,12 @@
+---
+prev:
+  text: "コンポーネントAPI"
+  link: "/ja/guide/component-api"
+next:
+  text: "グローバル関数を作成する"
+  link: "/ja/guide/create-global-functions"
+---
+
 <script setup>
 import { useThemeSassItems, useVConfirmSassItems } from "@theme/composables/sass";
 
@@ -14,11 +23,21 @@ const vconfirmItems = useVConfirmSassItems();
   <a class="header-anchor" href="#theme" aria-label="Permalink to &quot;テーマ&quot;">&ZeroWidthSpace;</a>
 </h2>
 
-<SassTable :items="themeItems" />
+<Suspense>
+  <SassTable :items="themeItems" />
+  <template #fallback>
+    読み込み中...
+  </template>
+</Suspense>
 
 ## v-confirm
 
-<SassTable :items="vconfirmItems" />
+<Suspense>
+  <SassTable :items="vconfirmItems" />
+  <template #fallback>
+    読み込み中...
+  </template>
+</Suspense>
 
 <h2 id="usage" tabIndex="-1">
   使い方

@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/vue-confirm",
-  "version": "4.0.0-next.0",
+  "version": "4.0.0",
   "license": "MIT",
   "description": "Confirm components for Vue.js projects",
   "author": {
@@ -91,10 +91,6 @@
     "postcss": "^8.4.31",
     "vitest": "^0.34.6",
     "vue": "^3.3.4"
-  },
-  "vetur": {
-    "tags": "dist/tags.json",
-    "attributes": "dist/attributes.json"
   },
   "publishConfig": {
     "access": "public"

@@ -12,7 +12,7 @@ import { useThemeProps, useThemeClasses } from "@/composables/theme";
 import { useBtnProps } from "@/composables/btn";
 
 // Directives
-import { clickOutside } from "@/directives";
+import { ClickOutside } from "@/directives";
 
 // Helper
 import { convertToUnit } from "@/utils/helper";
@@ -23,7 +23,7 @@ import "./VConfirm.scss";
 export const VConfirm = defineComponent({
   name: "v-confirm",
   directives: {
-    clickOutside,
+    ClickOutside,
   },
   props: {
     modelValue: Boolean,

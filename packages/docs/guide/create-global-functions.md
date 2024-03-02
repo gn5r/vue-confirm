@@ -1,5 +1,9 @@
 ---
 title: Create global functions
+prev:
+  text: "SASS Variables"
+  link: "/guide/sass-variables"
+next: false
 ---
 
 # Create actions using store such as pinia

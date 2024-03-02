@@ -1,3 +1,9 @@
+---
+next:
+  text: "SASS変数"
+  link: "/ja/guide/sass-variables"
+---
+
 <script setup>
 import {
   usePropsTableItems,
@@ -18,18 +24,33 @@ const slotsItems = useSlotsTableItems();
 
 ## Props
 
-<PropsTable :items="propsItems" />
+<Suspense>
+  <PropsTable :items="propsItems" />
+  <template #fallback>
+    読み込み中...
+  </template>
+</Suspense>
 
 <h2 id="events" tabIndex="-1">
   イベント
   <a class="header-anchor" href="#events" aria-label="Permalink to &quot;イベント&quot;">&ZeroWidthSpace;</a>
 </h2>
 
-<EventsTable :items="eventsItems" />
+<Suspense>
+  <EventsTable :items="eventsItems" />
+  <template #fallback>
+    読み込み中...
+  </template>
+</Suspense>
 
 <h2 id="slots" tabIndex="-1">
   スロット
   <a class="header-anchor" href="#slots" aria-label="Permalink to &quot;スロット&quot;">&ZeroWidthSpace;</a>
 </h2>
 
-<SlotsTable :items="slotsItems" />
+<Suspense>
+  <SlotsTable :items="slotsItems" />
+  <template #fallback>
+    読み込み中...
+  </template>
+</Suspense>

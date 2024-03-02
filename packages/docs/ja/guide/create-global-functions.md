@@ -1,5 +1,9 @@
 ---
 title: グローバル関数を作成する
+prev:
+  text: "SASS変数"
+  link: "/ja/guide/sass-variables"
+next: false
 ---
 
 # piniaのようなStoreを使いアクションを作成する

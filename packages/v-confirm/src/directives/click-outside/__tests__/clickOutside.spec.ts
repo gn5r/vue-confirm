@@ -4,7 +4,7 @@ import ClickOutside from "../";
 import { defineComponent } from "vue";
 
 describe("clickOutside", () => {
-  it("", async () => {
+  it("should emitted click:outside when clicked parent dom", async () => {
     const TestComponent = defineComponent({
       directives: {
         ClickOutside,
@@ -16,7 +16,6 @@ describe("clickOutside", () => {
       `,
       setup(_, { emit }) {
         function onClickOutside(e: Event) {
-          console.debug("onclick outside");
           emit("click:outside", e);
         }
         return { onClickOutside };
@@ -28,9 +27,7 @@ describe("clickOutside", () => {
     });
     const clickHandler =
       "ontouchstart" in document.documentElement ? "touchstart" : "click";
-    console.debug("clickHandler:", clickHandler);
     await wrapper.find(".parent").trigger(clickHandler);
-    console.debug(wrapper.emitted());
     expect(wrapper.emitted("click:outside")).toBeTruthy();
   });
 });

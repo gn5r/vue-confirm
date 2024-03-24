@@ -1,5 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`VConfirmActions.tsx > render a component 1`] = `"<div class=\\"v-confirm__actions\\" style=\\"justify-content: end;\\"></div>"`;
+exports[`VConfirmActions.tsx > render a component 1`] = `"<div class="v-confirm__actions" style="justify-content: end;"></div>"`;
 
-exports[`VConfirmActions.tsx > render buttons 1`] = `"<div class=\\"v-confirm__actions\\" style=\\"justify-content: end;\\"><button type=\\"button\\" class=\\"button\\">OK</button><button type=\\"button\\" class=\\"button\\">NO</button></div>"`;
+exports[`VConfirmActions.tsx > render buttons 1`] = `"<div class="v-confirm__actions" style="justify-content: end;"><button type="button" class="button">OK</button><button type="button" class="button">NO</button></div>"`;

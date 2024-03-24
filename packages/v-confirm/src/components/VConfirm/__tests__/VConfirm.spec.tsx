@@ -122,9 +122,7 @@ describe("VConfirm.tsx", () => {
 
       const clickHandler =
         "ontouchstart" in document.documentElement ? "touchstart" : "click";
-      console.debug("clickHandler:", clickHandler);
       await wrapper.find(".v-confirm").trigger(clickHandler);
-      console.debug(wrapper.emitted());
       expect(wrapper.emitted("click:outside")).toBeTruthy();
       expect(wrapper.emitted()["update:modelValue"][0]).toEqual([false]);
     });
@@ -137,7 +135,6 @@ describe("VConfirm.tsx", () => {
 
       const clickHandler =
         "ontouchstart" in document.documentElement ? "touchstart" : "click";
-      console.debug("clickHandler:", clickHandler);
       await wrapper.find(".v-confirm").trigger(clickHandler);
       expect(wrapper.emitted("click:outside")).toBeTruthy();
       expect(wrapper.emitted("update:modelValue")).toBeFalsy();

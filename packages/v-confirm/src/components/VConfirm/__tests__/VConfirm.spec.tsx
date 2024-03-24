@@ -109,9 +109,7 @@ describe("VConfirm.tsx", () => {
     it("defined click-outside derective", () => {
       const wrapper = mount(VConfirm);
 
-      expect(
-        wrapper.findComponent(VConfirm).vm.$options.directives?.ClickOutside
-      ).toBeDefined();
+      expect(wrapper.vm.$options.directives?.ClickOutside).toBeDefined();
     });
 
     it("should emitted click:outside when clicked parent dom", async () => {

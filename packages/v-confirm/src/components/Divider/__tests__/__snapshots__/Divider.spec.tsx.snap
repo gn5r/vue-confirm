@@ -1,5 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Divider.tsx > render a component 1`] = `"<hr role=\\"separator\\" aria-orientation=\\"horizontal\\" class=\\"divider light\\">"`;
+exports[`Divider.tsx > render a component 1`] = `"<hr role="separator" aria-orientation="horizontal" class="divider light">"`;
 
-exports[`Divider.tsx > render a dark component 1`] = `"<hr role=\\"separator\\" aria-orientation=\\"horizontal\\" class=\\"divider dark\\">"`;
+exports[`Divider.tsx > render a dark component 1`] = `"<hr role="separator" aria-orientation="horizontal" class="divider dark">"`;

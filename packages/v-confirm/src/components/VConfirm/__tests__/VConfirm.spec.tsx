@@ -109,9 +109,7 @@ describe("VConfirm.tsx", () => {
     it("defined click-outside derective", () => {
       const wrapper = mount(VConfirm);
 
-      expect(
-        wrapper.findComponent(VConfirm).vm.$options.directives?.ClickOutside
-      ).toBeDefined();
+      expect(wrapper.vm.$options.directives?.ClickOutside).toBeDefined();
     });
 
     it("should emitted click:outside when clicked parent dom", async () => {
@@ -122,9 +120,7 @@ describe("VConfirm.tsx", () => {
 
       const clickHandler =
         "ontouchstart" in document.documentElement ? "touchstart" : "click";
-      console.debug("clickHandler:", clickHandler);
       await wrapper.find(".v-confirm").trigger(clickHandler);
-      console.debug(wrapper.emitted());
       expect(wrapper.emitted("click:outside")).toBeTruthy();
       expect(wrapper.emitted()["update:modelValue"][0]).toEqual([false]);
     });
@@ -137,7 +133,6 @@ describe("VConfirm.tsx", () => {
 
       const clickHandler =
         "ontouchstart" in document.documentElement ? "touchstart" : "click";
-      console.debug("clickHandler:", clickHandler);
       await wrapper.find(".v-confirm").trigger(clickHandler);
       expect(wrapper.emitted("click:outside")).toBeTruthy();
       expect(wrapper.emitted("update:modelValue")).toBeFalsy();

@@ -75,20 +75,20 @@
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "vue": "^>=3.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.23.0",
-    "@babel/core": "^7.23.0",
-    "@babel/preset-env": "^7.22.20",
-    "@babel/preset-typescript": "^7.23.0",
-    "@mdi/js": "^7.3.67",
-    "@vue/babel-plugin-jsx": "^1.1.5",
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-typescript": "^7.24.1",
+    "@mdi/js": "^7.4.47",
+    "@vue/babel-plugin-jsx": "^1.2.2",
     "@vue/test-utils": "^2.4.5",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.19",
     "babel-plugin-module-resolver": "^5.0.0",
-    "jsdom": "^22.1.0",
-    "postcss": "^8.4.31",
+    "jsdom": "^24.0.0",
+    "postcss": "^8.4.38",
     "vitest": "^1.4.0",
     "vue": "^3.4.21"
   },

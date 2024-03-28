@@ -71,7 +71,7 @@ describe("VConfirm.tsx", () => {
     const wrapper = mount(VConfirm, {
       props: { modelValue: true },
     });
-    expect(wrapper.find(".divider").exists()).toBe(false);
+    expect(wrapper.find(".v-confirm__divider").exists()).toBe(false);
   });
 
   it("not reneder buttons when btn is empty", () => {
@@ -90,7 +90,7 @@ describe("VConfirm.tsx", () => {
     const wrapper = mount(VConfirm, {
       props: { modelValue: true, btns: btns },
     });
-    expect(wrapper.find(".divider").exists()).toBe(true);
+    expect(wrapper.find(".v-confirm__divider").exists()).toBe(true);
   });
 
   it("not render a divider when the length of btns is 1 or more elements but noActionsDivider is true", () => {

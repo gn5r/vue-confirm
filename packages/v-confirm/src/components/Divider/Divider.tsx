@@ -11,7 +11,7 @@ export const Divider = defineComponent({
       <hr
         role="separator"
         aria-orientation="horizontal"
-        class={["divider", themeClasses.value]}
+        class={["v-confirm__divider", themeClasses.value]}
         {...attrs}
       />
     );

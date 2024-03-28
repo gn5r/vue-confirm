@@ -2,15 +2,15 @@ import {
   bundledLanguages,
   getHighlighter,
   addClassToHast,
-  type ShikijiTransformer,
+  type ShikiTransformer,
   type CodeToHastOptions,
-} from "shikiji";
+} from "shiki";
 import {
   transformerNotationDiff,
   transformerNotationErrorLevel,
   transformerNotationFocus,
   transformerNotationHighlight,
-} from "shikiji-transformers";
+} from "@shikijs/transformers";
 
 export function useShikijiOptions(lang = "typescript"): CodeToHastOptions {
   return {
@@ -38,7 +38,7 @@ export function useShikijiOptions(lang = "typescript"): CodeToHastOptions {
           delete node.properties.style;
         },
       },
-    ] as ShikijiTransformer[],
+    ] as ShikiTransformer[],
   };
 }
 

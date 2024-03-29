@@ -65,7 +65,7 @@
     }
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.ts",
+    "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.mts",
     "build": "cross-env NODE_ENV=production vite build && yarn build:lib && yarn build:types",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",

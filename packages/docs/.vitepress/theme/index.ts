@@ -1,9 +1,11 @@
 // https://vitepress.dev/guide/custom-theme
 import "./styles/style.css";
 import "./styles/style.scss";
+
+import DefaultTheme from "vitepress/theme";
 import VCLayout from "./components/VCLayout.vue";
 
-import type { Theme } from "vitepress/client";
+import type { Theme } from "vitepress";
 
 import "@fortawesome/fontawesome-free/js/all.min.js";
 import vuetify from "./plugins/vuetify";
@@ -12,11 +14,12 @@ import pinia from "./plugins/pinia";
 import vconfirm from "./plugins/vconfirm";
 
 export default {
+  extends: DefaultTheme,
   Layout: VCLayout,
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app }) {
     app.use(pinia);
     app.use(i18n);
     app.use(vuetify);
     app.use(vconfirm);
   },
-} as Theme;
+} satisfies Theme;

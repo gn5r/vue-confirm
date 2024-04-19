@@ -76,7 +76,7 @@
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },
   "peerDependencies": {
-    "vue": "^>=3.3"
+    "vue": ">=3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",

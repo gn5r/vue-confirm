@@ -15,10 +15,10 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@gn5r/vue-confirm": "3.3.0",
     "pinia": "^2.1.7",
-    "vue-i18n": "^9.5.0"
+    "vue-i18n": "^9.13.0"
   },
   "devDependencies": {
-    "@types/prismjs": "^1.26.1",
+    "@types/prismjs": "^1.26.3",
     "prismjs": "^1.29.0",
     "vitepress": "^1.0.0-rc.20"
   }

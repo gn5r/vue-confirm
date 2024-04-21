@@ -11,7 +11,7 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview --base /vue-confirm/",
-    "lint": "eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue .vitepress --ignore-path ../../.gitignore",
+    "lint": "eslint .vitepress/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}",
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write ./**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}"
   },
   "dependencies": {

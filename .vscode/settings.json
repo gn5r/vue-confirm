@@ -7,5 +7,9 @@
     "docs",
     "api-generator"
   ],
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  },
   "eslint.workingDirectories": [{ "mode": "auto" }]
 }

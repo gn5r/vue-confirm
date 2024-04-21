@@ -6,19 +6,7 @@ import tseslint from "typescript-eslint";
  * @type {import("eslint").Linter.FlatConfig[]}
  */
 export default [
-  {
-    ignores: ["node_modules", "dist"],
-  },
-  {
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        ...globals.browser,
-      },
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
-  },
+  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -27,15 +15,12 @@ export default [
     },
   },
   {
-    files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
+    files: ["**/*.js", "**/*.cjs"],
     languageOptions: {
-      globals: {
-        ...globals.node,
-        ...globals.browser,
-      },
-      ecmaVersion: "latest",
-      sourceType: "script",
+      sourceType: "commonjs",
     },
-    ...eslint.configs.recommended,
+    rules: {
+      "@typescript-eslint/no-var-requires": "off",
+    },
   },
 ];

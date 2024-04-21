@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/vue-confirm",
-  "version": "4.1.0-beta.0",
+  "version": "4.1.0",
   "license": "MIT",
   "description": "Confirm components for Vue.js projects",
   "author": {
@@ -70,13 +70,13 @@
     "build:rollup": "rollup -c",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
-    "lint": "eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts src  --ignore-path ../../.gitignore",
+    "lint": "eslint -c ../../eslint.config.mjs src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },
   "peerDependencies": {
-    "vue": "^>=3.3"
+    "vue": ">=3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",

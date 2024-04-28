@@ -1,17 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`VConfirm.tsx > render a dark component 1`] = `
-"<transition-stub name=\\"transition\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\">
-  <div class=\\"v-confirm dark\\" style=\\"display: none;\\">
-    <div class=\\"v-confirm__content\\" style=\\"width: 800px;\\">
-      <header class=\\"v-confirm__header\\" style=\\"background-color: inherit;\\">
-        <div class=\\"\\" style=\\"background-color: transparent; caret-color: inherit;\\">
+"<transition-stub name="transition" appear="true" persisted="false" css="true">
+  <div class="v-confirm dark" style="display: none;">
+    <div class="v-confirm__content" style="width: 800px;">
+      <header class="v-confirm__header" style="background-color: inherit;">
+        <div class="" style="background-color: transparent; caret-color: inherit;">
           <!---->
         </div>
         <!---->
         <!---->
       </header>
-      <div class=\\"v-confirm__message\\">
+      <div class="v-confirm__message">
         <!---->
       </div>
       <!---->
@@ -22,17 +22,17 @@ exports[`VConfirm.tsx > render a dark component 1`] = `
 `;
 
 exports[`VConfirm.tsx > render with not active 1`] = `
-"<transition-stub name=\\"transition\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\">
-  <div class=\\"v-confirm light\\" style=\\"display: none;\\">
-    <div class=\\"v-confirm__content\\" style=\\"width: 800px;\\">
-      <header class=\\"v-confirm__header\\" style=\\"background-color: inherit;\\">
-        <div class=\\"\\" style=\\"background-color: transparent; caret-color: inherit;\\">
+"<transition-stub name="transition" appear="true" persisted="false" css="true">
+  <div class="v-confirm light" style="display: none;">
+    <div class="v-confirm__content" style="width: 800px;">
+      <header class="v-confirm__header" style="background-color: inherit;">
+        <div class="" style="background-color: transparent; caret-color: inherit;">
           <!---->
         </div>
         <!---->
         <!---->
       </header>
-      <div class=\\"v-confirm__message\\">
+      <div class="v-confirm__message">
         <!---->
       </div>
       <!---->

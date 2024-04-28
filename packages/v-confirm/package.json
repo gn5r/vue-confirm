@@ -89,7 +89,7 @@
     "babel-plugin-module-resolver": "^5.0.2",
     "jsdom": "^22.1.0",
     "postcss": "^8.4.31",
-    "vitest": "^0.34.6",
+    "vitest": "^1.5.2",
     "vue": "^3.4.25"
   },
   "vetur": {

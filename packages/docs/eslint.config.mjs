@@ -2,8 +2,14 @@ import config from "../../eslint.config.mjs";
 import pluginVue from "eslint-plugin-vue";
 import { FlatCompat } from "@eslint/eslintrc";
 import { fileURLToPath } from "url";
+import path from "path";
 
-const compat = new FlatCompat(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
 
 /**
  * @type {import("eslint").Linter.FlatConfig[]}

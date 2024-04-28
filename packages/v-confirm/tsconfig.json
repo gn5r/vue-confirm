@@ -6,5 +6,5 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["**/*.mjs", "src/**/*", "dev/**/*", "vite.config.*", "vite.*.conifg.*", "vitest.config.*"],
+  "include": ["src/**/*", "dev/**/*", "vite.config.*", "vite.*.conifg.*", "vitest.config.*"],
 }

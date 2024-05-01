@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/api-generator",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "private": true,
   "license": "ISC",
   "scripts": {
@@ -9,7 +9,7 @@
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.ts"
   },
   "dependencies": {
-    "@gn5r/vue-confirm": "^3.3.0"
+    "@gn5r/vue-confirm": "3.4.0"
   },
   "devDependencies": {
     "ts-node": "^10.9.1"

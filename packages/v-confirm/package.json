@@ -70,7 +70,7 @@
     "build:rollup": "rollup -c",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
-    "lint": "eslint -c ../../eslint.config.mjs src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
+    "lint": "eslint src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
@@ -81,6 +81,8 @@
   "devDependencies": {
     "@babel/cli": "^7.24.1",
     "@babel/core": "^7.24.4",
+    "@babel/eslint-parser": "^7.24.5",
+    "@babel/plugin-syntax-import-assertions": "^7.24.1",
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-typescript": "^7.24.1",
     "@mdi/js": "^7.3.67",

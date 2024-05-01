@@ -2,6 +2,7 @@
 
 ![downloads](https://img.shields.io/npm/dt/%40gn5r/vue-confirm?style=for-the-badge)
 ![latest](https://img.shields.io/npm/v/%40gn5r/vue-confirm/latest?style=for-the-badge&label=npm%40latest&color=green)
+![stable](https://img.shields.io/npm/v/%40gn5r/vue-confirm/stable?style=for-the-badge&label=npm%40stable&color=green)
 
 ![next](https://img.shields.io/npm/v/%40gn5r/vue-confirm/next?style=for-the-badge&label=npm%40next&color=green)
 ![beta](https://img.shields.io/npm/v/%40gn5r/vue-confirm/beta?style=for-the-badge&label=npm%40beta&color=green)

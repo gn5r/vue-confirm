@@ -7,6 +7,8 @@ console.debug("base:", base);
 
 const resolve = (dir = "") => path.resolve(__dirname, dir);
 
+const TAG_ID = "G-BNBTSMNVY8";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: base,
@@ -15,6 +17,30 @@ export default defineConfig({
   description: "A confirm component for Vue.js",
   lastUpdated: true,
   head: [
+    [
+      "script",
+      {},
+      `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MWGSG2LB');`,
+    ],
+    [
+      "script",
+      {
+        async: "",
+        src: `https://www.googletagmanager.com/gtag/js?id=${TAG_ID}`,
+      },
+    ],
+    [
+      "script",
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${TAG_ID}');`,
+    ],
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
     ["meta", { name: "og:site_name", content: "Vue Confirm" }],

@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onBeforeMount, onMounted, onUnmounted, watch } from "vue";
+import { ref, onMounted, onUnmounted, watch } from "vue";
 
 // Theme
 import DefaultTheme from "vitepress/theme";
@@ -76,13 +76,6 @@ function syncTheme() {
 function syncLocale() {
   locale.value = lang.value;
 }
-
-onBeforeMount(() => {
-  const noscript = document.createElement("noscript");
-  noscript.innerHTML =
-    '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWGSG2LB" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
-  document.body.prepend(noscript);
-});
 
 onMounted(() => {
   syncTheme();

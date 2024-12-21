@@ -30,12 +30,12 @@ describe("VConfirmHeader.tsx", () => {
     expect(wrapper.find("header > .v-confirm__close-icon").exists()).toBe(true);
   });
 
-  it("should emitted click event when clicked to mdi-icon", async () => {
+  it("should emit click event when mdi-icon is clicked", async () => {
     const wrapper = mount(VConfirmHeader, { props: { closeable: true } });
     await wrapper
       .find("header > .v-confirm__close-icon > button")
       .trigger("click");
-    expect(wrapper.emitted("click")).toBeTruthy();
+    expect(wrapper.emitted()).toHaveProperty("click");
   });
 
   it("render a title in header", () => {

@@ -9,19 +9,19 @@ describe("VConfirmActions.tsx", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("not renader a button when btns is empty", () => {
+  it("not render a button when btns is empty", () => {
     const wrapper = mount(VConfirmActions);
     expect(wrapper.find(".v-confirm__actions > button").exists()).toBe(false);
   });
 
-  it("should justify-content value of div's style is end when default props", () => {
+  it("should have justify-content value of 'end' in div's style when using default props", () => {
     const wrapper = mount(VConfirmActions);
     expect(wrapper.find(".v-confirm__actions").attributes().style).toContain(
       "justify-content: end"
     );
   });
 
-  it("should justify-content value is btnAlign value when specified btnAlign of props", () => {
+  it("should set justify-content value to btnAlign value when specified in props", () => {
     const wrapper = mount(VConfirmActions, { props: { btnAlign: "start" } });
     expect(wrapper.find(".v-confirm__actions").attributes().style).toContain(
       "justify-content: start"
@@ -55,7 +55,7 @@ describe("VConfirmActions.tsx", () => {
     expect(wrapper.find(".v-confirm__actions > button").text()).toBe("OK");
   });
 
-  it("shoult default class is .button of button", () => {
+  it("should default class is .button of button", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
@@ -68,7 +68,7 @@ describe("VConfirmActions.tsx", () => {
     );
   });
 
-  it("should button class value is class value when specified class of btns", () => {
+  it("should set button class to the specified class value in btns", () => {
     const btns: VConfirmBtn[] = [
       {
         text: "OK",
@@ -141,7 +141,7 @@ describe("VConfirmActions.tsx", () => {
     ).toContain("color: rgb(255, 255, 255); caret-color: #fff");
   });
 
-  it("should function of button is execute when click a button", async () => {
+  it("should execute button function when button is clicked", async () => {
     const btnFunc = vi.fn();
     const btns: VConfirmBtn[] = [
       {

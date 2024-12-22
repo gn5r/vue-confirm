@@ -11,8 +11,8 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview --base /vue-confirm/",
-    "lint": "eslint .vitepress/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}",
-    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write ./**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}"
+    "lint": "eslint **/*.{mjs,ts,mts,vue}",
+    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write ./**/*.{mjs,ts,mts,vue}"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

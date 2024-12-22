@@ -70,8 +70,8 @@
     "build:rollup": "rollup -c",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
-    "lint": "eslint src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
-    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
+    "lint": "eslint **/*.{js,mjs,ts,tsx,mts,vue}",
+    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write **/*.{js,mjs,ts,tsx,mts,vue}",
     "test:unit": "cross-env NODE_ENV=test vitest",
     "test:watch": "cross-env NODE_ENV=test vitest -w"
   },

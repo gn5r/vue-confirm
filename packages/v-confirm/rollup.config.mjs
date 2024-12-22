@@ -1,4 +1,4 @@
-import pkg from "./package.json" assert { type: "json" };
+import pkg from "./package.json" with { type: "json" };
 
 import { terser } from "rollup-plugin-terser";
 import { nodeResolve } from "@rollup/plugin-node-resolve";

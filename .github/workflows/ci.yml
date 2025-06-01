@@ -13,6 +13,9 @@ on:
       - master
       - main
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest

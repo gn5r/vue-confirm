@@ -8,9 +8,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "dev": "vitepress dev",
+    "dev": "vitepress dev --host",
     "build": "vitepress build",
-    "preview": "vitepress preview --base /vue-confirm/",
+    "preview": "vitepress preview --base /vue-confirm/ --host",
     "lint": "eslint **/*.{mjs,ts,mts,vue}",
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write ./**/*.{mjs,ts,mts,vue}"
   },

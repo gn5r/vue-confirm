@@ -18,7 +18,7 @@ describe("MdiIcon.tsx", () => {
     expect(wrapper.find("button.dark").exists()).toBe(true);
   });
 
-  it("should emitted click event when clicked this component", async () => {
+  it("should emit click event when this component is clicked", async () => {
     const func = vi.fn();
     const wrapper = mount(MdiIcon, {
       slots: { default: mdiClose },

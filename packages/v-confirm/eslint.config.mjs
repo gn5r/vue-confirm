@@ -7,6 +7,9 @@ import babelParser from "@babel/eslint-parser";
 export default [
   ...config,
   {
+    ignores: ["dist", "lib"],
+  },
+  {
     files: ["**/*.mjs"],
     languageOptions: {
       parser: babelParser,

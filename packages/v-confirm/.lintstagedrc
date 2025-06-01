@@ -1,6 +1,3 @@
 {
-  "**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}": [
-    "yarn run lint",
-    "yarn run lint:fix"
-  ]
+  "**/*.{js,mjs,ts,tsx,mts,vue}": ["yarn run lint", "yarn run lint:fix"]
 }

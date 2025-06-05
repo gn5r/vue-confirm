@@ -33,7 +33,7 @@
     "shelljs": "^0.8.5",
     "typescript": "^5.4.3",
     "typescript-eslint": "^7.7.0",
-    "vite": "^5.2.6",
+    "vite": "^6.3.5",
     "vite-plugin-vuetify": "^2.0.3",
     "vue": "^3.4.21",
     "vuetify": "^3.5.13"

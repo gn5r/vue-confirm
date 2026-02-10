@@ -66,14 +66,15 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.mts",
-    "build": "cross-env NODE_ENV=production yarn build:rollup && yarn build:lib && yarn build:types",
+    "build": "cross-env NODE_ENV=production pnpm build:rollup && pnpm build:lib && pnpm build:types",
     "build:rollup": "rollup -c",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
     "lint": "eslint **/*.{js,mjs,ts,tsx,mts,vue} --no-warn-ignored",
     "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write **/*.{js,mjs,ts,tsx,mts,vue}",
     "test:unit": "cross-env NODE_ENV=test vitest",
-    "test:watch": "cross-env NODE_ENV=test vitest -w"
+    "test:watch": "cross-env NODE_ENV=test vitest -w",
+    "clean": "rm -rf node_modules"
   },
   "peerDependencies": {
     "vue": ">=3.3"
@@ -85,6 +86,7 @@
     "@babel/plugin-syntax-import-assertions": "^7.24.1",
     "@babel/preset-env": "^7.24.3",
     "@babel/preset-typescript": "^7.24.1",
+    "@gn5r/vue-confirm": "workspace:*",
     "@mdi/js": "^7.4.47",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",

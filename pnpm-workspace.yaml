@@ -1,0 +1,8 @@
+packages:
+  - "packages/*"
+
+linkWorkspacePackages: true
+
+includeWorkspaceRoot: true
+
+failIfNoMatch: true

@@ -84,7 +84,7 @@
     "@babel/core": "^7.29.0",
     "@babel/eslint-parser": "^7.24.5",
     "@babel/plugin-syntax-import-assertions": "^7.24.1",
-    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-env": "^7.29.0",
     "@babel/preset-typescript": "^7.24.1",
     "@gn5r/vue-confirm": "workspace:*",
     "@mdi/js": "^7.4.47",

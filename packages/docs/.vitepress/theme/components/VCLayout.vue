@@ -53,7 +53,7 @@ import { useI18n } from "vue-i18n";
 import { useVConfirmStore } from "@theme/store/vconfirm";
 
 const { Layout } = DefaultTheme;
-const { global } = useTheme();
+const theme = useTheme();
 const { isDark, lang } = useData();
 const { locale } = useI18n({ useScope: "global" });
 const config = useVConfirmStore();
@@ -70,7 +70,7 @@ function scrollTop() {
 }
 
 function syncTheme() {
-  global.name.value = isDark.value ? "dark" : "light";
+  theme.toggle(["dark", "light"]);
 }
 
 function syncLocale() {

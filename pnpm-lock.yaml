@@ -94,11 +94,11 @@ importers:
         version: 9.14.5(vue@3.5.28(typescript@5.4.3))
     devDependencies:
       '@shikijs/transformers':
-        specifier: 1.2.1
-        version: 1.2.1
+        specifier: 2.5.0
+        version: 2.5.0
       shiki:
-        specifier: 1.2.1
-        version: 1.2.1
+        specifier: 2.5.0
+        version: 2.5.0
       vitepress:
         specifier: ^1.6.4
         version: 1.6.4(@algolia/client-search@5.48.0)(@types/node@20.11.30)(postcss@8.5.6)(sass@1.74.1)(search-insights@2.17.3)(terser@5.30.3)(typescript@5.4.3)
@@ -1827,9 +1827,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@1.2.1':
-    resolution: {integrity: sha512-KaIS0H4EQ3KI2d++TjYqRNgwp8E3M/68e9veR4QtInzA7kKFgcjeiJqb80fuXW+blDy5fmd11PN9g9soz/3ANQ==}
-
   '@shikijs/core@2.5.0':
     resolution: {integrity: sha512-uu/8RExTKtavlpH7XqnVYBrfBkUc20ngXiX9NSrBhOVZYv/7XQRKUyhtkeflY5QsxC0GbJThCerruZfsUaSldg==}
 
@@ -1844,9 +1841,6 @@ packages:
 
   '@shikijs/themes@2.5.0':
     resolution: {integrity: sha512-wGrk+R8tJnO0VMzmUExHR+QdSaPUl/NKs+a4cQQRWyoc3YFbUzuLEi/KWK1hj+8BfHRKm2jNhhJck1dfstJpiw==}
-
-  '@shikijs/transformers@1.2.1':
-    resolution: {integrity: sha512-H7cVtrdv6BW2kx83t2IQgP5ri1IA50mE3QnzgJ0AvOKCGtCEieXu0JIP3245cgjNLrL+LBwb8DtTXdky1iQL9Q==}
 
   '@shikijs/transformers@2.5.0':
     resolution: {integrity: sha512-SI494W5X60CaUwgi8u4q4m4s3YAFSxln3tzNjOSYqq54wlVgz0/NbbXEb3mdLbqMBztcmS7bVTaEd2w0qMmfeg==}
@@ -3896,9 +3890,6 @@ packages:
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
-
-  shiki@1.2.1:
-    resolution: {integrity: sha512-u+XW6o0vCkUNlneZb914dLO+AayEIwK5tI62WeS//R5HIXBFiYaj/Hc5xcq27Yh83Grr4JbNtUBV8W6zyK4hWg==}
 
   shiki@2.5.0:
     resolution: {integrity: sha512-mI//trrsaiCIPsja5CNfsyNOqgAZUb6VpJA+340toL42UpzQlXpwRV9nch69X6gaUxrr9kaOOa6e3y3uAkGFxQ==}
@@ -6109,8 +6100,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.57.1':
     optional: true
 
-  '@shikijs/core@1.2.1': {}
-
   '@shikijs/core@2.5.0':
     dependencies:
       '@shikijs/engine-javascript': 2.5.0
@@ -6138,10 +6127,6 @@ snapshots:
   '@shikijs/themes@2.5.0':
     dependencies:
       '@shikijs/types': 2.5.0
-
-  '@shikijs/transformers@1.2.1':
-    dependencies:
-      shiki: 1.2.1
 
   '@shikijs/transformers@2.5.0':
     dependencies:
@@ -8342,10 +8327,6 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
-
-  shiki@1.2.1:
-    dependencies:
-      '@shikijs/core': 1.2.1
 
   shiki@2.5.0:
     dependencies:

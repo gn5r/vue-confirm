@@ -1,6 +1,6 @@
 import {
   bundledLanguages,
-  getHighlighter,
+  getSingletonHighlighter,
   addClassToHast,
   type ShikiTransformer,
   type CodeToHastOptions,
@@ -18,13 +18,14 @@ export function useShikijiOptions(lang = "typescript"): CodeToHastOptions {
     themes: { light: "github-light", dark: "github-dark" },
     defaultColor: false,
     transformers: [
-      transformerNotationDiff(),
+      transformerNotationDiff({ matchAlgorithm: "v3" }),
       transformerNotationFocus({
+        matchAlgorithm: "v3",
         classActiveLine: "has-focus",
         classActivePre: "has-focused-lines",
       }),
-      transformerNotationHighlight(),
-      transformerNotationErrorLevel(),
+      transformerNotationHighlight({ matchAlgorithm: "v3" }),
+      transformerNotationErrorLevel({ matchAlgorithm: "v3" }),
       {
         name: "vitepress-add-class",
         pre(node) {
@@ -43,7 +44,7 @@ export function useShikijiOptions(lang = "typescript"): CodeToHastOptions {
 }
 
 export function useHighlighter() {
-  return getHighlighter({
+  return getSingletonHighlighter({
     themes: ["github-light", "github-dark"],
     langs: [...Object.keys(bundledLanguages)],
   });

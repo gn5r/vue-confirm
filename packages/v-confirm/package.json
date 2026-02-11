@@ -92,6 +92,8 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@vue/babel-plugin-jsx": "^2.0.1",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vitejs/plugin-vue-jsx": "^5.1.4",
     "@vue/test-utils": "^2.4.5",
     "autoprefixer": "^10.4.19",
     "babel-plugin-module-resolver": "^5.0.0",

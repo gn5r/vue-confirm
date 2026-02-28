@@ -1,24 +1,20 @@
+// @ts-check
+
 import globals from "globals";
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
-import { fileURLToPath } from "url";
-import path from "path";
-import { FlatCompat } from "@eslint/eslintrc";
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from "@vue/eslint-config-typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-export default [
+export default defineConfigWithVueTs(
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...pluginVue.configs["flat/essential"],
-  ...compat.extends("@vue/typescript/recommended"),
+  tseslint.configs.recommended,
+  pluginVue.configs["flat/essential"],
+  vueTsConfigs.recommended,
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "warn",
@@ -33,5 +29,5 @@ export default [
     rules: {
       "@typescript-eslint/no-var-requires": "off",
     },
-  },
-];
+  }
+);

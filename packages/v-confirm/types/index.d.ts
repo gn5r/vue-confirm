@@ -31,9 +31,8 @@ export type VConfirmProps = {
   width?: string | number;
 };
 
-/* eslint-disable @typescript-eslint/ban-types */
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 declare const VConfirm: Component<VConfirmProps, {}, {}, {}, {}>;
-/* eslint-enable */
 
 declare function createVConfirm(): { install: (app: App) => void };
 

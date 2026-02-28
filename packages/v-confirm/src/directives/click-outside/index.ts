@@ -11,7 +11,9 @@ function handler(
 
   const elements = e.composedPath();
   const target = e.target as HTMLElement;
-  elements && elements.length > 0 && elements.unshift(target);
+  if (elements && elements.length > 0) {
+    elements.unshift(target);
+  }
 
   if (el.contains(target)) return;
   binding.value(e);

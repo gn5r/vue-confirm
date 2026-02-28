@@ -1,6 +1,8 @@
+// @ts-check
+
 import pkg from "./package.json" with { type: "json" };
 
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { babel } from "@rollup/plugin-babel";
 import sass from "rollup-plugin-sass";
@@ -43,7 +45,7 @@ export default [
         name: "v-confirm",
         format: "umd",
         globals: { vue: "Vue" },
-        plugins: [terser({ format: { ecma: 2025 } })],
+        plugins: [terser()],
         sourcemap: true,
         banner,
       },

@@ -18,7 +18,7 @@ import alias from "@rollup/plugin-alias";
 const extensions = [".ts", ".tsx", ".js", ".jsx", ".mjs"];
 const banner = `/**
 * ${pkg.name} v${pkg.version}
-* Copyright (c) 2024 shangyuan.tuolang
+* Copyright (c) 2026 shangyuan.tuolang
 * @license MIT
 **/\n`;
 

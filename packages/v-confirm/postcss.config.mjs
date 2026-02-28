@@ -1,5 +1,5 @@
 import autoprefixer from "autoprefixer";
 
-module.exports = {
+export default {
   plugins: [autoprefixer({ grid: "autoplace" })],
 };

@@ -4,7 +4,7 @@ import ClickOutside from "../";
 import { defineComponent } from "vue";
 
 describe("clickOutside", () => {
-  it("should emitted click:outside when clicked parent dom", async () => {
+  it("should emit click:outside when parent DOM is clicked", async () => {
     const TestComponent = defineComponent({
       directives: {
         ClickOutside,

@@ -1,6 +1,8 @@
-import pkg from "./package.json" assert { type: "json" };
+// @ts-check
 
-import { terser } from "rollup-plugin-terser";
+import pkg from "./package.json" with { type: "json" };
+
+import terser from "@rollup/plugin-terser";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { babel } from "@rollup/plugin-babel";
 import sass from "rollup-plugin-sass";
@@ -16,7 +18,7 @@ import alias from "@rollup/plugin-alias";
 const extensions = [".ts", ".tsx", ".js", ".jsx", ".mjs"];
 const banner = `/**
 * ${pkg.name} v${pkg.version}
-* Copyright (c) 2024 shangyuan.tuolang
+* Copyright (c) 2026 shangyuan.tuolang
 * @license MIT
 **/\n`;
 
@@ -43,7 +45,7 @@ export default [
         name: "v-confirm",
         format: "umd",
         globals: { vue: "Vue" },
-        plugins: [terser({ format: { ecma: 2025 } })],
+        plugins: [terser()],
         sourcemap: true,
         banner,
       },

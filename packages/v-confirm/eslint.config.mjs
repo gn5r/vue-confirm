@@ -1,21 +1,16 @@
-import config from "../../eslint.config.mjs";
-import babelParser from "@babel/eslint-parser";
+// @ts-check
 
-/**
- * @type {import("eslint").Linter.FlatConfig[]}
- */
+import config from "../../eslint.config.mjs";
+
 export default [
   ...config,
   {
+    ignores: ["dist", "lib"],
+  },
+  {
     files: ["**/*.mjs"],
     languageOptions: {
-      parser: babelParser,
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          plugins: ["@babel/plugin-syntax-import-assertions"],
-        },
-      },
+      sourceType: "module",
     },
   },
 ];

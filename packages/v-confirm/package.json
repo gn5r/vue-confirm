@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/vue-confirm",
-  "version": "4.1.1",
+  "version": "4.1.4",
   "license": "MIT",
   "description": "Confirm components for Vue.js projects",
   "author": {
@@ -66,41 +66,44 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.mts",
-    "build": "cross-env NODE_ENV=production yarn build:rollup && yarn build:lib && yarn build:types",
+    "build": "cross-env NODE_ENV=production pnpm build:rollup && pnpm build:lib && pnpm build:types",
     "build:rollup": "rollup -c",
     "build:lib": "rm -rf lib && babel src --out-dir lib --source-maps --extensions \".ts\",\".tsx\",\".snap\" --copy-files --no-copy-ignored --out-file-extension .mjs",
     "build:types": "tsc --pretty -p tsconfig.dist.json",
-    "lint": "eslint src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
-    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write src/**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}",
+    "lint": "eslint **/*.{js,mjs,ts,tsx,mts,vue} --no-warn-ignored",
+    "lint:fix": "prettier --ignore-path ../../.gitignore --config ../../.prettierrc --write **/*.{js,mjs,ts,tsx,mts,vue}",
     "test:unit": "cross-env NODE_ENV=test vitest",
-    "test:watch": "cross-env NODE_ENV=test vitest -w"
+    "test:watch": "cross-env NODE_ENV=test vitest -w",
+    "clean": "rm -rf node_modules"
   },
   "peerDependencies": {
     "vue": ">=3.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.24.1",
-    "@babel/core": "^7.24.3",
-    "@babel/eslint-parser": "^7.24.5",
-    "@babel/plugin-syntax-import-assertions": "^7.24.1",
-    "@babel/preset-env": "^7.24.3",
-    "@babel/preset-typescript": "^7.24.1",
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/plugin-syntax-import-assertions": "^7.28.6",
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-typescript": "^7.28.5",
+    "@gn5r/vue-confirm": "workspace:*",
     "@mdi/js": "^7.4.47",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@vue/babel-plugin-jsx": "^1.2.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vitejs/plugin-vue-jsx": "^5.1.4",
+    "@vue/babel-plugin-jsx": "^2.0.1",
     "@vue/test-utils": "^2.4.5",
     "autoprefixer": "^10.4.19",
     "babel-plugin-module-resolver": "^5.0.0",
     "cssnano": "^6.1.2",
     "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
-    "rollup": "^4.14.1",
+    "rollup": "^4.59.0",
     "rollup-plugin-sass": "^1.12.21",
-    "rollup-plugin-terser": "^7.0.2",
-    "vitest": "^1.4.0",
-    "vue": "^3.4.21"
+    "vitest": "^4.0.18",
+    "vue": "^3.5.28"
   },
   "publishConfig": {
     "access": "public"

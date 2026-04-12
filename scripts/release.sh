@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pnpm publish -r --tag $(node ./scripts/parse-dist-tag.js) --no-git-checks
+pnpm publish -r --tag $(node ./scripts/parse-dist-tag.js) --no-git-checks --provenance

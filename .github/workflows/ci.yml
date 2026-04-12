@@ -7,8 +7,6 @@ on:
       - ".github/**"
       - "**/README*"
       - ".vscode/**"
-      - .yarnrc
-      - ".yarn/**"
     branches-ignore:
       - master
       - main
@@ -23,6 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -35,12 +38,11 @@ jobs:
           cache-name: cache
         with:
           path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
-      - run: yarn --frozen-lockfile --non-interactive
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
+      - run: pnpm install --frozen-lockfile --reporter=silent
 
       - name: Run lint
-        run: yarn run lint
-        working-directory: ./packages/v-confirm
+        run: pnpm run lint
 
   test:
     runs-on: ubuntu-latest
@@ -48,6 +50,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -60,9 +67,8 @@ jobs:
           cache-name: cache
         with:
           path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
-      - run: yarn --frozen-lockfile --non-interactive
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
+      - run: pnpm install --frozen-lockfile --reporter=silent
 
       - name: Run unit test
-        run: yarn run test:unit
-        working-directory: ./packages/v-confirm
+        run: pnpm -F @gn5r/vue-confirm test:unit

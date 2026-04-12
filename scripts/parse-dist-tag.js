@@ -1,5 +1,5 @@
-const lernaJson = require("../lerna.json");
-const version = lernaJson.version;
+const rootPackageJson = require("../package.json");
+const version = rootPackageJson.version;
 
 if (version.match(/beta/)) {
   console.log("beta");

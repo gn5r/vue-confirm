@@ -6,10 +6,6 @@ on:
       - "v*"
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: write
-
 jobs:
   ci:
     uses: ./.github/workflows/ci.yml
@@ -18,6 +14,8 @@ jobs:
     needs: [ci]
     runs-on: ubuntu-latest
     if: startswith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -56,6 +54,10 @@ jobs:
     needs: [create-release]
     runs-on: ubuntu-latest
     if: startswith(github.ref, 'refs/tags/v')
+    permissions:
+      id-token: write
+    environment:
+      name: npm-publish
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -70,14 +72,8 @@ jobs:
         with:
           node-version: 24
           registry-url: "https://registry.npmjs.org"
+          cache: pnpm
 
-      - uses: actions/cache@v3
-        id: cache_dependencies
-        env:
-          cache-name: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
       - run: pnpm install --frozen-lockfile --reporter=silent
       - run: pnpm -F @gn5r/vue-confirm build
 

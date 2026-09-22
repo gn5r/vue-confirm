@@ -5,7 +5,7 @@ import { defineComponent, ref, computed, nextTick, watch } from "vue";
 import { Transition } from "vue";
 import { VConfirmHeader } from "./VConfirmHeader";
 import { VConfirmActions } from "./VConfirmActions";
-import { Divider } from "@/components";
+import { Divider } from "../Divider";
 
 // Composables
 import { useThemeProps, useThemeClasses } from "@/composables/theme";

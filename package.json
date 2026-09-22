@@ -14,7 +14,7 @@
     "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^10.0.1",
     "@mdi/font": "^7.4.47",
-    "@types/node": "^20.11.30",
+    "@types/node": "^26.6.2",
     "@vue/eslint-config-typescript": "^14.7.0",
     "cross-env": "^7.0.3",
     "eslint": "^10.0.2",

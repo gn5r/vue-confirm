@@ -2,10 +2,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "dev/**/*", "vite.config.*", "vite.*.conifg.*", "vitest.config.*"],
+  "include": ["env.d.ts", "src/**/*", "dev/**/*", "vite.config.*", "vite.*.conifg.*", "vitest.config.*"],
 }

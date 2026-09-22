@@ -4,7 +4,8 @@ import pkg from "./package.json" with { type: "json" };
 
 import terser from "@rollup/plugin-terser";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import { babel } from "@rollup/plugin-babel";
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import typescript from "@rollup/plugin-typescript";
 import sass from "rollup-plugin-sass";
 import { writeFile } from "fs/promises";
 import { fileURLToPath } from "url";
@@ -52,8 +53,27 @@ export default [
     ],
     external: ["vue"],
     plugins: [
+      alias({
+        entries: [
+          {
+            find: /^@\/(.*)/,
+            replacement: fileURLToPath(new URL("src/$1", import.meta.url)),
+          },
+        ],
+      }),
       nodeResolve({ extensions }),
-      babel({ extensions, babelHelpers: "inline" }),
+      vueJsx(),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        include: ["src/**/*"],
+        outDir: "dist",
+        compilerOptions: {
+          jsx: "preserve",
+          declaration: false,
+          skipLibCheck: true,
+          outDir: "dist",
+        },
+      }),
       sass({
         output(styles) {
           Promise.all([
@@ -77,14 +97,6 @@ export default [
             );
           });
         },
-      }),
-      alias({
-        entries: [
-          {
-            find: /^@\/(.*)/,
-            replacement: fileURLToPath(new URL("src/$1", import.meta.url)),
-          },
-        ],
       }),
     ],
   },

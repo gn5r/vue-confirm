@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "4.1.4",
+  "version": "4.1.5",
   "scripts": {
     "lint": "pnpm run --parallel --stream -r lint",
     "lint:fix": "pnpm run --parallel --stream -r lint:fix",

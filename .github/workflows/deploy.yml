@@ -13,8 +13,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -38,21 +36,13 @@ jobs:
           version: 10
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: 22
+          cache: pnpm
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Install dependencies
-        uses: actions/cache@v3
-        id: cache_dependencies
-        env:
-          cache-name: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('pnpm-lock.yaml') }}
+        uses: actions/configure-pages@v6
       - run: pnpm install --frozen-lockfile --reporter=silent
 
       - name: Build v-confirm
@@ -75,7 +65,10 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     needs: [build-docs]
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

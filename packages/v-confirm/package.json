@@ -33,11 +33,11 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/v-confirm.esm.js",
-      "require": "./dist/v-confirm.min.js",
       "types": "./types/index.d.ts",
       "style": "./dist/v-confirm.min.css",
-      "sass": "./lib/styles/main.sass"
+      "sass": "./lib/styles/main.sass",
+      "import": "./dist/v-confirm.esm.js",
+      "require": "./dist/v-confirm.min.js"
     },
     "./styles": {
       "sass": "./lib/styles/main.sass",

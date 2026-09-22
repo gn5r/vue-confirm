@@ -83,7 +83,7 @@
     "@gn5r/vue-confirm": "workspace:*",
     "@mdi/js": "^7.4.47",
     "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.3.0",
     "@vitejs/plugin-vue": "^6.0.4",

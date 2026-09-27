@@ -93,7 +93,7 @@
     "cssnano": "^7.1.7",
     "jsdom": "^24.0.0",
     "postcss": "^8.5.23",
-    "rollup": "^4.59.0",
+    "rollup": "^4.63.4",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-sass": "^1.15.3",
     "tslib": "^2.8.1",

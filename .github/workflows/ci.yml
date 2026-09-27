@@ -30,7 +30,7 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         id: cache_dependencies
         env:
           cache-name: cache

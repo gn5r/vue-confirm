@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../styles/theme" as *;
 @use "./variables" as var;
 
@@ -30,10 +31,10 @@
   @at-root {
     @include theme("v-confirm") using ($theme) {
       > .v-confirm__content {
-        background: map-get($theme, "background");
+        background: map.get($theme, "background");
 
         .v-confirm__header {
-          color: map-get($theme, "text-color");
+          color: map.get($theme, "text-color");
 
           header {
             color: inherit;
@@ -41,7 +42,7 @@
         }
 
         .v-confirm__message {
-          color: map-get($theme, "text-color");
+          color: map.get($theme, "text-color");
         }
       }
     }

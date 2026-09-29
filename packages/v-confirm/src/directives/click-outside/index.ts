@@ -1,5 +1,13 @@
 import { ObjectDirective, VNode, DirectiveBinding } from "vue";
 
+const CLICK_OUTSIDE_KEY = Symbol("v-click-outside");
+
+interface ClickOutsideElement extends HTMLElement {
+  [CLICK_OUTSIDE_KEY]?: {
+    handler: (e: Event) => void;
+  };
+}
+
 function handler(
   el: HTMLElement,
   binding: DirectiveBinding,
@@ -19,20 +27,25 @@ function handler(
   binding.value(e);
 }
 
-const clickOutside: ObjectDirective<HTMLElement> = {
+const clickOutside: ObjectDirective<ClickOutsideElement> = {
   beforeMount: (el, binding, vnode) => {
     const clickHandler =
       "ontouchstart" in document.documentElement ? "touchstart" : "click";
-    document.addEventListener(clickHandler, (e) =>
-      handler(el, binding, vnode, e)
-    );
+    const listener = (e: Event) => handler(el, binding, vnode, e);
+    document.addEventListener(clickHandler, listener);
+    if (!el[CLICK_OUTSIDE_KEY]) {
+      el[CLICK_OUTSIDE_KEY] = {
+        handler: listener,
+      };
+    }
   },
-  unmounted: (el, binding, vnode) => {
+  unmounted: (el) => {
+    if (!el[CLICK_OUTSIDE_KEY]) return;
     const clickHandler =
       "ontouchstart" in document.documentElement ? "touchstart" : "click";
-    document.removeEventListener(clickHandler, (e) =>
-      handler(el, binding, vnode, e)
-    );
+    const listener = el[CLICK_OUTSIDE_KEY].handler;
+    document.removeEventListener(clickHandler, listener);
+    delete el[CLICK_OUTSIDE_KEY];
   },
 };
 

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../styles/theme" as *;
 
 .v-confirm__divider {
@@ -13,7 +14,7 @@
 
   @at-root {
     @include theme(divider) using ($theme) {
-      border-color: map-get($theme, "divider");
+      border-color: map.get($theme, "divider");
     }
   }
 }

@@ -2,7 +2,7 @@ import { ObjectDirective, VNode, DirectiveBinding } from "vue";
 
 const CLICK_OUTSIDE_KEY = Symbol("v-click-outside");
 
-interface ClickOutsideElement extends HTMLElement {
+export interface ClickOutsideElement extends HTMLElement {
   [CLICK_OUTSIDE_KEY]?: {
     handler: (e: Event) => void;
   };

@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, type PropType } from "vue";
+import { type PropType } from "vue";
 import { useTheme } from "vuetify";
 import { useHighlighter, useShikijiOptions } from "@theme/composables/shikiji";
 

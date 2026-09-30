@@ -5,7 +5,7 @@ import "./styles/style.scss";
 import DefaultTheme from "vitepress/theme";
 import VCLayout from "./components/VCLayout.vue";
 
-import type { Theme } from "vitepress";
+import type { EnhanceAppContext } from "vitepress";
 
 import "@fortawesome/fontawesome-free/js/all.min.js";
 import vuetify from "./plugins/vuetify";
@@ -16,10 +16,10 @@ import vconfirm from "./plugins/vconfirm";
 export default {
   extends: DefaultTheme,
   Layout: VCLayout,
-  enhanceApp({ app }) {
+  enhanceApp({ app }: EnhanceAppContext) {
     app.use(pinia);
     app.use(i18n);
     app.use(vuetify);
     app.use(vconfirm);
   },
-} satisfies Theme;
+};

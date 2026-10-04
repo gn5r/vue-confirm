@@ -138,7 +138,7 @@ describe("VConfirmActions.tsx", () => {
     const wrapper = mount(VConfirmActions, { props: { btns: btns } });
     expect(
       wrapper.find(".v-confirm__actions > button").attributes().style
-    ).toContain("color: rgb(255, 255, 255); caret-color: #fff");
+    ).toContain("color: rgb(255, 255, 255); caret-color: rgb(255, 255, 255)");
   });
 
   it("should execute button function when button is clicked", async () => {

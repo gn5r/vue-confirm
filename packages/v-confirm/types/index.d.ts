@@ -1,11 +1,7 @@
 import type { Component, App } from "vue";
 
 export type Alignment =
-  | "start"
-  | "center"
-  | "end"
-  | "space-between"
-  | "space-around";
+  "start" | "center" | "end" | "space-between" | "space-around";
 
 export type VConfirmBtn = {
   class?: string | string[];

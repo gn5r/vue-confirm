@@ -20,7 +20,7 @@
     "@gn5r/vue-confirm": "workspace:*",
     "pinia": "^4.0.3",
     "vue": "^3.5.33",
-    "vue-i18n": "^9.10.2"
+    "vue-i18n": "^11.4.16"
   },
   "devDependencies": {
     "@shikijs/transformers": "2.5.0",

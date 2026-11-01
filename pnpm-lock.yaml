@@ -288,8 +288,8 @@ importers:
         specifier: ^12.3.0
         version: 12.3.0(rollup@4.63.4)(tslib@2.8.1)(typescript@5.9.3)
       '@vitejs/plugin-vue':
-        specifier: ^6.0.9
-        version: 6.0.9(vite@7.3.6(@types/node@26.6.2)(jiti@1.21.0)(sass@1.105.0)(terser@5.30.3)(yaml@2.6.1))(vue@3.5.44(typescript@5.9.3))
+        specifier: ^6.0.10
+        version: 6.0.10(vite@7.3.6(@types/node@26.6.2)(jiti@1.21.0)(sass@1.105.0)(terser@5.30.3)(yaml@2.6.1))(vue@3.5.44(typescript@5.9.3))
       '@vitejs/plugin-vue-jsx':
         specifier: ^5.1.6
         version: 5.1.6(vite@7.3.6(@types/node@26.6.2)(jiti@1.21.0)(sass@1.105.0)(terser@5.30.3)(yaml@2.6.1))(vue@3.5.44(typescript@5.9.3))
@@ -1686,12 +1686,12 @@ packages:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
 
-  '@vitejs/plugin-vue@6.0.9':
-    resolution: {integrity: sha512-rD/MORlhaZMlXWW0rEn4FB4wMinWC0z/D7Ye160S5+Rs1mC8ZDAdcDp4SjKfUhG5t8q1ktcPVw4xuTkPRlzrSA==}
+  '@vitejs/plugin-vue@6.0.10':
+    resolution: {integrity: sha512-b80aUQh3n+qEzzZm5oQp3rT2QImeCx58K6eFl/RkJ3d65KW0kTuv5lNsLRVAjbW9YRUpo/wzmvzMgV34bTAItA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-      vue: ^3.2.25
+      vue: ^3.2.25 || ^3.6.0-rc.10
 
   '@vitest/expect@4.1.11':
     resolution: {integrity: sha512-VX2x5vNJXET47KAFzwERI+KRMtTTCSWTfSMKsW7JsUsXV4psq++e3DvZpuTDOpHcxytiDs6p2nhVb2tVDiiUYw==}
@@ -5084,7 +5084,7 @@ snapshots:
       vite: 6.4.3(@types/node@26.6.2)(jiti@1.21.0)(sass@1.105.0)(terser@5.30.3)(yaml@2.6.1)
       vue: 3.5.44(typescript@5.9.3)
 
-  '@vitejs/plugin-vue@6.0.9(vite@7.3.6(@types/node@26.6.2)(jiti@1.21.0)(sass@1.105.0)(terser@5.30.3)(yaml@2.6.1))(vue@3.5.44(typescript@5.9.3))':
+  '@vitejs/plugin-vue@6.0.10(vite@7.3.6(@types/node@26.6.2)(jiti@1.21.0)(sass@1.105.0)(terser@5.30.3)(yaml@2.6.1))(vue@3.5.44(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 7.3.6(@types/node@26.6.2)(jiti@1.21.0)(sass@1.105.0)(terser@5.30.3)(yaml@2.6.1)

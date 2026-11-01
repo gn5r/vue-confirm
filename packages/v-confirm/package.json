@@ -98,7 +98,7 @@
     "rollup-plugin-sass": "^1.15.3",
     "tslib": "^2.8.1",
     "vitest": "^4.1.11",
-    "vue": "^3.5.28"
+    "vue": "^3.5.44"
   },
   "publishConfig": {
     "access": "public"

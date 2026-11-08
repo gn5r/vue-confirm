@@ -43,7 +43,7 @@ jobs:
 
       - name: Create release tag
         id: create_release
-        uses: softprops/action-gh-release@v3.0.3
+        uses: softprops/action-gh-release@v3.0.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

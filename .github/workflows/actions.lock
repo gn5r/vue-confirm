@@ -20,7 +20,7 @@ workflows:
         - 'actions/setup-node@v7.1.0'
         - 'mikepenz/release-changelog-builder-action@v6.5.0'
         - 'pnpm/action-setup@v6.1.0'
-        - 'softprops/action-gh-release@v3.0.3'
+        - 'softprops/action-gh-release@v3.0.4'
 dependencies:
     'actions/cache@v6.1.0':
         ref: 'v6.1.0'
@@ -69,8 +69,8 @@ dependencies:
         commit: 'sha1-ea17c68df8912ef543352723c149a84f56e3d413'
         owner_id: 21320719
         repo_id: 262289747
-    'softprops/action-gh-release@v3.0.3':
-        ref: 'v3.0.3'
-        commit: 'sha1-efb35369e0ad2afab669f228072c1b0d510eae64'
+    'softprops/action-gh-release@v3.0.4':
+        ref: 'v3.0.4'
+        commit: 'sha1-8a0cd651e5b2365bd640854a3fa5dfc70e4875f3'
         owner_id: 2242
         repo_id: 204253808

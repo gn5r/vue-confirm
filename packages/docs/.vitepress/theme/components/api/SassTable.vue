@@ -1,6 +1,6 @@
 <template>
-  <v-sheet border rounded>
-    <v-table class="api-table">
+  <v-sheet class="vp-raw" border rounded>
+    <v-table>
       <thead>
         <tr>
           <th class="font-weight-medium" style="width: 40%">Name</th>

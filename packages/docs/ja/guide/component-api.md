@@ -24,33 +24,18 @@ const slotsItems = useSlotsTableItems();
 
 ## Props
 
-<Suspense>
-  <PropsTable :items="propsItems" />
-  <template #fallback>
-    読み込み中...
-  </template>
-</Suspense>
+<PropsTable :items="propsItems" />
 
 <h2 id="events" tabIndex="-1">
   イベント
   <a class="header-anchor" href="#events" aria-label="Permalink to &quot;イベント&quot;">&ZeroWidthSpace;</a>
 </h2>
 
-<Suspense>
-  <EventsTable :items="eventsItems" />
-  <template #fallback>
-    読み込み中...
-  </template>
-</Suspense>
+<EventsTable :items="eventsItems" />
 
 <h2 id="slots" tabIndex="-1">
   スロット
   <a class="header-anchor" href="#slots" aria-label="Permalink to &quot;スロット&quot;">&ZeroWidthSpace;</a>
 </h2>
 
-<Suspense>
-  <SlotsTable :items="slotsItems" />
-  <template #fallback>
-    読み込み中...
-  </template>
-</Suspense>
+<SlotsTable :items="slotsItems" />

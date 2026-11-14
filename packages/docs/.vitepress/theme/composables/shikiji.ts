@@ -1,10 +1,14 @@
 import {
-  bundledLanguages,
-  getSingletonHighlighter,
+  createHighlighterCoreSync,
+  createJavaScriptRegexEngine,
   addClassToHast,
   type ShikiTransformer,
   type CodeToHastOptions,
 } from "shiki";
+import githubLight from "shiki/themes/github-light.mjs";
+import githubDark from "shiki/themes/github-dark.mjs";
+import typescript from "shiki/langs/typescript.mjs";
+import scss from "shiki/langs/scss.mjs";
 import {
   transformerNotationDiff,
   transformerNotationErrorLevel,
@@ -44,8 +48,9 @@ export function useShikijiOptions(lang = "typescript"): CodeToHastOptions {
 }
 
 export function useHighlighter() {
-  return getSingletonHighlighter({
-    themes: ["github-light", "github-dark"],
-    langs: [...Object.keys(bundledLanguages)],
+  return createHighlighterCoreSync({
+    themes: [githubLight, githubDark],
+    langs: [typescript, scss],
+    engine: createJavaScriptRegexEngine(),
   });
 }

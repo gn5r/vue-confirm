@@ -65,7 +65,7 @@
     }
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.mts",
+    "dev": "cross-env NODE_ENV=development vite --config vite.dev.config.mts --host",
     "build": "cross-env NODE_ENV=production pnpm build:rollup && pnpm build:lib && pnpm build:types",
     "build:rollup": "rollup -c",
     "build:lib": "rm -rf lib && rollup -c rollup.lib.config.mjs",

@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@shikijs/transformers": "4.5.0",
+    "postcss": "^8.5.23",
     "shiki": "4.5.0",
     "vitepress": "^1.6.4"
   }

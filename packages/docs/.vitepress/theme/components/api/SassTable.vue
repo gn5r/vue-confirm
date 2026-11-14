@@ -42,7 +42,7 @@ defineProps({
 });
 
 const { current: theme } = useTheme();
-const highlighter = await useHighlighter();
+const highlighter = useHighlighter();
 
 function highlight(val?: string) {
   let code = "";

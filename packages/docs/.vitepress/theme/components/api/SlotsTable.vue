@@ -45,7 +45,7 @@ defineProps({
 
 const headers = ref<Array<string>>(["Name", "Type"]);
 const { current: theme } = useTheme();
-const highlighter = await useHighlighter();
+const highlighter = useHighlighter();
 
 function highlight(val?: string) {
   let code = "";

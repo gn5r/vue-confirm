@@ -23,21 +23,11 @@ const vconfirmItems = useVConfirmSassItems();
   <a class="header-anchor" href="#theme" aria-label="Permalink to &quot;テーマ&quot;">&ZeroWidthSpace;</a>
 </h2>
 
-<Suspense>
-  <SassTable :items="themeItems" />
-  <template #fallback>
-    読み込み中...
-  </template>
-</Suspense>
+<SassTable :items="themeItems" />
 
 ## v-confirm
 
-<Suspense>
-  <SassTable :items="vconfirmItems" />
-  <template #fallback>
-    読み込み中...
-  </template>
-</Suspense>
+<SassTable :items="vconfirmItems" />
 
 <h2 id="usage" tabIndex="-1">
   使い方

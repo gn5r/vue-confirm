@@ -1,13 +1,15 @@
 <template>
-  <v-container class="px-0" fluid>
+  <v-container class="px-0 vp-raw" fluid>
     <v-row no-gutters>
       <v-col cols="12">
         <v-card>
           <v-card-text class="pa-0">
             <v-container fluid>
-              <v-row align="center" dense>
+              <v-row align="center" density="compact">
                 <v-col>
-                  <span class="text-h5">{{ title.componentOptions }}</span>
+                  <span class="text-headline-small">{{
+                    title.componentOptions
+                  }}</span>
                 </v-col>
               </v-row>
               <v-row no-gutters>
@@ -53,7 +55,7 @@
                 </v-col>
               </v-row>
 
-              <v-row align="center" dense>
+              <v-row align="center" density="compact">
                 <v-col cols="4" md="2" lg="2">
                   <v-text-field
                     v-model="config.width"
@@ -67,11 +69,13 @@
 
               <v-row>
                 <v-col>
-                  <span class="text-h5">{{ title.titleOptions }}</span>
+                  <span class="text-headline-small">{{
+                    title.titleOptions
+                  }}</span>
                 </v-col>
               </v-row>
 
-              <v-row dense>
+              <v-row density="compact">
                 <v-col cols="6" md="1" lg="1">
                   <v-text-field
                     v-model="config.titleColor"
@@ -112,7 +116,7 @@
                 </v-col>
               </v-row>
 
-              <v-row dense>
+              <v-row density="compact">
                 <v-col cols="12" lg="10">
                   <v-text-field
                     v-model="config.title"
@@ -126,11 +130,13 @@
 
               <v-row>
                 <v-col>
-                  <span class="text-h5">{{ title.messageOptions }}</span>
+                  <span class="text-headline-small">{{
+                    title.messageOptions
+                  }}</span>
                 </v-col>
               </v-row>
 
-              <v-row dense>
+              <v-row density="compact">
                 <v-col cols="12" lg="10">
                   <v-textarea
                     v-model="config.message"
@@ -145,11 +151,13 @@
 
               <v-row>
                 <v-col>
-                  <span class="text-h5">{{ title.actionButtons }}</span>
+                  <span class="text-headline-small">{{
+                    title.actionButtons
+                  }}</span>
                 </v-col>
               </v-row>
 
-              <v-row dense>
+              <v-row density="compact">
                 <v-col cols="6" md="1" lg="1">
                   <v-text-field
                     v-model="config.btns[0].color"
@@ -190,7 +198,7 @@
                 </v-col>
               </v-row>
 
-              <v-row dense>
+              <v-row density="compact">
                 <v-col cols="6" md="3" lg="3">
                   <v-select
                     v-model="config.btnAlign"
@@ -205,7 +213,7 @@
                 </v-col>
               </v-row>
 
-              <v-row dense>
+              <v-row density="compact">
                 <v-col cols="6" md="3" lg="3">
                   <v-text-field
                     v-model="config.btns[0].text"

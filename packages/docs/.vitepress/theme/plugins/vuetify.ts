@@ -57,4 +57,9 @@ export default createVuetify({
       },
     },
   },
+  defaults: {
+    VBtn: {
+      class: "text-uppercase",
+    },
+  },
 });

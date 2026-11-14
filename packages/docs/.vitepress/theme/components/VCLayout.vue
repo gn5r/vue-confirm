@@ -14,7 +14,7 @@
   </Layout>
   <v-btn
     v-show="isShowPageUpBtn"
-    class="text-white"
+    class="text-white vp-raw"
     color="#607d8b"
     icon="mdi-arrow-up-thick"
     position="fixed"
@@ -22,6 +22,7 @@
     @click="scrollTop"
   />
   <v-confirm
+    class="vp-raw"
     v-model="config.modelValue"
     :btn-align="config.btnAlign"
     :btns="config.btns"
@@ -70,7 +71,7 @@ function scrollTop() {
 }
 
 function syncTheme() {
-  theme.toggle(["dark", "light"]);
+  theme.change(isDark.value ? "dark" : "light");
 }
 
 function syncLocale() {

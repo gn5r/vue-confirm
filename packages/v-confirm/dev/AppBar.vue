@@ -1,9 +1,9 @@
 <template>
   <v-app-bar density="compact">
     <template #append>
-      <v-icon
+      <v-btn
         :icon="current.dark ? 'mdi-brightness-4' : 'mdi-brightness-5'"
-        @click="toggelTheme"
+        @click="toggle(['light', 'dark'])"
       />
     </template>
   </v-app-bar>
@@ -12,11 +12,7 @@
 <script setup lang="ts">
 import { useTheme } from "vuetify";
 
-const { global, current } = useTheme();
-
-function toggelTheme() {
-  global.name.value = current.value.dark ? "light" : "dark";
-}
+const { current, toggle } = useTheme();
 </script>
 
 <style lang="sass" scoped></style>
